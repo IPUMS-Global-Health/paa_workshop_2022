@@ -1,0 +1,437 @@
+---
+title: "Stata Users Breakout Session"
+author: "Devon Kristiansen"
+date: '2022-05-18'
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+---
+
+
+## Setup
+
+Load `.dta` file
+
+```
+. cd "Z:\pma\admin\presentations\workshop2022"
+Z:\pma\admin\presentations\workshop2022
+
+. 
+. use workshop_2022.dta
+
+```
+
+---
+
+Result of the Female Questionnaire in Phase 1 vs Phase 2
+
+```
+. tab resultfq_2 resultfq_1, miss
+
+     result of female |  result of female questionnaire
+        questionnaire | completed  partly co          . |     Total
+----------------------+---------------------------------+----------
+            completed |    12,501          8      4,506 |    17,015 
+          not at home |       106          0          0 |       106 
+            postponed |        24          0          0 |        24 
+              refused |        87          0          0 |        87 
+     partly completed |        14          0          8 |        22 
+     respondent moved |        18          0          0 |        18 
+        incapacitated |        24          0          0 |        24 
+not interviewed (fema |         4          0          0 |         4 
+not interviewed (hous |       197          0          0 |       197 
+niu (not in universe) |     1,352          1          0 |     1,353 
+                    . |     1,987         25          0 |     2,012 
+----------------------+---------------------------------+----------
+                Total |    16,314         34      4,514 |    20,862 
+
+```
+
+---
+
+Dropping women who did not complete a survey in both surveys
+
+```
+. keep if resultfq_1 == 1
+(4,548 observations deleted)
+
+. keep if resultfq_2 == 1
+(3,813 observations deleted)
+```
+
+Dropping women who were not part of the de facto population
+
+```
+. keep if (resident_1 == 11 | resident_1 == 22) & (resident_2 == 11 | resident_2 == 22)
+(358 observations deleted)
+```
+
+---
+
+We'll call our dependent variable `category`
+
+```
+> gen category = .
+(12,143 missing values generated)
+
+. replace category = 1 if cp_1 == 0 & cp_2 == 0
+(5,107 real changes made)
+
+. replace category = 2 if cp_1 == 1 & cp_2 == 1
+(3,917 real changes made)
+
+. replace category = 3 if cp_1 == 0 & cp_2 == 1
+(1,939 real changes made)
+
+. replace category = 4 if cp_1 == 1 & cp_2 == 0
+(1,178 real changes made)
+
+```
+
+---
+
+"Non-users" were not using a method at the time of *both* of their interviews.
+
+"Users" were using a method at the time of *both* of their interviews.
+
+```
+. label define categorical 1 "Non-user" 2 "User" 3 "Adopted FP" 4 "Discontinued FP" 
+
+. label values category categorical
+
+. tab category, gen(cat_)
+
+       category |      Freq.     Percent        Cum.
+----------------+-----------------------------------
+       Non-user |      5,107       42.06       42.06
+           User |      3,917       32.26       74.33
+     Adopted FP |      1,939       15.97       90.30
+Discontinued FP |      1,178        9.70      100.00
+----------------+-----------------------------------
+          Total |     12,141      100.00
+
+```
+
+# Data Visualization
+
+---
+
+First graph uses counts of interviewed women
+
+```
+. graph bar (sum) cat_1-cat_4, over(country) legend(label(1 "Non-user") 
+label(2 "User") label(3 "Adopted FP") label(4 "Discontinued FP"))
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/g1.png", dpi = 300)
+```
+
+---
+
+Second graph uses proportions, so the visualization isn't biased by a difference in sample sizes
+
+```
+. graph bar cat_1-cat_4, over(country) legend(label(1 "Non-user") label(2 "User")
+label(3 "Adopted FP") label(4 "Discontinued FP"))
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/g2.png", dpi = 300)
+```
+
+# Data Analysis
+
+---
+
+Rename outcome variable
+
+```
+. rename cat_3 adoption
+
+. rename cat_4 discontinue
+
+```
+Explanatory variables
+
+```
+. tab cvincomeloss_2, miss
+
+     income loss resulted from covid-19 |
+                           restrictions |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+                                     no |        658        5.42        5.42
+                                    yes |      7,566       62.31       67.73
+                             don't know |          2        0.02       67.74
+                  niu (not in universe) |      3,917       32.26      100.00
+----------------------------------------+-----------------------------------
+                                  Total |     12,143      100.00
+
+```
+
+---
+
+use hhincomelossamt to understand who did not lose income in cvincomeloss
+
+```
+. tab cvincomeloss_2 hhincomelossamt_2
+
+ income loss resulted |    household income loss since covid-19
+        from covid-19 |                restrictions
+         restrictions |      none    partial   complete  no respon |     Total
+----------------------+--------------------------------------------+----------
+                   no |         0        547        111          0 |       658 
+                  yes |         0      5,449      2,117          0 |     7,566 
+           don't know |         0          2          0          0 |         2 
+niu (not in universe) |     3,904          0          0         13 |     3,917 
+----------------------+--------------------------------------------+----------
+                Total |     3,904      5,998      2,228         13 |    12,143 
+
+. replace cvincomeloss_2 = 0 if hhincomelossamt_2 == 1
+(3,904 real changes made)
+```
+
+---
+
+look at the other explanatory variable
+
+```
+. tab country covidconcern_2, row
+
+             |            concerned about getting infected
+ pma country | not conce  a little   concerned  very conc  currently |     Total
+-------------+-------------------------------------------------------+----------
+burkina faso |       212        461        955      3,576          1 |     5,208 
+             |      4.07       8.85      18.34      68.66       0.02 |    100.00 
+-------------+-------------------------------------------------------+----------
+       kenya |       162        216      1,515      5,034          8 |     6,935 
+             |      2.34       3.11      21.85      72.59       0.12 |    100.00 
+-------------+-------------------------------------------------------+----------
+       Total |       374        677      2,470      8,610          9 |    12,143 
+             |      3.08       5.58      20.34      70.91       0.07 |    100.00 
+
+             | concerned
+             |   about
+             |  getting
+             |  infected
+ pma country | no respon |     Total
+-------------+-----------+----------
+burkina faso |         3 |     5,208 
+             |      0.06 |    100.00 
+-------------+-----------+----------
+       kenya |         0 |     6,935 
+             |      0.00 |    100.00 
+-------------+-----------+----------
+       Total |         3 |    12,143 
+             |      0.02 |    100.00 
+                      
+```
+
+---
+
+replace NIU to missing
+
+```
+. forvalues i = 1/2 {
+  foreach var in age marstat educattgen cvincomeloss covidconcern 
+  hhincomelossamt wealtht cp {
+    replace `var'_`i' = . if `var'_`i' > 90
+  }
+}
+(0 real changes made)
+(1 real change made, 1 to missing)
+(2 real changes made, 2 to missing)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(2 real changes made, 2 to missing)
+(2 real changes made, 2 to missing)
+(0 real changes made)
+(0 real changes made)
+(1 real change made, 1 to missing)
+(15 real changes made, 15 to missing)
+(3 real changes made, 3 to missing)
+(13 real changes made, 13 to missing)
+(993 real changes made, 993 to missing)
+(0 real changes made)
+
+```
+
+---
+
+Establishing the survey weight settings
+
+```
+. svyset [pw=panelweight], psu(eaid_1) strata(strata_1)
+
+      pweight: panelweight
+          VCE: linearized
+  Single unit: missing
+     Strata 1: strata_1
+         SU 1: eaid_1
+        FPC 1: <zero>
+
+. 
+
+```
+
+---
+
+Demonstrating weighted proportions
+
+```
+. tab country adoption, row
+
+                      | category==Adopted FP
+          pma country |         0          1 |     Total
+----------------------+----------------------+----------
+         burkina faso |     4,386        821 |     5,207 
+                      |     84.23      15.77 |    100.00 
+----------------------+----------------------+----------
+                kenya |     5,816      1,118 |     6,934 
+                      |     83.88      16.12 |    100.00 
+----------------------+----------------------+----------
+                Total |    10,202      1,939 |    12,141 
+                      |     84.03      15.97 |    100.00 
+
+```
+
+---
+
+
+```
+. svy: tab country adoption, row
+(running tabulate on estimation sample)
+
+Number of strata   =        23                  Number of obs     =     12,141
+Number of PSUs     =       474                  Population size   = 12,134.981
+                                                Design df         =        451
+
+-------------------------------
+pma       |category==Adopted FP
+country   |     0      1  Total
+----------+--------------------
+  burkina | .8503  .1497      1
+    kenya | .8353  .1647      1
+          | 
+    Total | .8418  .1582      1
+-------------------------------
+  Key:  row proportion
+
+  Pearson:
+    Uncorrected   chi2(1)         =    5.0554
+    Design-based  F(1, 451)       =    1.8652     P = 0.1727
+
+
+```
+
+---
+
+Creating an age category recode
+
+```
+. recode age_2 (15/24=1) (25/34=2) (35/49=3), gen(age_rec)
+(12143 differences between age_2 and age_rec)
+
+. label define agerecode 1 "15-24" 2 "25-34" 3 "35-49"
+
+. label values age_rec agerecode
+
+. 
+. recode birthevent_2 (99=0) (0=0) (1/2=1) (else=2), gen(birth_rec)
+(10389 differences between birthevent_2 and birth_rec)
+
+. label define birthrecode 0 "No births" 1 "1 or 2 births" 2 "3+ births"
+
+. label values birth_rec birthrecode
+```
+
+## Logistic regressions
+
+```
+. svy: logit adoption i.age_rec urban i.wealtht_2 i.educattgen_2 
+cvincomeloss_2 i.covidconcern_2 if country == 1 
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/m1.png", dpi = 300)
+```
+
+---
+
+
+```
+. svy: logit adoption i.age_rec urban i.wealtht_2 i.educattgen_2 
+cvincomeloss_2 i.covidconcern_2 if country == 7 
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/m2.png", dpi = 300)
+```
+
+---
+
+```
+. svy: logit discontinue i.age_rec urban i.wealtht_2 i.educattgen_2 
+cvincomeloss_2 i.covidconcern_2 if country == 1 
+```
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/m3.png", dpi = 300)
+```
+
+---
+
+```
+. svy: logit discontinue i.age_rec urban i.wealtht_2 i.educattgen_2 
+cvincomeloss_2 i.covidconcern_2 if country == 7 
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/m4.png", dpi = 300)
+```
+
+
+## Logistic regressions with parity
+
+```
+. svy: logit adoption i.age_rec i.birth_rec urban i.wealtht_2 i.educattgen_2 
+cvincomeloss_2 i.covidconcern_2 if country == 1 
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/m5.png", dpi = 300)
+```
+
+---
+
+```
+. svy: logit adoption i.age_rec i.birth_rec urban i.wealtht_2 i.educattgen_2 
+cvincomeloss_2 i.covidconcern_2 if country == 7 
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/m6.png", dpi = 300)
+```
+
+---
+
+```
+. svy: logit discontinue i.age_rec i.birth_rec urban i.wealtht_2 i.educattgen_2 
+cvincomeloss_2 i.covidconcern_2 if country == 1 
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/m7.png", dpi = 300)
+```
+
+---
+
+```
+. svy: logit discontinue i.age_rec i.birth_rec urban i.wealtht_2 i.educattgen_2 
+cvincomeloss_2 i.covidconcern_2 if country == 7 
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("images/m8.png", dpi = 300)
+```

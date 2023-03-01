@@ -1,0 +1,1877 @@
+time,english,french
+5.359,all right well we still have some more,d'accord eh bien nous en avons encore d'autres
+7.359,joining us but uh but let's get started,qui nous rejoignent mais euh mais commençons
+10,uh so hi everyone and welcome to our,euh alors salut tout le monde et bienvenue à notre
+12.4,session on longitudinal analysis using,session sur l'analyse longitudinale utilisant des
+14.48,pma data this session is hosted jointly,données pma cette session est hébergée conjointement
+17.6,by ippums and pma,par ippums et pma
+20.08,i'm philan glevich the pi of pma,je suis philan glevich le pi de pma
+23.119,thanks to everyone for joining us today,merci  à tout le monde de nous avoir rejoint aujourd'hui
+24.8,and let's get started next slide please,"et commençons la prochaine diapositive s'il vous plaît,"
+29.679,so i'll start this uh webinar with the,donc je vais commencer ce webinaire euh avec la
+31.679,research question,question de recherche est-ce
+33.12,did the covet 19 pandemic impact,que la pandémie de covet 19 a eu un impact sur l'
+35.6,contraceptive use,utilisation de contraceptifs
+37.12,uh so this question was prominent,euh donc cette question était importante en
+38.64,particularly in the early stages of,particulier dans les premiers stades de la
+40,pandemic and rightfully so many,pandémie et à juste titre tant
+42.559,predicted that the pandemic could have a,a prédit que la pandémie pourrait avoir un
+44.8,profound impact on contraceptive use uh,"impact profond sur l'utilisation des contraceptifs, en"
+47.36,particularly in low middle-income,particulier dans les pays à faible revenu
+48.719,countries due to uh,intermédiaire en raison
+51.36,supply chain disruptions,"des perturbations de la chaîne d'approvisionnement, de la"
+53.52,rising costs of contraceptives social,"hausse des coûts des contraceptifs, de la"
+55.76,distancing which limited access to uh,distanciation sociale qui a limité l'accès aux
+58.239,service delivery points for forgetting,points de prestation de services pour avoir oublié la
+59.92,family planning,"planification familiale,"
+61.199,um so for a lot of reasons there was,donc pour beaucoup de  raisons il y avait
+63.039,there was you know good justification to,il y avait vous savez une bonne justification pour
+64.799,suspect that covet could have a,soupçonner que la convoitise pourrait avoir un
+66.72,devastating impact on contraceptive use,impact dévastateur sur la contraception  utilisation
+69.28,and particularly for a vulnerable,"et en particulier pour les populations vulnérables,"
+71.28,populations,NA
+72.56,so many uh many articles and other,tant d'articles et d'autres
+75.68,venues predicted that early in the,lieux ont prédit qu'au début de la
+77.759,pandemic,NA
+79.28,that there could be increased,"pandémie, il pourrait y avoir une augmentation"
+82.159,unintended pregnancies,"des grossesses non désirées, en"
+84.24,especially again among vulnerable,"particulier parmi les populations vulnérables,"
+85.84,populations,NA
+87.119,so this research question basically,donc cette question de recherche
+88.88,forms the uh the background for this,constitue essentiellement le contexte de cette
+91.28,session,session
+92.159,uh where we'll be using pma's,euh où nous '  J'utiliserai les
+93.84,longitudinal panel data from before and,données longitudinales du panel de pma avant et
+96.24,during the coveted pandemic to look at,pendant la pandémie tant convoitée pour examiner les
+98.159,changes in contraceptive use,changements dans l'utilisation des contraceptifs. Diapositive
+100.88,next slide please,"suivante, s'il vous plaît,"
+103.28,so uh as a structure for this session,"alors euh comme structure pour cette session,"
+105.6,we'll start with an overview of pma and,nous commencerons par un aperçu de pma et
+108.24,describe pma study design and sampling,décrirons la conception de l'étude pma et l'
+111.2,approach and other features of pma,"approche d'échantillonnage et  d'autres fonctionnalités de pma,"
+113.6,then we'll turn it over to iphones for a,nous passerons ensuite aux iphones pour une
+115.52,brief description of their role with pma,brève description de leur rôle avec pma
+118.24,and then the bulk of this webinar will,", puis la majeure partie de ce webinaire"
+120.159,be devoted to longitudinal data analysis,sera consacrée à l'analyse de données longitudinales
+122.96,where we'll have two breakout rooms one,où nous aurons deux salles de sous-commission une
+124.96,for r one for stata and you'll select,pour r une pour stata  et vous
+127.6,which breakout room you prefer based on,sélectionnerez la salle de sous-commission que vous préférez en fonction du
+129.36,which statistical package you'd prefer,package statistique dans lequel vous préférez vous
+131.12,training in and we'll devote most of,entraîner et nous consacrerons le plus  de
+133.12,this session to um examples of,cette session à euh des exemples d'
+135.28,longitudinal panel data analysis uh in,analyse longitudinale de données de panel euh dans
+138.16,those statistical packages,ces ensembles statistiques
+140.959,next slide please,diapositive suivante s'il vous plaît d'
+143.599,all right so starting with an overview,"accord, donc en commençant par un aperçu"
+145.599,of pma,de pma
+146.879,so pma was initiated in 2013 in response,donc pma a été lancé en 2013 en réponse
+150,to the london summit and family planning,au sommet de londres et à la planification familiale
+152.64,and the initial goal of pma was to track,et l'objectif initial de pma était  pour suivre
+154.959,key family planning indicators over time,les indicateurs clés de la planification familiale au fil du temps
+156.879,in select geographies which pma has done,"dans certaines zones géographiques, ce que pma a fait"
+159.44,in 11 countries in africa and asia so,dans 11 pays d'afrique et d'asie
+161.599,far to date,"jusqu'à présent,"
+162.959,so by 2013 pma changed study designs,donc en 2013 pma a changé les plans d'étude
+165.84,where we moved from repeated,où nous sommes passés d'une
+167.68,cross-sectional study design to a,étude transversale répétée à un
+169.28,longitudinal panel and i'll describe,panel longitudinal et je '  Je
+171.519,this panel design uh shortly in a few,décrirai brièvement cette conception de panel dans quelques
+173.92,slides,"diapositives,"
+175.2,so this slide shows some of the,donc cette diapositive montre certaines des
+176.48,accomplishments for pma so far,réalisations de pma jusqu'à présent
+178.56,and one to point out that we're,et une pour souligner que nous
+181.519,approaching our millionth interview so,"approchons de notre millionième entretien,"
+183.599,that's one landmark that we're,c'est donc un point de repère que nous
+184.879,anticipating in the coming years,anticipons dans les prochaines années
+186.8,next slide please,diapositive s'il vous plaît
+189.84,so how does pma work,alors comment pma fonctionne
+191.68,so pma starts with our resident,donc pma commence par nos
+193.519,numerators who are women that,numérateurs résidents qui sont des femmes
+195.92,are that either reside within or close,qui résident dans ou à proximité
+198.8,to enumeration areas in the pma sample,des zones de dénombrement dans le p  ma échantillon
+201.599,so these uh women do data collection for,donc ces femmes font la collecte de données pour
+203.76,pma,pma
+204.959,and uh they start by going to households,et euh elles commencent par se rendre dans les ménages
+207.92,or service delivery points in pma,ou les points de prestation de services dans
+209.84,enumeration areas,les zones de dénombrement pma
+211.28,and administer a survey by smartphone,et administrent une enquête par smartphone en
+213.519,using odk,utilisant odk une
+215.12,after the survey is finished it's,"fois l'enquête terminée, elle est"
+216.64,uploaded to a central server where we do,téléchargée sur un serveur central où nous faisons de
+219.04,real-time data management and data,vrai  - gestion du temps des données et
+221.68,quality checks on the data,vérifications de la qualité des données sur les données une
+223.92,after data collection is complete we,"fois la collecte des données terminée, nous"
+226.4,produce a number of data visualization,produisons un certain nombre de produits de visualisation de données
+228.4,products uh reports academic papers uh,euh rapports articles universitaires euh
+231.76,briefs,mémoires
+232.799,and uh and other items and then,"et euh et d'autres éléments, puis"
+234.959,ultimately the data that pma collects,finalement les données recueillies par pma
+237.04,are made publicly available within about,sont rendues publiques dans environ
+239.28,six months after data collection is,six  mois après la fin de la collecte des données
+240.879,finished,NA
+241.84,and you can access the data on either,et vous pouvez accéder aux données sur
+243.84,the ipams website or the pma website,le site Web d'ipams ou sur le site Web de
+247.04,next slide please,"pma diapositive suivante,"
+251.439,so pma currently operates in nine,donc pma opère actuellement dans neuf
+253.28,geographies as shown on this map,"zones géographiques, comme indiqué sur cette carte"
+255.68,pma collects nationally representative,pma collecte des données représentatives au niveau national
+257.519,data in uganda kenya um,en ouganda kenya um
+260.799,niger and cote d'ivoire,niger et cote d'  ivoire
+263.12,and we collect in burkina faso,et nous recueillons au burkina faso
+265.52,and we collect sub-nationally,et nous recueillons des données représentatives au niveau sous-national
+267.199,representative data in dr congo where we,en rd congo où nous
+269.52,work in congo central and kinshasa,travaillons  provinces du congo central et de kinshasa
+272.08,provinces,NA
+273.919,in nigeria where we work in canolago,au nigeria où nous travaillons dans les
+276.16,states,états de canolago
+277.04,in india where we work in rajasthan,en inde où nous travaillons au rajasthan
+279.44,and then pma core has a related project,", puis pma core a un projet connexe"
+282.479,in ethiopia that focuses on maternal,en éthiopie qui se concentre sur la santé maternelle
+284.32,health,NA
+285.12,next slide please,diapositive suivante s'il vous plaît
+288.08,so this slide depicts the pma study,donc cette diapositive illustre la conception de l'étude pma
+289.84,design,NA
+291.28,we're starting on the top pma does a,"que nous commençons  en haut, pma fait un"
+293.44,household and female panel where at,"panel de ménages et de femmes où, au"
+296.4,baseline we enroll uh eligible,"départ, nous inscrivons euh des"
+298.4,households and women uh for interview in,ménages éligibles et des femmes euh pour un entretien au cours de
+300.88,the first year which has been completed,la première année qui a été achevée
+302.72,for all of our geography so far,pour l'ensemble de notre géographie jusqu'à présent
+305.12,and then over time we followed the same,", puis au fil du temps, nous avons suivi les mêmes"
+307.199,households in women for two subsequent,ménages chez les femmes pour  deux
+309.36,interviews which are done in an annual,entretiens ultérieurs qui sont effectués sur une base annuelle
+311.36,basis,NA
+312.88,so women can in eligible households can,afin que les femmes des ménages éligibles puissent
+315.12,age into the sample once they turn 15,vieillir dans l'échantillon une fois qu'elles ont atteint l'âge de 15 ans
+317.919,and then they can also move in and out,", puis elles peuvent également entrer et sortir"
+319.919,of the sample as well and i'll provide,de l'échantillon et je fournirai
+321.52,more details on that in a second um so,"plus de détails à ce sujet dans un  deuxièmement,"
+324.72,the service delivery points or health,les points de prestation de services ou les
+326.96,facilities um sdps are connected to the,établissements de santé um sdps sont connectés aux
+330.479,households because they're sampled,ménages car ils sont échantillonnés
+332.4,deliberately based on facilities that,délibérément en fonction des établissements qui
+334.24,serve the women in the enumeration areas,desservent les femmes du th  e zones de dénombrement
+336.08,in the pma sample so we'd also do a,dans l'échantillon pma donc nous ferions également un
+339.28,sample of these facilities or sdps uh,échantillon de ces établissements ou sdps euh établissements
+342,both public and private facilities we,"publics et privés, nous les"
+344.4,follow them over time for uh annual,suivons au fil du temps pour euh
+346.639,interviews as well,entretiens annuels également
+348.24,and um then we also conduct client exit,et euh ensuite nous menons également des entretiens de sortie des clients
+350.96,interviews,NA
+352.479,in these facilities,dans ces établissements
+354.88,that are in the pma sample as well,"qui  font également partie de l'échantillon pma,"
+357.36,so ultimately we have a longitudinal,nous avons donc finalement un
+359.44,panel we also produce cross-sectional,"panel longitudinal, nous produisons également des résultats transversaux"
+361.6,results,NA
+363.44,for key family planning indicators as,pour les indicateurs clés de la planification familiale
+365.12,well and our service delivery points are,et nos points de prestation de services sont
+368.08,tied to,liés
+369.199,the households in our and women in our,aux ménages de notre et aux femmes de notre
+371.199,uh in our samples too next slide please,euh dans nos échantillons aussi ensuite  diapositive s'il vous plaît
+375.84,so some details on pma sampling,donc quelques détails sur l'échantillonnage pma dans l'
+378.479,overall a sampling approach is guided by,ensemble une approche d'échantillonnage est guidée par
+380.56,the goal of estimating monarch by the,l'objectif d'estimer le monarque par le
+382.319,minor contraceptive prevalence rate with,taux de prévalence contraceptive mineure avec
+384.16,a margin of error plus or minus three,une marge d'erreur de plus ou moins trois
+386.16,percentage points,points de pourcentage
+387.6,so in order to uh to do so pma uses a,donc pour euh pour le faire pma utilise un
+390.8,multi-stage cluster design with urban,multi-  conception de clusters par étapes avec les
+392.96,rural and major regions as strata,régions urbaines rurales et principales comme strates
+395.6,and,et
+396.479,we start by going to national,nous commençons par nous rendre dans les
+398.319,statistical agencies and countries where,agences statistiques nationales et les pays où
+399.919,we work and,nous travaillons et
+401.68,draw a representative sample of,dessinons un représentant  échantillon de
+403.039,enumeration areas from the master,zones de dénombrement à partir du
+404.96,sampling frame that's used for the,cadre d'échantillonnage principal qui est utilisé pour le
+406.4,census in each country next slide,recensement dans chaque pays diapositive suivante
+412.4,so at the beginning of data collection,"donc au début de la collecte de données,"
+414.24,we start with resident numerators,nous commençons avec la
+416.08,mapping and listing each enumeration,cartographie et la liste des numérateurs résidents de chaque
+418.08,area,zone de dénombrement
+419.12,and then after this mapping and listing,", puis une fois cette cartographie et cette"
+420.72,is complete we do a random sample of,"liste terminées, nous effectuons un  échantillon de"
+422.8,households in each ea which is usually,ménages dans chaque ea qui est généralement de
+424.96,35 households,35 ménages
+426.639,from a total size of about two 200,sur une taille totale d'environ deux 200
+429.919,and then it's women who are age 15 to 49,", puis ce sont les femmes âgées de 15 à 49 ans"
+432.24,at baseline who are eligible for the pma,au départ qui sont éligibles pour l'
+434.96,pma sample,échantillon pma pma
+436.8,next slide,prochaine diapositive
+439.44,uh then in in subsequent phases of phase,euh puis dans les phases suivantes de la phase
+442.4,two for example uh resident numerators,deux  par exemple euh les numérateurs résidents
+444.639,return to the same dwelling units,retournent dans les mêmes unités d'habitation
+446.08,interviewed in phase one and,interrogées lors de la première phase et ont
+447.599,administered the female survey to all,administré l'enquête féminine à toutes les
+449.759,women age 15 to 49 regardless of whether,"femmes âgées de 15 à 49 ans,"
+452.4,they were interviewed at baseline,"qu'elles aient été interrogées ou non au départ, de"
+454.88,so women interviewed in the household at,sorte que les femmes interrogées dans le ménage lors de la première
+456.72,phase one are re-interviewed but then,phase sont réinterrogées mais ensuite
+458.88,new women can also be enrolled so this,"de nouvelles femmes peuvent également être inscrites,"
+460.56,is how we do both the panel and the,c'est ainsi que nous faisons à la fois le panel et les
+462.24,cross-section uh cross-sectional,NA
+464.08,estimates at the same time,estimations transversales euh transversales en même temps
+466.24,and then women who left the phase one,"et  ensuite, les femmes qui ont quitté le ménage de la phase un"
+468.24,household are still eligible for,sont toujours éligibles pour un
+470.16,follow-up depending on where their,suivi en fonction de leur
+471.759,location is by phase two so if they,"emplacement par la phase deux, donc si elles ont"
+474.4,moved within the enumeration area or,déménagé dans la zone de dénombrement
+476.4,close view you,ou vous voient de
+477.919,closely outside the ea then we follow up,"près en dehors de l'ea, nous suivons"
+480.319,with them,avec elles
+481.84,and so far we've achieved 80 percent,"et jusqu'à présent, nous  'ai atteint 80 % de"
+485.199,retention in all geographies for our,rétention dans toutes les zones géographiques pour nos
+487.199,panel data to date,"données de panel à ce jour,"
+489.44,next slide,diapositive suivante
+491.28,so then a few brief points on waiting,", alors quelques brefs points sur les"
+493.039,procedures uh so obviously pma is,procédures d'attente euh donc évidemment pma est
+495.12,interested in waiting because we produce,intéressé par l'attente parce que nous produisons
+496.639,these uh representative estimates,ces estimations représentatives
+498.639,so cross-sectional weights are conducted,donc des pondérations transversales sont effectuées
+500.96,are created by you know using design,sont créées  par vous savez en utilisant des
+503.36,survey weights uh which are the inverse,poids d'enquête de conception euh qui sont l'inverse
+505.919,of the household selection probability,de la probabilité de sélection des ménages
+508.16,and then the weights are further,", puis les poids sont encore"
+509.28,adjusted for non-response at the,ajustés pour la non-réponse au niveau du
+510.8,household,ménage
+512.399,and enumeration area level,"et de la zone de dénombrement,"
+514.8,then for longitudinal weights we also,"puis pour les poids longitudinaux, nous"
+516.959,adjust for,ajustons également pour la
+518.399,loss of follow-up where we create um uh,perte de suivi où nous  créer euh euh
+521.599,inverse probability weights based on the,des pondérations de probabilité inverses basées sur la
+523.44,likelihood of a woman being uh,probabilité qu'une femme soit euh
+526.16,one having completed the baseline survey,une ayant terminé l'enquête de base
+528.399,and then adjust accordingly for,", puis ajuster  en conséquence pour l'"
+530.32,attrition,attrition
+531.519,and then finally the household and,", puis enfin les poids des ménages et des"
+532.88,female weights are normalized at the,femmes sont normalisés au niveau
+534.48,national or sub-national level,national ou sous-national
+536.959,next slide,diapositive suivante d'
+539.68,all right so now i'll turn it over to,"accord, alors maintenant je vais passer la"
+541.76,wuchi who will go over pma panel,parole à wuchi qui passera en revue l'
+543.92,membership,adhésion au panel pma
+548.24,great thank you phil hi everyone my name,super merci phil salut tout le monde mon nom
+550.64,is with young fleming and i'm a program,est avec un jeune flamand et je suis
+552.72,officer at the kate institute at johns,responsable de programme au kate institute de johns
+554.88,hopkins,hopkins
+556,in this session i'm going to be,"lors de cette session, je vais"
+557.519,presenting a brief overview of how the,présenter un bref aperçu de la manière dont les
+559.68,panel surveys were conducted and who,enquêtes par panel ont été menées et des
+561.76,were involved in the panel samples,personnes impliquées dans les échantillons par panel
+564.56,a pma sampling approach is a structured,une approche d'échantillonnage pma  est un
+567.04,house tool or dwelling unit based,outil de maison structurée ou une
+569.12,approach,approche basée sur l'
+570.16,dwelling unit is defined as a room or,unité d'habitation l'unité d'habitation est définie comme une pièce ou un
+572.8,group of rooms occupied by one or more,groupe de pièces occupées par un ou plusieurs
+575.2,households,ménages
+576.48,pma considers each physical structured,pma considère chaque ménage physiquement structuré
+579.279,household that was randomly selected as,qui a été sélectionné au hasard comme
+582.24,phase one as the fixed panel,phase un comme panel fixe
+584.8,at phase two or year two the res or,à la phase deux ou à la deuxième année  les rés ou les
+587.839,interviewers would go back to their,intervieweurs retournaient à leurs quartiers
+589.68,selected eas and re-identify the phase,sélectionnés et réidentifiaient les
+592.56,one dwelling units,logements de la phase un les logements de la
+594.399,phase one dwelling units were dwelling,phase un étaient des
+596.48,units that were randomly selected and,logements qui étaient choisis au hasard  élus et
+598.399,included in phase one sample,inclus dans l'échantillon
+601.36,next slide please,NA
+604.8,after the phase 1 dwelling unit was,de la phase 1 diapositive suivante s'il vous plaît après que l'unité d'habitation de la phase 1 a été
+606.64,identified the interviewer conducted,identifiée l'enquêteur a mené l'
+608.88,household interview and identified women,entretien ménager et identifié les femmes
+611.68,eligible for the female survey,éligibles pour l'enquête féminine
+614.079,the eligibility criteria for the female,les critères d'éligibilité pour l'
+616.48,survey where women who were competent to,enquête féminine où les femmes qui étaient compétentes pour
+619.2,answer the questionnaire between the age,répondre au questionnaire entre l'âge
+621.12,of 15 and 49 years old,de 15 et 49 ans
+623.68,who either lived in a selected household,qui vivaient dans un ménage sélectionné
+626.079,or slept in a selected household the day,ou dormaient dans un ménage sélectionné la veille de
+628.079,before the survey,l'enquête
+630,if the woman has already received a,si la femme a déjà reçu un
+632.24,baseline interview at phase one and she,entretien de base lors de la première phase et qu'elle a
+635.2,also contin consented to be followed up,"également continué à consentir à être suivie,"
+637.68,she would receive a female panel,elle recevrait une femme
+639.76,follow-up survey,enquête de suivi par panel
+641.92,if the woman has not received a baseline,si la femme n'a pas reçu d'
+644.399,survey at phase one these were cases,"enquête de référence lors de la phase un, il s'agissait de cas"
+647.04,where the women was younger than 15 at,où la femme avait moins de 15 ans
+649.6,the time of phase one survey or she was,au moment de l'enquête de la phase un ou elle était
+652.32,the new women moved into the household,la nouvelle femme emménagée dans le ménage
+654.8,or someone who slept over the day before,ou quelqu'un qui dormait  la veille de
+657.279,the survey she would receive the female,"l'enquête, elle recevrait l'"
+659.68,baseline survey and would be consented,enquête de base des femmes et accepterait
+662.48,to follow up for the panel survey,de suivre l'enquête par panel au
+664.959,next slide please,"prochain sli  de s'il vous plaît,"
+667.92,there were also instances where panel,il y a également eu des cas où des
+670.64,women were found to have moved out of,femmes du panel ont quitté
+672.72,the phase 1 dwelling units,les unités d'habitation de la phase 1
+674.8,in these instances our ease were,"dans ces cas, notre facilité a été"
+676.88,instructed to find out more information,chargée de trouver plus d'informations
+679.279,about these women's either from their,sur ces femmes soit auprès de leurs
+681.76,households from their neighbors or call,"ménages auprès de leurs voisins, soit en les"
+683.76,them directly on their phones if the,appelant directement sur leurs téléphones  si les
+685.68,phone numbers were previously provided,numéros de téléphone étaient précédemment fournis
+688.48,if the women moved to a new dwelling,si les femmes déménageaient dans une nouvelle
+690.64,unit within the study area the,"unité d'habitation dans la zone d'étude, l'"
+692.88,interviewer would locate the new,enquêteur localiserait la nouvelle
+694.56,dwelling unit and administer household,unité d'habitation et administrerait le
+697.12,questionnaire at her new household even,questionnaire du ménage à son nouveau ménage même
+699.76,if that new household was not previously,si ce nouveau ménage n'avait pas été précédemment
+701.76,selected for pma survey,sélectionné pour l'enquête
+704.48,this would help us know some key,pma  aidez-nous à connaître certaines
+706.079,information about her new dwelling unit,informations clés sur son nouveau logement
+710,the dwelling unit in which the panel,le logement dans lequel les femmes du panel
+711.6,women is currently residing,"résident actuellement,"
+714.16,then the panel women would receive the,alors les femmes du panel recevraient le questionnaire de suivi du panel des femmes
+716.16,female panel follow-up questionnaire,NA
+718.959,there are also instances where panel,il y a aussi des cas où les
+721.12,women move to new dwelling units outside,femmes du panel déménagent dans de nouveaux logements en dehors
+723.68,of the study area,du  zone d'étude
+725.279,in this case she would be considered,dans ce cas elle serait considérée comme
+726.88,lost to follow-up,perdue de vue
+728.48,other cases where panel women who,autres cas où volet  l les femmes qui ont
+730.399,refused to continue to participate,refusé de continuer à participer
+733.12,or no information was available,ou aucune information n'était disponible
+734.88,regarding their whereabouts and in these,concernant leur localisation et dans ces
+737.12,cases they were also considered laws to,"cas, elles ont également été considérées comme des lois à"
+739.04,follow up,suivre
+740.88,next slide please,diapositive suivante veuillez
+744.079,recap,récapituler
+745.12,to recap the panel membership panel,pour récapituler l'adhésion au panel les
+747.12,women are women who were aged between 15,femmes du panel sont des femmes âgées de 15
+749.76,and 49 who have received female baseline,à 49 ans qui ont  ont reçu le questionnaire de référence des femmes
+753.04,questionnaire at phase one and who have,lors de la première phase et qui ont
+755.44,consented to follow-ups,consenti aux suivis
+758,next slide please,diapositive suivante s'il vous plaît
+760.56,in terms of loss to follow-up in the,en termes de perte de suivi dans l'
+762.639,panel survey it occur when a panel woman,enquête par panel cela se produit lorsqu'une femme du panel
+765.519,was not found for interview in,n'a pas été trouvée pour un entretien dans
+767.44,subsequent surveys,"les enquêtes suivantes, en"
+769.12,specifically it could occur at four,particulier cela pourrait se produire à quatre
+771.2,levels at the dwelling unit level,niveaux au niveau de l'unité d'habitation niveau du
+774.16,household level,ménage niveau de la
+775.519,household roster level,liste des ménages
+777.36,and female questionnaire level,et niveau du questionnaire féminin
+780.48,next slide please,diapositive suivante s'il vous plaît
+783.04,at the dwelling unit level laws to,au niveau de l'unité d'habitation les lois de
+785.04,follow-up occur when the re went back to,suivi se produisent lorsque le retour à
+787.68,the phase one dwelling unit and the,l'unité d'habitation de la phase un et que l'
+789.76,dwelling unit was not found or it was,unité d'habitation n'a pas été trouvée ou qu'elle a été
+792.079,destroyed or replaced with a commercial,détruit ou remplacé par une
+794.16,structure and the whereabouts of the,structure commerciale et le lieu où se trouve l'
+796.399,entire household or the panel women who,ensemble du ménage ou le panel de femmes
+798.72,used to reside in the dwelling unit was,qui résidaient dans le  l'unité d'habitation n'était
+801.279,not known and the women could also be,pas connue et les femmes ne pouvaient
+803.6,not reached by the phone anymore,plus être jointes par téléphone
+805.76,in these cases the panel woman was,"dans ces cas, la femme du panel était"
+807.68,considered last to follow up,considérée comme la dernière à suivre
+809.76,since the overall pma survey design,puisque la conception globale de l'enquête pma
+811.92,includes cross-sectional surveys in,comprend des enquêtes transversales en
+813.76,addition to the panel we would replace,"plus du panel, nous le"
+816,it well in units if the dwelling unit,remplacerions bien  dans les unités si la perte d'unité d'habitation
+817.839,loss was more than 10 percent in order,était supérieure à 10 % afin
+820.56,to meet their target sample size,d'atteindre la taille d'échantillon cible
+823.76,next slide please,"suivante, veuillez effectuer le"
+825.76,last to follow up at the household level,dernier suivi au niveau du ménage
+827.76,occurred when the re went back to the,s'est produite lorsque le retour à l'
+830.079,phase one dwelling unit the dwelling,unité d'habitation de la phase 1 l'unité d'habitation
+832.24,unit was located but the previously,était située mais la  le
+834.24,selected household no longer lived there,ménage précédemment sélectionné n'y vivait plus
+836.959,and no information about the entire,et aucune information sur l'ensemble du
+838.8,household nor the panel women who used,ménage ni sur le panel de femmes qui
+841.279,to reside there could not be gathered,y résidaient n'a pu être recueillie
+843.519,in these cases panel women was,dans ces cas les femmes du panel ont été
+845.279,considered lost to follow-up,considérées comme perdues de vue
+847.519,there could also be instances where,il pourrait aussi y avoir des cas où
+850,the household was located but they,le ménage était situé mais  ils ont
+852.24,refused to participate in the household,refusé de participer à l'
+854.32,survey,enquête auprès des ménages
+855.279,or did not complete the entire household,ou n'ont pas rempli l'intégralité de l'
+857.68,survey and in this case the household,"enquête auprès des ménages et dans ce cas, la"
+860.399,roster could could not be updated and,liste des ménages pourrait  d ne pas être mis à jour et
+863.04,the female follow-up questionnaire,le questionnaire
+865.68,from from the,de
+867.68,female follow-up questionnaire form,suivi des femmes du formulaire du questionnaire de suivi des femmes
+868.959,could not be generated,n'a pas pu être généré
+870.399,for the panel women and she would be,pour les femmes du panel et elle serait
+872.24,considered lost to follow up,considérée comme perdue de vue
+875.12,also uh lawsuit follow-up at the,également euh le suivi des poursuites au
+877.279,household roster level occurred when the,niveau de la liste des ménages a eu lieu lorsque  la
+879.92,re conducted the household survey at the,re a mené l'enquête auprès des ménages dans l'
+882.16,phase one dwelling unit she found out,"unité d'habitation de la phase un, elle a découvert"
+884.639,that the panel woman was not part of the,que la femme du panel ne faisait plus partie du
+886.72,household anymore,"ménage,"
+888.399,this could be because the women died or,cela pourrait être parce que les femmes sont décédées ou
+890.48,moved out of the area and no one knows,ont quitté la région et que personne ne sait
+892.639,her whereabouts or nobody has any,où elle se trouve ou que personne n'a d'
+895.04,information about her in this case the,"informations  à son sujet dans ce cas, la"
+898,panel woman was considered lost to,femme du panel a été considérée comme perdue pour le
+900,follow up,suivi de
+901.44,next slide please,"la diapositive suivante, s'il vous"
+904.079,lastly lawson follow up at the female,"plaît enfin, le suivi au niveau du questionnaire féminin a"
+906.24,questionnaire level occurred when the,eu lieu lorsque la
+908.32,panel woman was not available for,femme du panel n'était pas disponible pour un
+910.24,interview at all three in-person,entretien lors des trois
+912.56,attempts or she could also refuse to,tentatives en personne ou elle pouvait également refuser de
+914.959,continue to participate in phase two,"continuer  pour participer à la phase deux,"
+917.6,she was not required to continue to,elle n'était pas tenue de continuer à
+919.44,participate even though she consented to,participer même si elle avait consenti
+921.44,follow up in phase one,"à suivre la phase un,"
+923.76,the panel women could also become,les femmes du panel pouvaient également devenir  e
+926.48,could also become incapacitated due to,pourrait également devenir incapable en raison d'une
+929.04,sickness or other issues,maladie ou d'autres problèmes
+931.6,or she could start the interview but,ou elle pourrait commencer l'entretien mais
+933.199,could not finish the entire interview in,ne pourrait pas terminer l'intégralité de l'entretien dans
+935.6,these instances the panel women was,"ces cas, les femmes du panel ont été"
+937.6,considered lost to follow up with that,considérées comme perdues pour le suivi avec lequel
+940.88,i'm going to conclude my session and i'm,je vais conclure ma session et je suis
+943.04,going to hand over to devon who would be,NA
+945.12,discussing about iphones and the data,NA
+947.04,extraction,NA
+949.44,thanks fati,NA
+950.639,hello my name is evan christensen i'm a,je vais passer le relais à devon qui discuterait des iphones et de l'extraction de données merci fati bonjour mon nom est evan christensen je suis un
+953.04,senior data analyst and i'm the project,analyste de données senior et je suis le
+955.519,manager of iphone's pma um i've been,chef de projet du pma d'iphone euh je suis
+958,with iphone since 2012. um for those who,avec iphone depuis 2012  euh pour ceux qui
+961.44,are not familiar with iphones i'll,"ne sont pas familiers avec les iphones, je vais"
+963.36,briefly explain what we do,expliquer brièvement ce que nous
+965.839,so we are based at the university of,"faisons, nous sommes basés à l'université des"
+968,minnesota twin cities and we take public,villes jumelles du minnesota et nous prenons des
+970.8,use data such as census and survey data,données à usage public telles que des données de recensement et d'enquête
+973.68,from around the world and we integrate,du monde entier et nous les
+976.16,it across time and space,"intégrons à travers  dans le temps et dans l'espace,"
+978.399,we also systematically document the data,nous documentons également systématiquement les données
+981.44,to make it easier for researchers to use,pour faciliter leur utilisation par les chercheurs
+983.68,to study change conduct comparative,pour étudier le changement mener des recherches comparatives
+986,research,NA
+987.279,merge information across data types and,fusionner les informations entre les types de données et
+989.759,analyze individuals within family and,analyser les individus au sein de la famille et de la
+992,community context,société  contexte communautaire
+993.92,so we are funded by multiple entities,", nous sommes donc financés par plusieurs entités,"
+996.88,including the national institutes of,y compris les instituts nationaux de la
+998.639,health,"santé,"
+999.519,the national science foundation et,"la fondation nationale des sciences,"
+1001.279,cetera so access to the data that we,"etc., de sorte que l'accès aux données que nous"
+1004.24,harmonize is always free,harmonisons est toujours gratuit
+1007.12,next slide please,NA
+1009.68,one thing i'd like to emphasize is that,NA
+1011.6,we do not collect data ourselves but we,".  nous-mêmes, mais nous nous"
+1014.56,partner with other organizations and we,associons à d'autres organisations et nous
+1016.639,access existing data like performance,accédons aux données existantes telles que la
+1018.8,monitoring for action,surveillance du rendement pour l'action
+1020.399,and we make them easier to use,et nous les rendons plus faciles à utiliser
+1022.8,so we offer a variety of integrated,afin d'offrir une variété de
+1024.88,microdata collections,collections
+1026.72,from u.s and international census data,de microdonnées intégrées à partir des données de recensement américaines et internationales
+1028.799,to surveys on the labor force,"aux enquêtes sur l'utilisation du temps de la main-d'œuvre, la"
+1031.199,time use health and review surveys,"santé et l'examen  enquêtes,"
+1034.16,we also have a couple of aggregate data,nous avons également quelques collectes de données agrégées sur la
+1036.16,collections of population and,population et
+1037.76,agricultural census,le recensement agricole
+1039.679,next slide please,diapositive suivante s'il vous plaît
+1042.959,so here at iphones what i mean by,donc ici sur iphones ce que je veux dire par
+1045.039,harmonize and integrate,harmoniser et intégrer
+1047.36,we make sure that,nous nous assurons que les
+1048.96,codes and variable names are consistent,codes et les noms de variables sont cohérents
+1051.84,over time and place and a huge part of,dans le temps et dans le lieu et une grande partie de
+1054.799,our work is the,notre travail  est la
+1056.64,extensive documentation at the variable,documentation complète au niveau variable
+1059.36,level,NA
+1061.28,one more slide,une diapositive de plus
+1063.44,perfect thank you,parfaite merci
+1065.6,so we uh empirically test variable,donc nous euh empiriquement te  univers variables
+1068.559,universes so you understand like uh the,afin que vous compreniez comme euh le
+1071.039,denominator that you're working with,dénominateur avec lequel vous travaillez
+1072.72,with any variable variable you might be,avec n'importe quelle variable variable avec laquelle vous pourriez
+1074.799,working with,travailler
+1076.08,we also display the associated survey,nous affichons également les
+1079.039,questions with the variables and we also,questions d'enquête associées avec les variables et nous
+1082,note comparability issues over time,notons également des problèmes de comparabilité dans le temps
+1085.28,or across,ou entre les
+1086.4,country,NA
+1087.6,surveys,enquêtes nationales que
+1088.799,our website allows use it allows users,notre site Web permet  l'utiliser permet aux utilisateurs
+1091.52,to download data in different data,de télécharger des données dans différents
+1093.44,formats such as stata spss sas csv,formats de données tels que stata spss sas csv
+1098.08,and fixed with which income in,et fixe avec quel revenu en
+1100.24,combination with our iphone's r package,combinaison avec le package r de notre iphone
+1102.32,that will be,qui sera
+1104.72,demonstrated in the our breakout session,"démontré lors de notre session en petits groupes,"
+1107.679,it makes it easy to download data into,il facilite le téléchargement de données dans
+1109.84,our format,notre format
+1111.2,and we also link the longitudinal pma,et nous  liez également les fichiers pma longitudinaux
+1114.24,files for you,pour vous
+1115.679,in the iphone's pma website,sur le site Web pma de l'iphone
+1119.039,next slide please,diapositive suivante s'il vous plaît
+1122,another feature of ipham's pma is our,une autre caractéristique du pma d'ipham est notre
+1124.559,joint project the ibum's pma data,projet commun le centre d'analyse des données pma d'ibum
+1127.2,analysis hub,NA
+1128.64,which publishes a blog and there are new,qui publie un blog et il y a de nouveaux
+1131.039,posts about twice a month,messages environ deux fois par mois
+1133.039,the blog is an excellent resource for,le blog est une excellente ressource  pour l'
+1134.96,using iphone's pma data,"utilisation des données pma de l'iphone,"
+1137.12,they highlight publications that have,ils mettent en évidence les publications qui ont
+1138.72,used the data,utilisé les données
+1140.32,and they include our code to describe,et ils incluent notre code pour décrire  e
+1142.64,how the analysis or data visualizations,comment l'analyse ou les visualisations de données
+1145.2,were accomplished,"ont été réalisées,"
+1146.64,the blog is currently working on a six,le blog travaille actuellement sur une
+1148.32,part series about the longitudinal data,série en six parties sur les données longitudinales
+1150.64,from pma,"de pma,"
+1151.919,so be sure to visit it and stay tuned,alors assurez-vous de le visiter et de rester à l'écoute
+1153.76,for future posts,pour les futurs messages
+1155.76,uh next slide oh thank you um so that,euh diapositive suivante oh merci euh donc cela
+1158.32,brings us to,nous amène
+1160,the topic of today's workshop,"au  sujet de l'atelier d'aujourd'hui,"
+1162.72,so we wanted to frame um the workshop,nous voulions donc encadrer l'atelier d'
+1165.039,today in terms of a research question,aujourd'hui en termes d'une question de recherche à
+1167.28,that you could answer with the new pma,laquelle vous pourriez répondre avec les nouvelles
+1169.2,longitudinal data so did covid19 impact,"données longitudinales pma, de même covid19 a-t-il eu un impact sur l'"
+1173.36,contraceptive use,utilisation des contraceptifs
+1175.039,and that's a really broad question but,"et c'est une question très large, mais"
+1176.72,we wanted to break down one approach you,nous voulions décomposer une approche vous
+1180.08,could use,pourrait utiliser
+1181.44,so first we wanted to show you how to,alors nous voulions d'abord vous montrer comment
+1183.36,download the data,télécharger les données
+1185.52,that you need to use to answer the,que vous devez utiliser pour répondre à la
+1186.88,question,question
+1188.16,and then we will show a simple data,", puis nous montrerons une"
+1189.84,visualization that you you can easily do,visualisation de données simple que vous pouvez facilement faire
+1191.919,yourself in either state rr,vous-même dans l'un ou l'autre état rr
+1194.32,and then demonstrate,", puis démontrer"
+1195.76,a simple logistic regression uh using,une simple régression logistique  euh en utilisant
+1198.16,several possible measures of covid19,plusieurs mesures possibles des impacts du covid19
+1201.039,impacts,NA
+1202.08,and estimate the probability of a woman,et estimer la probabilité qu'une femme
+1204.08,discontinuing or adopting a,arrête ou adopte une
+1206.08,contraceptive method,méthode contraceptive
+1207.84,between late 2019 and late 2020 which is,"entre fin 2019 et  fin 2020, qui sont"
+1210.96,the two,les deux
+1212.08,phases of survey data that we'll be,phases des données d'enquête que nous
+1213.76,using today,utiliserons aujourd'hui
+1216.08,for the purposes of today we chose,"aux fins d'aujourd'hui, nous avons choisi"
+1219.039,income loss due to covet and a woman's,la perte de revenu due à la convoitise et l'
+1222.48,personal concern over,inquiétude personnelle d'une femme à propos
+1224.32,um getting infected with covid19 as two,de l'infection par le covid19 comme deux
+1227.679,potential impacts of the pandemic that,impacts potentiels de la pandémie qui
+1230.159,may have influenced a woman's demand for,pourraient avoir  influencé la demande de contraception d'une femme
+1232.48,contraception,NA
+1235.52,and the,et la
+1236.72,next section of the webinar will be a,prochaine section du webinaire sera un
+1238.88,tutorial of how to create a customized,didacticiel sur la façon de créer un
+1241.36,data file on the ipams pma online,fichier de données personnalisé sur le
+1243.6,dissemination system so we offer,"système de diffusion en ligne ipams pma, nous proposons donc"
+1246.559,cross-sectional samples um like which,des échantillons transversaux euh comme ceux que
+1248.64,you mentioned and phil mentioned um but,vous avez mentionnés et phil a mentionné euh mais
+1251.039,you can also,vous  peut également
+1252.64,access the longitudinal data in either,accéder aux données longitudinales sous forme
+1255.2,long or wide form uh so next next slide,longue ou large euh alors prochaine diapositive suivante
+1258.08,please,s'il vous plaît
+1260.72,and one more one we're done perfect um,et une de plus nous avons terminé parfait euh
+1263.44,so,donc
+1264.48,what i mean by long and wide form so,ce que je veux dire par forme longue et large donc d'
+1266.799,first and then uh one more click perfect,abord et puis euh un clic de plus parfait
+1270.24,um so,euh alors
+1271.36,when i say long form i mean that um,"quand je  dire forme longue, je veux dire que euh,"
+1274.88,we have the same person on multiple rows,"nous avons la même personne sur plusieurs lignes,"
+1278.48,so the fq insty d is the female,donc le fq insty d est l'
+1281.28,identifier that we are using to link the,identifiant féminin que nous utilisons pour lier les
+1283.76,female records in the iphone's data so,"enregistrements féminins dans les données de l'iphone, donc"
+1286.64,uh notice we see the same woman on face,euh remarquez que nous voyons e  La même femme sur le visage
+1289.36,in phase one and phase two on different,"dans la phase un et la phase deux sur des lignes différentes,"
+1291.44,rows so in the baseline sample she was,"donc dans l'échantillon de référence, elle avait"
+1294,28,28 ans
+1295.28,and one year later in late 2020 she was,"et un an plus tard à la fin de 2020, elle avait"
+1297.679,29,29 ans
+1298.96,and that is the the identifier variable,et c'est la variable d'identification qui
+1301.12,is repeated uh next slide,est répétée euh la diapositive suivante
+1305.039,and then perfect um and then wide form,", puis parfaite euh et puis  forme large"
+1308.64,um each individual has her own row and,euh chaque individu a sa propre ligne et
+1311.52,different variables to represent her,différentes variables pour représenter ses
+1313.44,characteristics in each time period so,caractéristiques dans chaque période de temps donc
+1316.559,um if you see like in phase one,euh si vous voyez comme dans la phase un
+1319.76,her age would be contained in the,son âge serait contenu dans la
+1321.2,variable age underscore one and her age,variable age underscore one et son âge
+1323.919,would be cons contained in age,serait contre contenu dans age
+1325.84,underscore two,underscore  deux
+1327.36,um so it's not shown but if that female,euh donc ce n'est pas affiché mais si cet
+1331.12,identifier was on this screen,"identifiant féminin était sur cet écran,"
+1333.76,you would note that it was not repeated,vous remarquerez qu'il n'a pas été répété
+1335.76,because there's only one line per woman,car il n'y a qu'une seule ligne par femme
+1338.64,and one more click down,et un autre clic
+1341.76,excellent so as you can see,excellent pour que vous puissiez voir que
+1344.08,this woman uh was 21 in time one and she,cette femme euh avait 21 ans dans le temps un et  elle
+1347.76,was not married,n'était pas mariée
+1349.12,but by the uh but by the end or,mais à la euh mais à la fin ou
+1352.4,by phase two she was married so this way,"à la phase deux, elle était mariée donc de cette façon"
+1355.52,um you use,euh vous utilisez
+1357.12,um you can see the change over time,euh vous pouvez voir le changement au fil du temps
+1359.36,within the same row,dans la même rangée
+1361.679,and with that,et avec ça
+1363.039,i'm going to share my screen and,je vais partager mon écran et ma
+1365.039,demonstrate,démo  nstrate
+1366.4,how to create a data file,comment créer un fichier de données
+1369.36,on the ipams pma website so laura i,sur le site Web ipams pma donc laura je
+1372.159,think i'm going to try to take the,pense que je vais essayer de vous prendre le
+1373.76,screen sharing from you,partage d'écran d'
+1379.039,okay,accord
+1380.159,excellent um so we'll start from the,excellent euh donc nous allons commencer à partir de la
+1382.559,iphone's pma home page,page d'accueil pma de l'iphone
+1385.52,and,et
+1386.24,you you get access to the data,vous avez accès au
+1388.4,dissemination system by going to select,système de diffusion de données en allant sélectionner des
+1391.52,data up here or you can also go down to,données ici ou vous pouvez également descendre pour
+1394,get data,obtenir des
+1395.679,in order to access the data you must,données afin d'accéder aux données vous devez vous
+1397.76,register for a free account with ipham's,inscrire pour un compte gratuit avec pma d'
+1400.559,pma,ipham
+1401.76,you'll need to describe your research,vous devrez décrire votre
+1404,project and which countries you need,projet de recherche et les pays auxquels vous avez besoin d'
+1406.159,access to,accéder  à
+1407.6,if the described use is a non-commercial,si l'utilisation décrite est une utilisation non commerciale
+1410.159,use and it's appropriately within the,et qu'elle s'inscrit de manière appropriée dans le
+1412.64,scope of the pma data,"cadre des données pma,"
+1414.799,i'll read through your application and,je lirai votre demande et
+1416.88,approve your registration,"approuverai votre enregistrement,"
+1420.24,all right,NA
+1421.2,so,donc
+1424.72,the first time you come to the iphone's,la première fois que vous
+1426.64,pma,accéderez
+1428,data dissemination system you'll be,"au système de diffusion de données pma de l'iphone, vous  être"
+1429.52,greeted with this menu and um,accueilli avec ce menu et euh
+1432.559,beyond the longitudinal and family,au-delà des données longitudinales et de
+1434.88,planning data pma has collected,planification familiale pma a collecté de
+1437.279,many different,nombreux
+1438.96,survey types there's nutrition maternal,types d'enquêtes différents il y a la nutrition la santé maternelle du
+1441.279,newborn health but the one we're going,nouveau-né mais celle sur laquelle nous allons
+1443.039,to be focusing on today,nous concentrer aujourd'hui
+1444.48,is person and family planning i'm going,est pe  rson et la planification familiale je
+1447.279,to click that topic,vais cliquer sur ce sujet
+1450.159,and the first thing that i want to do uh,et la première chose que je veux faire euh
+1453.52,is select my samples in order to,est de sélectionner mes échantillons afin de
+1456.799,filter the view for myself because there,filtrer la vue pour moi-même car il
+1459.76,are,y a des
+1460.48,thousands of variables but we want to,milliers de variables mais nous voulons
+1462.96,just select the ones,simplement sélectionner celles
+1465.52,that are contained within the samples,qui sont  contenus dans les échantillons
+1467.919,that we're looking at today,que nous examinons aujourd'hui
+1470.4,so you can access the cross-sectional,afin que vous puissiez accéder à la
+1472.799,version of the data as the default,"version transversale des données par défaut,"
+1475.2,but today we'll be looking at the,"mais aujourd'hui, nous examinerons la"
+1476.96,longitudinal,longitudinale
+1478.72,and you're going to hover over these,et vous allez survoler ces
+1480.24,icons to remind yourself,icônes pour vous rappeler
+1482.72,what's the differences between the long,ce qui est  les différences entre le long
+1484.4,and wide and we also have a link to some,et le large et nous avons également un lien vers une
+1486.559,extensive documentation about what the,documentation complète sur ce à quoi les
+1489.44,files should look like when you download,fichiers devraient ressembler lorsque vous les téléchargez
+1491.2,and either long or wide,et qu'ils soient longs ou larges
+1493.2,but for today we're going to stick with,mais pour aujourd'hui nous allons nous en tenir au
+1494.88,the wide format,format large
+1497.52,and,et
+1498.559,and for this,et pour cet
+1499.76,workshop we're going to take a look at,atelier  nous allons jeter un œil aux
+1501.36,burkina faso's longitudinal data and,données longitudinales du burkina faso et
+1503.919,also kenya,aussi du kenya
+1505.84,uh and lastly we're going to keep only,euh et enfin nous allons garder uniquement
+1508.72,the female respondents that's the the,les femmes interrogées c'est la
+1510.799,default but if you wanted to,valeur par défaut mais si vous vouliez
+1513.44,perhaps calculate some information at,peut-être calculer des informations à
+1515.44,the household level about the,le niveau du ménage concernant la
+1517.36,composition of the household you could,"composition du ménage, vous pouvez"
+1518.96,of course,bien sûr
+1519.84,include household members within your,inclure les membres du ménage dans votre
+1521.6,data extract,"extrait de données,"
+1523.039,but for today for today we're just going,"mais pour aujourd'hui, nous allons simplement nous"
+1524.559,to stick with the female respondents,en tenir aux répondantes d'
+1529.679,okay,"accord,"
+1531.2,so,alors
+1532.32,now i'm going to select,maintenant je vais sélectionner
+1535.279,my variables of interest,"mes variables d'intérêt,"
+1537.679,so i'm just going to go,donc  je vais juste
+1539.84,down through a few of our,passer en revue quelques-unes de nos
+1542.96,relevant variables i like to start with,variables pertinentes j'aime commencer
+1545.44,a couple technical variables i want to,par quelques variables techniques je veux
+1548.32,have a variable that,avoir une variable qui
+1550.32,tells us the result,nous indique le résultat
+1552.08,of the female questionnaire like which,du questionnaire féminin comme celui
+1554.24,he was describing about when there is,qu'il décrivait quand il y a
+1557.44,follow-up um,suivi-  up euh
+1559.76,or there if there's loss to follow-up,ou là s'il y a une perte de suivi
+1561.6,and,et
+1562.4,why that the woman may have not been,pourquoi la femme n'a peut-être pas été
+1564.88,interviewed in the second round,interrogée au deuxième tour
+1567.52,so i've selected,", j'ai donc sélectionné"
+1569.2,the result,la
+1571.6,variable,"variable de résultat,"
+1572.88,i'm also going to select the panel,je vais également sélectionner le poids du panel
+1576,weight,NA
+1577.12,that phil mentioned so we're going to,"que phil a mentionné, donc nous sommes  vais"
+1579.52,choose,choisir
+1581.12,the longitudinal weight um and next i,le poids longitudinal euh et ensuite je
+1584.96,want to take a look at a few control,veux jeter un coup d'œil à quelques
+1587.6,variables,"variables de contrôle,"
+1589.12,some pretty standard ones like the,certaines assez standard comme l'
+1590.64,woman's age,"âge de la femme,"
+1592.559,her education,son
+1594.08,level,niveau d'éducation
+1595.039,and then also her marital status,", puis aussi son état civil"
+1598.88,and,et
+1600.159,oh i also,oh je aussi
+1602,forgot i wanted to also add oh,j'ai oublié que je voulais également ajouter oh les
+1605.039,strata is pre-selected excellent,strates sont présélectionnées excellente
+1607.679,um and then i also want to add in parody,euh et ensuite je veux aussi ajouter la parodie
+1610.4,um as a as a control variable because,euh comme variable de contrôle parce
+1613.6,that is definitely a factor in a woman's,que c'est certainement un facteur dans la
+1616,demand for contraception,demande de contraception d'une femme d'
+1618.799,all right,accord
+1620.88,then,alors
+1622.32,i will go to family planning and then,"j'irai à la famille  la planification, puis l'utilisation"
+1625.12,current or recent family planning use so,"actuelle ou récente de la planification familiale, donc"
+1627.2,our,notre
+1628.24,dependent variable that we're going to,variable dépendante que nous
+1630.08,be looking at is the variable cp or,allons examiner est la variable cp ou
+1632.88,whether the woman is a contraceptive,si la femme est une
+1635.12,user,utilisatrice de contraceptifs
+1636.159,and as you as you may be noticing i'm,"et comme vous le remarquerez peut-être,"
+1638.24,adding each of these variables to my,j'ajoute chacune de ces variables  à mon
+1640.88,cart by,panier en
+1642.32,clicking the plus sign and you'll,cliquant sur le signe plus et vous
+1643.76,probably be noticing this data card much,remarquerez probablement cette carte de données un peu
+1645.919,like an online shopping cart you're just,comme un panier d'achat en ligne vous
+1648.48,filling up your cart with the only the,remplissez simplement votre panier avec les seules
+1650.88,variables that you're interested in it's,variables qui vous intéressent cela
+1652.799,going to keep your file nice and lean,va garder votre fichier agréable  et maigre
+1655.039,and the best part is it's free from,et la meilleure partie est qu'il est exempt d'
+1657.039,iphones,iphones d'
+1659.039,okay let's see here i also want to grab,accord voyons ici je veux aussi
+1661.84,a couple other things,saisir quelques autres choses
+1663.44,like,comme
+1665.36,the urban status,le statut
+1667.279,urban rural status of the household,urbain le statut rural urbain du ménage
+1670.799,and i also want to grab,et je veux aussi
+1673.6,whether the woman was,savoir si la femme était
+1676.159,a usual member of the household or not,un membre habituel  du ménage ou non
+1678.159,and whether she had slept there the,et si elle y avait dormi la
+1679.6,night before,"nuit précédente, de"
+1680.88,so that we are finding the de facto,sorte que nous constatons que la population de facto
+1682.799,population,NA
+1684.96,also want to know,veut également savoir
+1687.039,um maybe her household's wealth,euh peut-être le statut de richesse de son ménage
+1690.799,status,NA
+1692.64,and then lastly,et enfin
+1695.039,we will get to our ex main explanatory,nous arriverons à nos ex principales
+1697.52,variables so,variables explicatives donc
+1699.12,with,avec
+1700.24,these phase two samples that were,ces deux phases  des échantillons qui ont été
+1702.159,conducted after covid restrictions,"effectués après l'apparition de restrictions covid,"
+1705.2,occurred,NA
+1706.399,they've,ils ont
+1707.36,added a lot of questions to get a sense,ajouté beaucoup de questions pour avoir une idée
+1710.08,of how did covid restrictions and covid,de la façon dont les restrictions covid et covid ont
+1713.12,affect these women,affecté ces femmes
+1714.799,and one great feature of our website is,et une grande fonctionnalité de notre site Web est
+1717.039,that you can also just select all in a,que vous pouvez également simplement sélectionner tout dans un
+1719.279,group um,groupe euh
+1721.12,but one in particular that i wanted to,mais  un en particulier sur lequel je voulais
+1723.84,focus on,me concentrer
+1725.279,is the income loss,est la perte de revenu
+1727.12,and this is also a brief demonstration,et c'est aussi une brève démonstration
+1728.88,of how our website works so,"du fonctionnement de notre site Web, donc"
+1732.159,if i wanted to know more about,si je voulais en savoir plus sur
+1734.559,this variable income loss resulting from,cette perte de revenu variable résultant des
+1736.96,cobia 19 restrictions i click on the,"restrictions de cobia 19, je clique sur le"
+1739.279,variable name and this brings me to some,nom de la variable et ceci  m'amène à une
+1742.399,documentation about the variable,documentation sur la variable
+1744.799,in particular i want to,"en particulier, je veux"
+1747.76,flag that the universe,signaler que l'univers
+1750.559,is,NA
+1751.36,there's a restriction on it so um,"est soumis à une restriction, donc"
+1753.919,this variable was um,euh cette variable n'a été
+1756.64,asked only of women whose household,demandée qu'à wom  fr dont le ménage a
+1759.039,experienced a loss of income during the,subi une perte de revenu au cours des
+1761.039,last 12 months,"12 derniers mois,"
+1762.64,so if i go back over to the code section,"donc si je reviens à la section du code,"
+1766.799,all the women who,toutes les femmes qui
+1768.64,were not in universe for this question,n'étaient pas dans l'univers pour cette question
+1771.279,um their households did not lose income,euh leurs ménages n'ont pas perdu de revenu
+1774.08,um so,euh donc
+1775.52,just because they don't have an um,juste parce qu'elles n'ont pas  un
+1778.32,a no uh does not mean that so when they,euh non euh ne veut pas dire que donc quand ils
+1781.36,have an niu that means their household,ont un niu cela signifie que leur ménage
+1783.36,did not,n'a
+1784.399,lose any income um and that's going to,perdu aucun revenu euh et ça va
+1786.48,be key for the breakout section,être la clé pour la section en
+1788.72,um and there's also the questionnaire,petits groupes euh et il y a aussi le texte du questionnaire que
+1791.039,text i mentioned before um all of the,j'ai mentionné avant euh toute la
+1794.159,documentation around this variable is,documentation  autour de cette variable
+1796.32,all accessible within a few clicks,"est accessible en quelques clics, d'"
+1799.6,okay and then i have,"accord, puis j'ai"
+1801.52,one last,une dernière
+1804.559,variable that i would like to add and,variable que je voudrais ajouter et
+1807.2,that is our the one we discussed earlier,"c'est celle dont nous avons discuté plus tôt, à"
+1809.44,is how concerned the woman was about,savoir à quel point la femme était préoccupée par l'
+1811.919,getting infected,"infection,"
+1814,i'm going to add that,je vais ajouter que
+1816.52,[Music],[  Musique] d'
+1817.919,okay,accord
+1820.559,great so i'm going to view my cart,super donc je vais voir mon panier
+1824.399,review the variables that i've selected,revoir les variables que j'ai sélectionnées
+1828.64,and then i will go to create my data,et ensuite je vais créer mon
+1830.72,extract,extrait de données
+1832.24,so one thing i want to draw your,donc une chose sur laquelle je veux attirer votre
+1833.6,attention to if you,attention si
+1835.279,are going to go to the r breakout,vous allez à la r  évasion
+1837.44,session um you're going to want to,s  ession euh vous allez vouloir
+1840.64,create a fixed width,créer un
+1842.799,file um,fichier à largeur fixe euh
+1844.24,so i'm going to say this is the r,donc je vais dire que c'est la
+1846.08,version for the,version r pour l'
+1848.84,workshop and then i'm going to submit my,atelier et ensuite je vais soumettre mon
+1852.88,extract,extrait
+1857.44,excellent and then um,excellent et puis
+1860.399,this is a handy feature that i use all,euh c'est une fonctionnalité pratique qui  j'utilise tout
+1862.24,the time because of course i always,le temps parce que bien sûr j'oublie toujours
+1864.72,forget to add just that one last,d'ajouter juste cette dernière
+1866.32,variable that i needed you can take an,variable dont j'avais besoin vous pouvez prendre un
+1868.399,existing extract you've created and,extrait existant que vous avez créé et le
+1870.399,revise it,réviser
+1872.64,so what i'll do if you are going to come,alors que ferais-je si vous allez venir
+1875.12,to the stata version of the breakout,à la version stata  de la
+1877.2,session,session en petits groupes que
+1878.48,you want to go to change the data format,vous voulez aller pour changer le format des données
+1880.72,and select,et sélectionner
+1881.84,stata,stata à la
+1882.96,instead,"place,"
+1884.08,then i'm going to submit that,alors je vais soumettre cet
+1889.6,excellent,excellent d'
+1890.72,okay um so,"accord, donc"
+1892.96,with that,"avec ça,"
+1894.799,um,NA
+1895.76,i think,je pense que
+1897.44,um,NA
+1899.36,we,NA
+1901.2,can let's see laura i think i might just,"nous pouvons voir Laura, je pense que je pourrais"
+1903.84,um,NA
+1904.84,share the um presentation um i have it,partager la présentation.  euh je l'
+1908.96,up here and i just have two more slides,ai ici et j'ai juste deux autres diapositives
+1911.279,to go before we go to the breakout,à faire avant d'aller à la
+1913.12,session,session en petits groupes
+1915.12,um,euh
+1917.44,so i just wanted to,donc je voulais juste
+1922.08,do a quick recap so,faire un bref récapitulatif donc
+1924.24,the main variables that we're looking at,les principales variables que nous examinons
+1926.159,today are cp is our dependent um,aujourd'hui sont cp est notre dépendant euh
+1929.679,and we're going that's what the woman,et  nous allons c'est ce que la
+1931.84,was using a contraceptive method in the,femme utilisait une méthode contraceptive  d dans la
+1934.159,phase that she was observed in,phase dans laquelle elle a été
+1936.799,so it's going to,"observée, il y aura donc"
+1938.64,have a wide format data file,"un fichier de données au format large,"
+1942,so cp underscore 1 is going to be the,donc le soulignement cp 1 sera la
+1944.88,variable,variable
+1946,of whether or not she was using a method,indiquant si elle utilisait ou non une méthode
+1947.84,when she was interviewed in late 2019,lorsqu'elle a été interviewée fin 2019
+1950.72,and cp underscore two is going to be the,et le soulignement cp deux est  va être la
+1953.519,variable indicating whether she was,variable indiquant si elle
+1955.519,using a contraceptive method um in phase,utilisait une méthode contraceptive euh dans la phase
+1958.88,two,deux
+1960.24,and then uh the cv income loss that's,", puis euh la perte de revenu cv c'est-à-"
+1962.96,whether the if the household had lost,dire si le ménage avait perdu un
+1965.12,income whether it was due to covet um,revenu si c'était dû à la convoitise euh
+1967.76,and then uh covert concern is a likert,et puis euh la préoccupation secrète est une
+1970.24,scale about how concerned the woman was,échelle de likert sur  à quel point la femme craignait
+1972.559,about getting infected with covet,d'être infectée par la convoitise
+1975.679,and one thing i do want to take a minute,et une chose que je veux prendre une minute
+1977.76,to note here is that,pour noter ici est que ce n'est
+1980.64,just because a woman was not using,pas parce qu'une femme n'utilisait pas la
+1984.399,family planning in phase 1 or phase 2,planification familiale en phase 1 ou en phase 2
+1987.12,it does not mean that she didn't use a,qu'elle n'utilisait pas  une
+1989.2,method some point in between and then,"méthode à un moment donné entre les deux, puis"
+1991.6,stopped before she was interviewed again,s'est arrêtée avant qu'elle ne soit à nouveau interrogée
+1994.559,and one great thing about these the,et une grande chose à propos de
+1996.64,these data for,ces données pour
+1998.159,um for the longitudinal samples is that,euh pour les échantillons longitudinaux est que
+2001.279,pma also collected a,pma a également collecté un
+2004.399,oh,oh
+2005.6,thank you so much i didn't realize that,merci beaucoup je ne m'en étais pas rendu compte
+2008.08,um you were still seeing the website,euh vous voyiez toujours le site Web
+2010.88,um,euh
+2011.919,great,super
+2013.279,um,euh d'
+2014.159,okay,accord
+2014.96,so um,donc euh
+2016.72,pma also collects a contraceptive,pma recueille également un
+2019.2,calendar um we're not going to be using,calendrier contraceptif euh nous n'allons pas utiliser
+2021.519,those data today,ces données aujourd'hui
+2023.12,um but,euh mais
+2024.96,that is something that's you want to,c'est quelque chose que vous voulez
+2026.64,keep in mind that we're not,garder à l'esprit que nous n'incluons pas les
+2029.36,including women who use for a short time,femmes  qui utilisent pendant une courte période
+2031.919,and and stopped using before we,et et ont cessé d'utiliser avant de les
+2034,interviewed them again,interroger à nouveau d'
+2036.08,okay um so,accord euh donc
+2038.159,with that,avec ça
+2039.76,um,euh
+2041.039,oh yes so for the breakout sessions in,oh oui donc pour les séances en
+2044.399,rns data today we'll be using carp at,"petits groupes dans les données rns aujourd'hui, nous utiliserons la carpe du"
+2046.799,all's uh recent paper contraceptive,tout euh dynamique contraceptive papier récente
+2049.28,dynamics during covet 19 in sub-saharan,pendant la convoitise 19 en sous-marin  -Afrique saharienne
+2052.399,africa uh longitudinal evidence from,euh preuves longitudinales du
+2054.56,burkino and phosphino faso in kenya,burkino et du phosphino faso au kenya
+2057.839,this will be our guiding framework for,ce sera notre cadre directeur pour
+2059.839,today,aujourd'hui
+2060.879,but the the main difference between this,mais la principale différence entre cet
+2063.359,paper and what we'll be doing today is,article et ce que nous ferons aujourd'hui est
+2065.599,that um the authors merged phase one,que euh les auteurs ont fusionné les
+2068.159,data with a covid uh 19 phone survey,données de phase un avec un covid euh  19
+2071.679,data from using like the same women from,données d'enquêtes téléphoniques utilisant les mêmes femmes de
+2074.399,the baseline survey were interviewed in,l'enquête de référence ont été interrogées
+2076.8,the summer,"cet été,"
+2077.839,but in this workshop we're actually,"mais dans cet atelier, nous allons en fait"
+2079.52,going to be using phase 1 and phase 2,utiliser les données des phases 1 et
+2082.24,data,"2,"
+2083.119,but you could absolutely download the,mais vous pouvez absolument  téléchargez les
+2085.04,covid phone survey data separately,données de l'enquête téléphonique covid séparément
+2087.599,and merge it to the data file that we,et fusionnez-les avec le fichier de données que nous
+2089.76,just created and you would merge that on,venons de créer et vous fusionnerez cela sur
+2092,the variable fqinst id that fema,la variable fqinst id cet identifiant fema d'
+2094.48,identifier,NA
+2097.359,okay great,accord super
+2099.119,so,alors
+2099.92,now i'm going to create,maintenant je vais créer
+2103.119,breakout rooms so um you have the choice,des salles de sous-commission donc euh vous avez le choix
+2106.24,of attending the r session with matt or,de  assister à la session r avec matt ou à
+2108.96,the stata session with me,la session stata avec moi
+2111.28,and if you do not choose a breakout room,et si vous ne choisissez pas de salle de sous-commission
+2114.24,um you will be randomly assigned to one,"euh, vous serez assigné au hasard à une d'"
+2120.72,okay,"accord d'accord,"
+2122.4,all right,NA
+2125.44,so i'll just take a quick moment to,donc je vais juste prendre un petit moment pour
+2128.88,set up the breakout rooms,mettre en place les salles de sous-commission
+2140.76,[Music],[Musique]
+2146.24,okay oops,d'accord oups
+2148.079,oh boy,oh mon garçon d'
+2154,okay so,accord donc
+2155.599,um excellent,euh excellent d'
+2165.599,all right great thanks so everyone i,accord super merci donc tout le monde je
+2167.04,will see you in the breakout sessions,vous verrai dans les séances en petits groupes
+2436.4,so i'm going to use that workshop data,donc je vais utiliser ces données d'atelier
+2440.72,excellent,excellent
+2450.64,great,super
+2451.52,so first things first um whenever i open,donc tout d'abord euh chaque fois que j'ouvre
+2454.72,a data file i like to get a sense of the,un fichier de données j'aime obtenir un  sens du
+2456.88,content of the file,contenu du fichier
+2458.72,um so i'm going to,euh donc je vais
+2460.72,do a cross tabulation of those um those,faire un tableau croisé de ces euh ces
+2463.52,two,deux
+2464.56,versions of this result,versions de cette
+2466.4,variable,variable de résultat
+2467.52,so i want to take a look at,donc je veux jeter un oeil à
+2470.319,how many women completed both,combien de femmes ont rempli les deux
+2472.88,questionnaires,questionnaires
+2474.4,so the column,donc la colonne
+2477.839,all of this metadata devin sort of,toutes ces métadonnées devi  n sorte d'
+2479.839,introduce much easier,introduction beaucoup plus facile
+2482.48,so you can download this this package,afin que vous puissiez télécharger ce package
+2484.8,ipamsar from,ipamsar à partir de
+2486.4,crayon just like you would any other,crayon comme vous le feriez pour tout autre
+2488.56,major r package,package r majeur
+2490.16,with install packages ipams are,avec des packages d'installation ipams sont
+2494.16,and then,puis
+2495.119,each session when you open,chaque session lorsque vous ouvrez
+2497.119,or to work with an iphone's extract,"ou travaillez avec un extrait d'iphone,"
+2498.56,you'll just need to load that library,vous aurez juste besoin de  chargez cette bibliothèque
+2500.64,and that library comes with a function,et cette bibliothèque est livrée avec une fonction
+2501.92,called read iphone's micro for microdata,appelée lire le micro de l'iphone pour les
+2505.04,so we'll specify the ddi file and the,"microdonnées, nous allons donc spécifier le fichier ddi et le"
+2508.079,data file uh there you'll have a,"fichier de données euh là, vous aurez un"
+2510.16,different number here of course if it's,numéro différent ici bien sûr si c'est
+2511.76,your first,votre premier
+2513.119,uh your first data extract from iphones,euh votre premier extrait de données de  iphones
+2515.68,it'll be number zero zero zero one and,ce sera le numéro zéro zéro zéro un et
+2518,i've got 93 data files somehow already,"j'ai déjà 93 fichiers de données d'une manière ou d'une autre,"
+2522.079,but um that's the only major difference,mais euh c'est la seule différence majeure
+2524.319,that you need to change,"que vous devez changer,"
+2526.64,we'll also be working with three other,nous travaillerons également avec trois autres
+2530.319,packages in this session um the first,packages dans cette session euh le
+2532.48,one is actually a suite of packages that,"premier est  en fait, une suite de packages que la"
+2535.119,most our users are probably familiar,"plupart de nos utilisateurs connaissent probablement,"
+2536.64,with it's the tidy verse,c'est le verset bien rangé
+2539.359,includes,comprend
+2541.04,a graphics package and several,un package graphique et plusieurs
+2543.44,other small packages that are extremely,autres petits packages qui sont extrêmement
+2545.119,useful for data manipulation,utiles pour la manipulation de données
+2548.079,in addition to that we're gonna be using,en plus de cela  t nous allons utiliser
+2549.52,the labeled package to work with some,le package étiqueté pour travailler avec des
+2551.92,value labels and then finally we'll be,étiquettes de valeur et enfin nous
+2554.16,using the surveyor package which is a,utiliserons le package d'arpenteur qui est un
+2556.96,tidy verse wrapper around the,emballage de vers bien rangé autour du
+2560,survey package uh developed by a,package d'enquête euh développé par un
+2562.319,statistician named thomas lumley to work,statisticien nommé thomas lumley pour travailler
+2564.319,with survey weights,avec des poids d'enquête
+2565.839,and,et
+2566.64,cluster sample design,la conception de l'échantillon en grappes
+2568.4,so we'll be demonstrating how to do that,", nous montrerons donc comment"
+2571.28,incorporate survey weights into your,incorporer les poids d'enquête dans votre
+2572.64,analysis,NA
+2575.44,so we'll begin by kind of considering,"analyse, nous commencerons donc par considérer"
+2577.359,the analytic sample,l'échantillon analytique avec
+2579.119,that we're working with,lequel nous travaillons
+2580.56,uh as uh routine mentioned you know pma,"euh comme euh la routine l'a mentionné, vous savez que pma"
+2583.28,uses this open panel design so that,utilise ce panel ouvert  concevoir pour que les
+2585.2,women can enter the panel,femmes puissent entrer dans le panel
+2587.52,after phase one for example if they age,"après la première phase, par exemple si elles vieillissent"
+2590,if they reach age 15. after we've,si elles atteignent l'âge de 15 ans. après que nous ayons
+2592.4,already started,déjà commencé
+2593.52,um,euh
+2593.81,[Music],[Musique]
+2595.2,so and they can also be lost to,ainsi et elles peuvent également être perdues de
+2596.8,follow-up at any phase if for example,vue à n'importe quelle phase si par exemple
+2598.64,they leave the,elles  quitter la
+2600.24,study area if they leave the enumeration,zone d'étude s'ils quittent la
+2602.24,area,zone de dénombrement
+2603.44,um,euh
+2604.4,so what you really want to do to start,donc ce que vous voulez vraiment faire pour
+2606.079,off is take a look at that variable that,commencer est de jeter un coup d'œil à cette variable que
+2607.68,devon pointed out result fq and this,devon a souligné résultat fq et
+2609.76,this is the result of the female,c'est le résultat du
+2611.52,questionnaire when we have a wide format,questionnaire féminin quand nous  avoir un
+2614.4,data extract like the one we're working,extrait de données au format large comme celui avec lequel nous
+2615.839,with here um you'll see two versions of,travaillons ici euh vous verrez deux versions du
+2618.16,result fq a one will have the suffix one,résultat fq l'une aura le suffixe un qui lui est
+2620.8,attached to it and that's the result of,attaché et c'est le résultat du
+2622.48,the phase one questionnaire and then the,"questionnaire de la phase un, puis l'"
+2625.04,other will have a two and that's from,autre aura  un deux et c'est de la
+2626.72,phase two,phase deux
+2628.48,uh what you can see here is that um,euh ce que vous pouvez voir ici c'est que euh
+2632.24,in the extract we created we selected,dans l'extrait que nous avons créé nous n'avons sélectionné que des
+2634.64,female respondents only so that,femmes interrogées afin que
+2637.839,everyone who's in our data extract had,tous ceux qui sont dans notre extrait de données aient
+2639.839,to complete you know one of the two,à remplir vous savez l'un des deux
+2642.48,female questionnaires there are other,questionnaires féminins il y a d'autres
+2644,household members on the,membres du ménage  sur la
+2645.35,[Music],[musique]
+2646.64,i want to look at women who uh,je veux regarder les femmes qui euh ont
+2648.8,adopted a method between phase one and,adopté une méthode entre la phase un et la
+2650.8,phase two and then also women who,"phase deux, puis aussi les femmes qui ont"
+2652.72,discontinued,arrêté
+2654.16,um so i think we we discussed cp,euh donc je pense que nous avons discuté cp
+2657.04,underscore one and cp underscore two uh,soulignement un et cp soulignement deux euh
+2659.76,category one these would be women who,catégorie un ce seraient des femmes qui
+2661.68,were not users,n'étaient pas des utilisateurs
+2663.2,because their,parce que leur
+2664.48,contraceptive use status is zero in both,statut d'utilisation de contraceptifs est nul dans les deux
+2667.92,periods um and then for category two if,périodes um et ensuite pour la catégorie deux
+2671.599,they were a user in both periods,s'ils étaient un utilisateur dans les deux périodes
+2673.839,um category three will be the adopters,um la catégorie trois sera les adoptants
+2677.04,because it went from not use into use,parce qu'il est passé de non-utilisation à utilisation
+2680.4,and then category four went from use to,a  Et puis la catégorie quatre est passée de l'utilisation à la
+2683.2,non-use,non-utilisation
+2686.88,and i do want to emphasize,et je tiens à souligner
+2688.88,that this will not capture women who,que cela ne capturera pas les femmes qui
+2691.839,um who may have,euh qui peuvent avoir
+2693.839,used a method for a short period of time,utilisé une méthode pendant une courte période
+2695.68,and cancelled or discontinued her use,et annulé ou interrompu son utilisation
+2698.4,before we see it show up,avant de la voir apparaître
+2700.48,or it might,ou  il se peut que
+2702.079,we might not,nous ne
+2703.359,uh see,voyions pas euh les
+2704.4,women who stopped using between the,femmes qui ont arrêté d'utiliser entre les
+2707.359,completed so we'll say,"remplis, donc nous dirons"
+2709.599,filter if both of these variables equal,filtrer si ces deux variables sont égales à
+2711.92,one,un
+2712.72,and you can see here how many cases are,et vous pouvez voir ici combien de cas il
+2715.68,left,reste
+2718.72,uh in addition to um focusing on women,euh en plus de nous concentrer sur les femmes
+2721.2,who completed both questionnaires we're,qui ont rempli les deux questionnaires nous  Je
+2722.88,going to be working only with the de,vais travailler uniquement avec la
+2724.24,facto population of women and these are,population de facto des femmes et ce sont des
+2725.92,women who slept in the household the,femmes qui ont dormi dans le ménage la
+2727.44,night bef,nuit avant
+2728.4,the night before the household interview,la nuit avant l'entretien avec le ménage
+2730.96,uh you'll find that information in the,euh vous trouverez cette information dans la
+2732.319,variable residence,variable résidence
+2736.8,so now uh these are our final sample,alors maintenant euh ce sont nos derniers
+2739.76,sizes,tailles d'échantillon
+2741.319,5208 women in burkina faso and 6935,5208 femmes au burkina faso et 6935
+2745.2,in kenya,au
+2747.92,so we'll move on now to recoding,kenya nous allons donc passer maintenant au recodage un
+2750.8,just under 10 discontinued,peu moins de 10 discontinué
+2758.96,so a huge advantage of using the,donc un énorme avantage d'utiliser les
+2761.359,longitudinal data over cross-sectional,données longitudinales par rapport aux données transversales
+2764.16,is that we can observe women both taking,est que nous pouvons observer les femmes à la fois
+2766.48,up family planning and discontinuing,prendre la planification familiale et interrompre
+2769.28,rather than seeing the net effect in,plutôt que de voir l'effet net en
+2771.359,comparing the mcp,comparant le mcp
+2773.359,mcpr,mcpr
+2774.8,between the two surveys because we may,"entre les deux enquêtes, car nous venons peut-"
+2777.2,have only just noticed a a modest,être de remarquer une
+2780.4,increase in family planning use,"augmentation modeste de l'utilisation de la planification familiale,"
+2783.04,just like netting out the difference,tout comme la différence
+2784.8,between adoption and continuation but,"entre l'adoption et la continuation, mais"
+2787.2,then we wouldn't really be seeing,alors nous ne le ferions pas  Je ne vois vraiment pas
+2789.76,the movement in those categories,le mouvement dans ces catégories
+2795.44,so and just so we can get a sense of,afin que nous puissions avoir une idée de
+2799.44,how,la différence entre le
+2800.24,kenya and burkina faso differed,Kenya et le Burkina Faso
+2803.2,i've got a bar graph and we'll just be,. J'ai un graphique à barres et nous allons simplement
+2805.839,um,comparer
+2808.079,we'll be comparing,NA
+2810.079,these categories between the two,ces catégories entre les deux
+2812,countries,pays.
+2815.04,so i'm using,donc
+2816.4,the unweighted um counts of women um so,j'utilise le décompte non pondéré des femmes euh donc
+2819.92,you can as you can see um,vous pouvez comme vous pouvez le voir euh
+2822,there are a lot more consistent users in,il y a beaucoup plus d'utilisateurs cohérents au
+2825.599,kenya than there are in burkina faso but,kenya qu'il n'y en a au burkina faso mais
+2828.079,this does not take into account that,cela ne tient pas compte du fait que
+2829.68,these samples have different sample,ces échantillons ont des
+2831.52,sizes,tailles d'échantillon différentes
+2832.48,and i just wanted to,et  je voulais juste
+2833.92,um demonstrate the differences between,um démontrer les différences entre
+2837.04,these two,ces deux
+2838.24,graphs that like it it really matters,"graphiques qui l'aiment, c'est vraiment important"
+2840.8,about um and make sure to,pour um et assurez-vous de
+2843.28,graph proportions,représenter graphiquement les proportions
+2845.04,because these will look a little,car elles seront un peu
+2846.319,different,différentes
+2847.599,if we're not using the sums,si nous n'utilisons pas les
+2852.8,so as you can see,"sommes, comme vous pouvez le voir,"
+2854.72,the non-users are,les non-utilisateurs représentent
+2856.72,a huge portion of burkina faso but you,"une grande partie du burkina faso, mais vous"
+2860,still see quite a bit of movement in,voyez toujours pas mal de mouvement
+2861.92,both in both countries you have a com a,"dans les deux pays, vous avez un segment"
+2864.64,comparable,comparable
+2865.92,um segment of these women who adopted or,de ces femmes qui  adopté ou
+2868.96,discontinued but again these are,"abandonné, mais encore une fois, ce sont des"
+2871.28,unweighted,NA
+2872.64,proportions,NA
+2876.319,all right uh so,"proportions non pondérées, d'accord, donc"
+2878.4,i'm gonna double check,je vais vérifier
+2880.4,on the chat see if there's any questions,"sur le chat pour voir s'il y a des questions,"
+2883.76,um,euh d'
+2886.88,okay,"accord,"
+2888.079,um,NA
+2890.16,feel free to um add questions in the,n'hésitez pas à ajouter des questions dans le
+2893.359,chat i'll try to um,"chat, j'essaierai de"
+2895.68,check back in to see if there's any,revenir pour voir  s'il y a des
+2898.319,things that i should uh clarify or go,choses que je devrais clarifier ou
+2900.559,back to um but for now,revenir à euh mais pour l'instant
+2903.839,um i'm going to continue on,euh je vais continuer sur
+2906.16,um,euh
+2907.2,so,donc
+2908.48,as we said um our our simple logistic,comme nous l'avons dit euh notre simple régression logistique sur
+2911.359,regression that we're going to,laquelle nous allons nous
+2913.2,um to focus on today is going to be on,concentrer aujourd'hui va  être de
+2917.44,whether,savoir si les
+2919.04,impacts of covid,impacts de covid
+2921.2,had it,NA
+2923.04,were had some significant effects on,avaient eu des effets significatifs sur le
+2925.52,when whether women adopted a family,moment où les femmes ont adopté une
+2928.079,planning method or discontinued their,méthode de planification familiale ou ont interrompu leur
+2930.24,method,"méthode,"
+2931.44,so i'm going to reuse categories three,donc je vais réutiliser les catégories trois
+2934.319,and four and just rename them to,et quatre et les renommer simplement en
+2936.079,adoption and discontinue,adoption et interrompre
+2938.4,just so it's a lot more clear,juste pour que ce soit beaucoup  plus clair
+2941.359,and we don't have to memorize,et nous le faisons  Je n'ai pas besoin de mémoriser
+2943.119,what three and four mean,ce que signifient trois et quatre
+2947.44,and then i also want to take a look at,", puis je veux également jeter un œil à l'"
+2950.16,one of our,une de nos
+2951.52,main explanatory variables of whether,"principales variables explicatives, à savoir si"
+2954.4,the household lost income,le ménage a perdu des revenus en
+2956.72,due to cobit,raison du
+2958.319,um and so this is what i was getting at,cobit euh et c'est donc ce à quoi je voulais en venir
+2961.04,in,NA
+2962.079,um when we're creating the data extract,quand nous  Je crée l'extrait
+2964.8,from the website so we have this niu,"de données du site Web, nous avons donc cette"
+2967.52,category of not in universe so this,"catégorie niu de pas dans l'univers, donc"
+2970.72,these are women who lived in households,ce sont des femmes qui vivaient dans des ménages
+2972.88,that did not lose income,"qui n'ont pas perdu de revenus,"
+2976.24,because,car les
+2978.48,women were only given this question in,femmes n'ont reçu cette question dans
+2980.8,their survey if they reported that their,leur enquête que si elles ont déclaré que leur
+2982.96,household did lose income,"ménage l'avait fait  perdre des revenus,"
+2985.52,so for the purposes of,donc pour les besoins de
+2988.64,this,cette
+2990,analysis what we wanted to do is look at,"analyse, ce que nous voulions faire, c'est"
+2993.52,did the household lose income or not,examiner si le ménage a perdu des revenus ou
+2998.72,so,"non,"
+3000.24,and then also,et puis aussi
+3001.839,was it due to covet,était-ce dû à la convoitise
+3003.68,so we kind of have three categories of,", nous avons donc en quelque sorte trois catégories de"
+3005.44,women here um,femmes ici euh et
+3007.119,what if cv income loss is no that means,"si cv la perte de revenus est  non, cela signifie"
+3010.64,they did lose income but they said it,"qu'ils ont perdu des revenus, mais ils ont dit que ce"
+3012.64,was not due to covid,"n'était pas à cause de covid,"
+3014.64,we have women who said their income,nous avons des femmes qui ont dit que leurs revenus avaient
+3016.96,was impacted and it was due to covet and,"été touchés et que c'était dû à la convoitise,"
+3019.92,then women who said,puis des femmes qui ont dit que
+3021.68,my household did not lose income,"mon ménage n'avait pas perdu de revenus,"
+3024.839,so you have we have two choices here um,"donc vous avez nous avons deux choix h  euh,"
+3028.72,we could either,nous pourrions soit
+3030.48,make this into a three category variable,en faire une variable à trois catégories
+3033.92,um and,euh et
+3035.28,um,euh
+3036.48,the,le
+3037.2,factor level,niveau de facteur
+3038.96,so you can see here that our numeric,afin que vous puissiez voir ici que nos
+3040.72,codes are gone and they've been replaced,codes numériques ont disparu et qu'ils ont été remplacés
+3042.48,with,par des
+3043.44,characters no and yes and n a,caractères non et oui et n a
+3046.8,uh the reason we want to,euh la raison pour laquelle nous voulons
+3048.4,transform our,transformer notre
+3050.4,numeric variables into,les variables numériques en
+3052.319,factors in the end is because um,facteurs à la fin est parce que euh
+3055.119,if you do any kind of graphing,"si vous faites n'importe quel type de graphique,"
+3057.04,you're going to then see the value label,vous allez voir l'étiquette de valeur
+3059.28,rather than the numeric code you'll see,"plutôt que le code numérique, vous verrez"
+3060.96,the numeric codes if you forget to turn,les codes numériques si vous oubliez de le
+3062.88,it into a factor and it also makes,transformer en facteur et il  rend également le
+3064.8,working with dummy variables in,travail avec des variables fictives dans
+3066.4,regression analysis quite a bit easier,l'analyse de régression un peu plus
+3068.559,as well,facile et les
+3072.24,likert style questions can be treated as,questions de style likert peuvent également être traitées comme des
+3074.8,factors as well here's that covid,facteurs voici cette
+3076.96,concern variable that devin introduced,variable de préoccupation covid que devin a introduite
+3080.24,indicating a woman's level of concern,indiquant le niveau de préoccupation d'une femme à l'
+3082.559,about becoming affected with covid19 and,idée d'être affectée par covid19
+3085.2,this is at at phase two amidst the,et c'est à la phase  deux au milieu de la
+3088.079,pandemic,pandémie
+3089.44,um you can see here that we've got this,euh vous pouvez voir ici que nous avons cette
+3091.28,likert style uh scale ranging from not,échelle euh de style likert allant de pas
+3094.16,concerned to very concerned but then you,inquiet à très inquiet mais ensuite vous
+3096.24,have this code 5,avez ce code 5
+3098.72,currently or previously infected with,actuellement ou précédemment inf  ected avec
+3100.48,cobid19,cobid19
+3102,and you have a few missing responses so,"et vous avez quelques réponses manquantes, donc"
+3108.24,this time what we're going to do is use,"cette fois, ce que nous allons faire est d'"
+3110.72,that use that value pronoun again to say,utiliser à nouveau ce pronom de valeur pour dire
+3113.92,that we would like to label n a,que nous aimerions étiqueter n a
+3116.559,any value where the value,toute valeur où la valeur
+3119.52,is greater or equal,est supérieure ou égale
+3121.839,greater than or equal to 5.,supérieure ou égale  à 5.
+3123.76,and then um i'm just going to speed,et puis euh je vais juste accélérer les
+3125.44,things along here and pipe that directly,choses ici et diriger cela directement
+3127.599,to our function as factor,vers notre fonction en tant que facteur
+3130.4,so um that gets rid of the 5 and the 98,donc euh cela se débarrasse du 5 et du 98
+3133.52,that we saw and then,que nous avons vu et ensuite le
+3135.839,turns it into a factor,transforme en un facteur
+3142.48,uh okay so something that we feature a,euh d'accord donc quelque chose  que nous présentons
+3145.04,lot on the blog is,beaucoup sur le blog est une
+3147.839,sort of strategies to make your data,sorte de stratégies pour rendre votre
+3150,cleaning workflow more efficient and one,flux de travail de nettoyage de données plus efficace et l'une
+3152.319,of my favorite strategies is using the,de mes stratégies préférées consiste à utiliser à nouveau la
+3154.48,across function from deep wire deep,fonction transversale de la pince profonde à fil profond
+3156.8,plier again is one of those packages,est l'un de ces
+3159.68,that gets loaded when you load the tidy,packages qui est chargé lorsque vous chargez le rangement
+3161.76,burst,éclater
+3162.72,and across just allows you to run the,et traverser vous permet simplement d'exécuter la
+3165.359,same data manipulation function over,même fonction de manipulation de données sur
+3167.92,several variables in sequence so here,"plusieurs variables en séquence, donc ici,"
+3170.24,i'm saying okay across these variables,"je dis d'accord sur ces variables,"
+3173.2,i'd like to do,je voudrais faire
+3174.48,basically the workflow we saw on our on,essentiellement le flux de travail que nous avons vu sur notre
+3176.559,our,NA
+3177.359,on our last slide,"sur notre dernière diapositive,"
+3179.04,so this is country,donc c'est  c  pays
+3180.4,uh the urban rural status of the,euh le statut urbain rural de la
+3182.48,enumeration area where the one woman,zone de dénombrement où la seule femme
+3184.64,resides um the wealth uh tertile of her,réside euh la richesse euh tertile de son
+3188.88,household and her general education,ménage et son
+3192.24,level so with each one of those we'll,niveau d'éducation générale donc avec chacun d'eux nous allons
+3194.24,we'll,NA
+3195.28,turn the,transformer les
+3196.64,values above 90 into n a's and then of,valeurs supérieures à 90 en n a et  alors
+3199.839,course as a factor,"bien sûr, en tant que facteur"
+3204.72,uh so,"euh, donc"
+3206.079,something that everyone does when they,quelque chose que tout le monde fait quand ils
+3208.48,start working with categorical variables,"commencent à travailler avec des variables catégorielles,"
+3210.319,is that they have to learn you know how,c'est qu'ils doivent apprendre que vous savez
+3211.839,to set a reference group um,comment définir un groupe de référence euh
+3213.839,you can do this with a another um,vous pouvez le faire avec une autre
+3216.24,function from the four cats,fonction um du package quatre chats
+3218.559,package um it's factor re-level so here,euh c'est  facteur re-niveau donc ici
+3222,here i'm setting up,ici je configure l'
+3223.839,age in three groups,âge en trois groupes
+3226.8,so um,donc euh une
+3228.64,sort of a young group a middle group and,sorte de groupe jeune un groupe intermédiaire et
+3230.079,an older group,un groupe plus âgé
+3232.72,and i do that with case when and that,et je le fais avec le cas où et qui
+3235.599,creates this character string but i want,crée cette chaîne de caractères mais je
+3237.2,to make sure that,veux m'assurer que
+3238.88,i use,j'utilise
+3240.64,uh the youngest group as my reference,euh le groupe le plus jeune comme mon
+3242.8,group um factor v level is going to set,groupe de référence um factor v level va définir
+3246.24,your levels in the order that you that,vos niveaux dans l'ordre que
+3248.559,you specify here so this will ensure,"vous spécifiez ici, donc cela garantira"
+3251.2,that the youngest group is is the,que le groupe le plus jeune est le
+3252.559,reference group,"groupe de référence,"
+3255.92,all right so much for our um,tant pis pour notre um
+3260.319,independent variables we're now going to,"indépendant  ent variables, nous allons maintenant"
+3261.68,look at our dependent variables,"examiner nos variables dépendantes,"
+3270,so um,donc euh
+3271.839,as devon mentioned we're interested in,"comme devon l'a mentionné, nous sommes intéressés à"
+3274.319,predicting,prédire l'
+3277.119,contraceptive method adoption and,adoption et l'
+3279.96,discontinuation between phase one and,arrêt de la méthode contraceptive entre la phase un et la
+3282.079,phase two,phase deux
+3283.52,and we're primarily interested in how um,et nous sommes principalement intéressés par l'
+3287.2,those covid19 variables impact whether,impact de ces variables covid19 sur le fait que les
+3290.799,women adopted a method or just continued,femmes  adopté une méthode ou juste continué
+3292.72,a method,une méthode
+3294.4,so we're going to use this variable,donc nous allons utiliser cette variable
+3296.88,cp,cp
+3299.119,to create,pour créer
+3301.44,basically,essentiellement
+3305.68,here for,ici pendant
+3306.799,um about 20 minutes so um we've got,euh environ 20 minutes donc euh il nous
+3309.839,about 10 minutes left and i want to um,reste environ 10 minutes et je veux euh
+3312.96,establish,établir
+3314.24,that um,que euh
+3315.92,the,le plan d'
+3316.96,sample design of pma is a survey and,échantillonnage de pma  est une enquête et
+3320,it's,c'est
+3321.04,and it's a multi-stage cluster,"et c'est une grappe à plusieurs degrés,"
+3323.2,so i'm going to include the primary,donc je vais inclure l'
+3325.119,sampling unit,unité d'échantillonnage primaire
+3326.96,in my,dans mon
+3328.079,my weighting,NA
+3329.52,survey set and we also have,ensemble d'enquête de pondération et nous avons également
+3332.4,the,les
+3333.44,primary sampling units were selected,unités d'échantillonnage primaires qui ont été sélectionnées en
+3335.839,according to strata,"fonction des strates,"
+3337.76,so i'm going to include that and also,donc je vais l'inclure  et
+3340.24,declare that panel weight is the weight,déclare également que le poids du panneau est le poids
+3342.48,that i want to use um to get,que je veux utiliser pour obtenir des
+3344.319,representative proportions so i'm going,"proportions représentatives, donc je vais l'"
+3347.04,to,NA
+3348.4,run that,exécuter
+3351.839,so,NA
+3353.52,to get across tabulation with a weighted,"pour obtenir un tableau avec une proportion pondérée,"
+3356,proportion then i just insert the svy,puis je viens d'insérer  rt le
+3358.799,colon ahead of my cross tabulation or,côlon svy avant mon tableau croisé ou
+3363.2,ahead of my logit,"avant mon logit,"
+3365.119,so i'm going to run both an unweighted,donc je vais exécuter à la fois un tableau croisé non pondéré
+3368,and a weighted,et pondéré
+3369.76,cross tabulation of how many women,du nombre de femmes qui ont
+3372,adopted family planning in both of these,adopté la planification familiale dans ces deux
+3374.4,countries and then the weighted version,"pays, puis la version pondérée"
+3378.96,just to compare the differences,juste pour comparer le  différences
+3381.76,um so in the non-weighted we have 15.77,"euh donc dans le non pondéré, nous avons 15,77"
+3386.96,percent of this grouping in burkina faso,% de ce groupe au burkina faso
+3390.16,adopted and 16.12,"adopté et 16,12"
+3392.64,in kenya um as you can see there was,au kenya euh comme vous pouvez le voir il y avait
+3396.4,an oversampling of women who adopted in,un suréchantillonnage de femmes qui ont adopté au
+3399.2,burkina a little bit of an undersampling,burkina un peu un sous-échantillonnage
+3401.52,in kenya so we've got little um so we,au kenya donc nous avons  eu peu euh donc nous
+3404.16,have a bit of a difference uh not wildly,avons un peu de différence euh pas très
+3407.76,different but um still corrected uh for,différent mais euh toujours corrigé euh pour
+3411.44,uh attrition and those other uh features,euh l'attrition et ces autres euh caractéristiques
+3414.64,that those weights control for,que ces poids contrôlent pour
+3417.28,excellent so,excellent donc
+3419.44,um,euh
+3420.88,i'm also going to create,je vais aussi créer
+3423.28,an age category,une variable catégorielle de catégorie d'âge
+3425.44,categorical variable,NA
+3427.68,the way that the carp paper did,le chemin  que le papier de la carpe a fait
+3431.28,and,et
+3432.48,we i'm also going to include,nous je vais aussi inclure
+3434.72,um a categorical for parody um so,un catégorique pour la parodie euh donc
+3438.96,grouping the number of births,regrouper le nombre de naissances
+3441.599,and then finally um i'm building my,et puis finalement euh je construis mon
+3444.079,model,modèle
+3445.68,so i'm going to have,donc je vais avoir
+3447.28,separate regressions for each country,"des régressions séparées  pour chaque pays,"
+3449.359,i'm not going to pull them together for,je ne vais pas les rassembler pour
+3450.799,this analysis,cette analyse
+3452.559,because,car
+3454.96,the,l'
+3457.119,each country's coveted restriction,NA
+3459.2,experience was different,"expérience de restriction convoitée de chaque pays était différente,"
+3461.599,so i'm going to have separate models for,donc je vais avoir des modèles séparés pour l'
+3464.96,adoption and,adoption et l'
+3466.52,discontinuation and also by country so,"abandon et aussi par pays, ce"
+3469.119,that leaves us with four models,qui nous laisse avec quatre modèles
+3472,so i'll get a lot of things going on my,donc je  Je vais avoir beaucoup de choses sur mon
+3474.16,screen so i've gotta,"écran, donc je"
+3476.079,um,NA
+3477.68,all right so we have,"dois bien, donc"
+3479.44,we did just copy this and actually paste,nous avons juste copié ceci et le
+3481.599,it into stata hopefully it's a little,coller dans stata j'espère que c'est un peu
+3483.599,more,plus
+3484.4,visible,visible
+3485.52,and i'm restricting to burkina faso for,et je me limite au burkina faso pour
+3488.24,this one so i've got,celui-ci  donc j'ai
+3489.839,we're estimating the um,nous estimons la
+3491.92,probability that the woman,probabilité euh que la femme
+3493.68,was,soit
+3494.64,of non-users in the first phase whether,des non-utilisatrices dans la première phase si
+3497.28,she adopted in the second phase,elle a adopté dans la deuxième phase
+3499.52,so we've got our age recode her urban,donc nous avons notre âge recode son statut urbain
+3501.92,status,NA
+3503.52,her,sa
+3504.319,wealth turtile her education level,richesse turtile son niveau d'éducation
+3508.16,whether her family lost income due,si elle  la famille a perdu des revenus à cause
+3510.96,to covid um and then whether how,"de covid euh, puis si"
+3513.92,concerned she was about contracting,elle était préoccupée par le fait de contracter la
+3516.319,covet and then we're going to get the,"convoitise, puis nous allons obtenir les"
+3519.04,odds ratios so it's a lot easier to,"rapports de cotes, donc c'est beaucoup plus facile à"
+3521.44,interpret,interpréter d'
+3523.839,okay,"accord,"
+3526.079,so,donc à
+3527.68,because of limited time i won't go,"cause du temps limité, je ne passerai pas"
+3530,through each of the control variables,par chacun  des variables de contrôle
+3531.76,and of course there are plenty others,et bien sûr il y en a beaucoup d'autres
+3534.079,that we could be including um,que nous pourrions inclure euh
+3536.96,i did want to focus a little bit on our,je voulais me concentrer un peu sur nos
+3539.28,explanatories,explications
+3540.88,so unfortunately for bikini fosso these,donc malheureusement pour bikini fosso ce
+3543.76,are not,ne sont pas
+3544.96,um,euh
+3545.92,they're not significant uh statistically,ils ne sont pas significatifs euh statistiquement
+3549.119,um but,euh mais
+3550.72,we do have,nous avons
+3552.24,the,le
+3553.04,magnitude or the direction of the point,l'ampleur ou la direction de l'
+3555.119,estimate um is somewhat interesting uh,"estimation ponctuelle euh est quelque peu intéressante, euh"
+3558.079,so if this was statistically significant,"donc si c'était statistiquement significatif,"
+3560.64,we might interpret if um the woman's,nous pourrions interpréter si euh le ménage de la femme a
+3563.28,household lost income she might be,"perdu des revenus, elle pourrait être"
+3566.319,um a little bit more likely to,euh un peu plus susceptible d'
+3569.04,adopt a method perhaps,adopter une méthode peut
+3570.96,her demand for having a child soon was,-être sa demande d'avoir un enfant bientôt  a été
+3572.96,affected by the income loss um but,"affecté par la perte de revenu, euh,"
+3576.24,it's not clear here but this is room for,"mais ce n'est pas clair ici, mais il y a de la place"
+3579.2,for more investigation perhaps there are,"pour une enquête plus approfondie, peut-être qu'il y a des"
+3581.44,things that we aren't controlling for,choses que nous ne contrôlons pas et
+3583.2,that we should be it would be some of an,"que nous devrions être, ce serait une partie d'un"
+3585.04,variable bias um,"biais variable, d'"
+3587.599,okay and then,"accord, puis"
+3588.96,next,ensuite
+3589.92,to adjust our confidence intervals um so,pour ajuster  nos intervalles de confiance afin
+3593.359,that you don't get any values that are,que vous n'obteniez aucune valeur
+3595.44,below zero or above one hundred percent,"inférieure à zéro ou supérieure à cent pour cent,"
+3597.76,basically,NA
+3599.119,so if you do that you'll get a table,"donc si vous faites cela, vous obtiendrez un tableau"
+3600.48,like this,"comme celui-ci,"
+3601.52,i'm going to move along a bit quickly,je vais  pour avancer un peu rapidement
+3603.04,here because we've got about six minutes,ici parce qu'il nous reste environ six minutes
+3605.44,left,NA
+3606.559,um,euh
+3607.44,but,mais
+3610,you saw that we get a coefficient,vous avez vu que nous obtenons une
+3612.16,estimate and a confidence interval here,estimation de coefficient et un intervalle de confiance ici
+3614.4,i'm just using the same function that we,j'utilise simplement la même fonction que nous
+3617.2,we saw before but with,avons vue auparavant mais avec
+3619.2,gm error bar to insert these error bars,une barre d'erreur gm à  insérez ces barres d'erreur
+3623.04,indicating the confidence interval,indiquant l'intervalle de confiance que
+3625.52,i don't think i mentioned but this is a,je ne pense pas avoir mentionné mais il s'agit d'un
+3626.88,95 confidence interval by default and of,intervalle de confiance de 95 par défaut et
+3629.359,course you can adjust that as as needed,"bien sûr vous pouvez l'ajuster au besoin,"
+3634.4,all right so finally we'll uh spend the,donc finalement nous allons passer les
+3636.64,last five minutes on our,cinq dernières minutes sur notre
+3639.839,analysis,analyse
+3641.599,so we're going to use that exact same,nous allons donc utiliser exactement la même
+3643.359,surveyor,NA
+3644.64,toolkit to model our dependent variables,boîte à outils d'arpenteur pour modéliser nos variables dépendantes
+3648.88,with this,avec cette
+3650.88,survey glm function which comes from,fonction d'enquête glm qui provient de
+3653.599,that survey package,"ce package d'enquête,"
+3657.44,this is similar to the glm function that,cela est similaire à la fonction glm que la
+3660.16,most our users,"plupart de nos utilisateurs,"
+3663.44,so,donc
+3664.48,once again with burkina faso,encore une fois avec le burkina faso
+3666.88,not a lot going on with with these,pas beaucoup de choses  avec ces
+3670.319,coveted impact variables but again there,"variables d'impact convoitées, mais encore une fois, il"
+3673.28,are lots of different covet impact,y a beaucoup de variables d'impact de convoitise différentes
+3674.96,variables,NA
+3676.16,in these data,dans ces données
+3677.52,and,et
+3679.04,perhaps there's there's something about,peut-être qu'il y a quelque chose dans
+3682.319,the way that,la façon dont les
+3683.52,covid restrictions uh ruled out in,restrictions covid sont exclues dans
+3686.559,burkina faso versus kenya that um,burki  na faso contre le kenya qui euh
+3689.599,that determine,qui déterminent
+3691.2,the impacts,les impacts
+3692.559,um okay and then,euh d'accord et puis
+3694.319,with kenya for discontinuation we once,"avec le kenya pour l'arrêt, nous"
+3697.44,again see that the concern,voyons encore une fois que la
+3701.28,variable,variable de préoccupation
+3702.4,was significantly,était significativement
+3704.72,significant compared to so women who,significative par rapport aux femmes qui
+3706.72,were not at all concerned,n'étaient pas du tout inquiètes
+3710,compared to well women who were,par rapport aux femmes bien portantes qui
+3712.64,concerned about getting coveted um,craignaient d'être convoitées euh
+3714.96,compared to women who were not at all,par rapport aux femmes qui n'étaient pas du tout
+3716.48,concerned were um far more likely to,concernées étaient euh beaucoup plus susceptibles d'
+3719.92,discontinue a method so that's,"arrêter une méthode, donc c'est également"
+3721.68,consistent with the adoption results as,cohérent avec les résultats d'adoption
+3724.799,well,NA
+3725.68,and i think we have just very,et je pense que nous n'avons que très
+3728.559,um,euh
+3729.599,we only have a few minutes left i,nous n'avons plus que quelques minutes je
+3731.039,believe so i'm gonna,crois donc je vais
+3732.559,see if i um look in the chat,"voir  si je regarde dans le chat, d'"
+3736.4,um,NA
+3737.52,okay can you talk a little bit about why,"accord, pouvez-vous parler un peu de la raison pour laquelle"
+3739.2,you are not using,vous n'utilisez pas
+3740.88,clustered standard errors,les erreurs standard groupées
+3742.96,um,euh
+3745.28,and then,et puis d'
+3746.96,okay,accord
+3747.92,so,donc
+3752,i,NA
+3753.599,so okay,NA
+3755.039,full disclosure i'm i'm an economist um,je vais donc d'accord divulgation complète je suis je suis un économiste euh
+3758.319,and um i'm not a phd but my,et euh je ne suis pas un  phd mais je
+3761.44,understanding is that we are,crois comprendre que nous
+3763.119,um adjusting the standard errors,ajustons les erreurs types en
+3765.44,according to both the,fonction à la fois de l'
+3767.44,primary sampling unit and,unité d'échantillonnage primaire et
+3771.92,in the strata,"des strates,"
+3773.839,so,donc
+3775.76,my understanding is that we are using,je crois comprendre que nous utilisons
+3777.76,clustered standard errors um however um,des erreurs types groupées euh cependant euh
+3782.64,that's definitely something that if you,tha  C'est certainement quelque chose que si
+3784.48,would like to email us separately about,"vous souhaitez nous envoyer un e-mail séparément à ce sujet,"
+3787.28,this we are following the,nous suivons les
+3789.28,um,um
+3792.4,the briefs that pma,les mémoires que pma
+3795.839,um about these data um,"um à propos de ces données um,"
+3799.359,so,NA
+3800.559,we'll definitely have to get back to you,donc nous devrons certainement vous répondre
+3802,on that um but this is my understanding,"à ce sujet, mais c'est ce que je comprends"
+3804.799,is that according to this multi-stage,est que selon  à cette
+3807.2,cluster sampling design we're adjusting,"conception d'échantillonnage en grappes à plusieurs degrés, nous ajustons"
+3809.839,the standard errors based on,les erreurs types en fonction des
+3811.839,strata and psu,strates et des psu
+3813.44,um,euh
+3814.4,so okay awesome yeah i'm i'm not exactly,donc d'accord génial ouais je ne suis pas tout à fait d'
+3818.319,okay great um so why are the baseline,accord super euh alors pourquoi les variables
+3821.039,explanatory,explicatives de base
+3822.839,variables i guess i'm not entirely,je suppose que je ne le suis pas entièrement
+3826.16,uh sure about this question,euh sûr de cette question
+3829.359,um,euh
+3830.64,i,je
+3834.48,um oh my baseline explanatory models,euh oh mes modèles explicatifs de base
+3840.24,into the model okay,dans le modèle d'accord
+3842.559,um,euh
+3843.92,if i'm understanding correctly um you're,si je comprends bien euh vous
+3846.16,asking why we're using uh like the phase,demandez pourquoi nous utilisons euh comme les
+3848.64,two versions of each of these,versions de phase deux de chacun de ces
+3850.799,um,euh
+3851.599,so,donc d'
+3852.559,okay we have two minutes left um,accord nous en avons deux  minutes restantes euh
+3855.2,so for most of these explanatory,donc pour la plupart de ces
+3857.039,variables um,variables explicatives euh
+3858.799,we are,nous
+3861.599,using,utilisons des
+3863.44,variables because like,variables parce que comme
+3865.44,the baseline happened before covet um so,la ligne de base s'est produite avant la convoitise euh afin
+3868.559,that we couldn't,"que nous ne puissions pas,"
+3870.16,they couldn't ask questions about covet,ils ne pouvaient pas poser de questions sur les
+3872.319,impacts before covet happened um so we,impacts de la convoitise avant que la convoitise ne se produise euh donc nous
+3875.039,are only using um baseline two but you,n'utilisons que  euh ligne de base deux mais vous
+3878.72,could of course like,pourriez bien sûr comme
+3880.48,um,euh
+3881.44,see if there's any changes in her,voir s'il y a des changements dans son
+3883.44,education,éducation
+3884.64,so you could look to see if there were,afin que vous puissiez voir s'il y avait des
+3886.48,differences between her education at,différences entre son éducation au
+3888,time one and time two um but i i just,moment un et au temps deux euh mais j'ai juste
+3890.96,chose to use the um the time to because,choisi d'utiliser le euh le temps de parce que
+3893.76,that's like um we were kind of looking,"c'est comme euh, nous étions en quelque sorte en train de regarder"
+3896.48,at,NA
+3897.2,how she's changing over time um but,"comment elle change avec le temps, euh, mais"
+3900.24,again,"encore une fois,"
+3901.039,a lot of the the choices i made for this,beaucoup des choix que j'ai faits pour ce
+3903.2,model was um the sake of simplicity um,"modèle étaient euh par souci de simplicité, euh"
+3906.48,in this model but the great thing about,"dans ce modèle, mais la grande chose à propos de"
+3908.799,these data is that you have the,ces données est que vous avez le
+3911.359,information about this woman in both,des informations sur cette femme dans les deux
+3913.119,time periods and if you in this way you,"périodes et si vous de cette manière, vous"
+3915.28,can kind of dissect that change over,pouvez en quelque sorte disséquer ce changement au fil du
+3917.44,time i hope that's what your question,"temps, j'espère que c'est ce que votre"
+3919.52,was getting at,"question recevait,"
+3920.839,um but,mais
+3922.88,uh definitely feel free to email uh,"euh, n'hésitez pas à envoyer un e-mail euh"
+3925.76,iphones umn.org and we'll post that um,iphones umn.org et nous publierons  c'est
+3929.599,that's our user support email,notre e-mail d'assistance aux utilisateurs
+3931.68,and you can definitely they'll be able,et vous pouvez certainement qu'ils pourront
+3933.039,to forward me,me transmettre les
+3934.96,questions that you have um,questions que vous avez
+3938,about this workshop um sorry that we're,sur cet atelier euh désolé que nous manquions
+3940.96,we're kind of running a little low on,un peu de
+3942.559,time but thank you so much everyone for,temps mais merci beaucoup tout le monde  pour
+3944.559,uh for attending and for your questions,"euh pour un  ttending et pour vos questions,"
+3947.359,so i think we'll be,donc je pense que nous serons
+3948.839,um,NA
+3950.4,brought back to the larger group very,"très bientôt ramenés au groupe plus large,"
+3952.559,soon,NA
+4107.52,all right so i think we probably have,donc je pense que nous avons probablement
+4109.6,everyone back from sessions now,tout le monde de retour des sessions maintenant
+4112.56,um,euh
+4114,so matt and devin any any notes anything,si mat et devin toutes les notes que
+4116.799,you want to note from uh the breakout,vous voulez noter de euh le
+4118.48,sessions,séances en petits groupes
+4125.679,um no notes phil other than,euh pas de notes phil autre que
+4128.159,my session had no time for questions so,"ma session n'avait pas le temps pour les questions, donc"
+4130.64,if anybody would like to ask a question,si quelqu'un souhaite poser une question
+4132.64,here is a great time to do it,"ici, c'est un bon moment pour le faire"
+4135.6,uh yeah no notes here but um same if,euh ouais pas de notes ici mais euh pareil s'il
+4137.759,there's any other questions that came up,y a d'autres questions qui sont venues
+4139.52,um,euh
+4140.88,feel free to write them in,"sentir  libre de les écrire,"
+4143.839,that's right so i think you all should,"c'est vrai, donc je pense que vous devriez tous"
+4145.759,have access to the chat um so we did,"avoir accès au chat euh, nous"
+4148.56,want to allow a little bit of time for,voulions donc laisser un peu de temps pour les
+4150.4,questions so if you have any please feel,"questions, donc si vous en avez, n'hésitez"
+4152.4,free to put them in the chat and we can,pas à les mettre dans le chat et nous pouvons
+4154.08,answer them right away,répondre  ils
+4166.319,do,font
+4198.88,all right um well not seeing any,tout de suite bien euh eh bien ne voyant aucune
+4201.36,questions that's okay,question c'est bien
+4203.679,because,parce que
+4205.12,we'll have time for uh questions,nous aurons du temps pour euh des questions
+4208.32,later after this session,plus tard après cette session
+4210.32,but just a few more things to note,mais juste quelques autres choses à noter
+4212.4,before we finish up,avant de terminer
+4215.28,so first of all the uh the examples that,donc tout d'abord les euh les exemples que
+4218,we ran through today we're looking at,nous avons couru  jusqu'à aujourd'hui w  Nous examinons
+4219.92,the impact of covet 19 on concept of use,l'impact de covet 19 sur le concept d'utilisation
+4222.96,and that's obviously only one of uh many,et ce n'est évidemment qu'un des nombreux
+4226.08,topics that pma collects data on so pma,"sujets sur lesquels pma collecte des données, donc pma"
+4229.44,we also collect data on women's on,nous collectons également des données sur les femmes sur des
+4230.96,topics like women's economic empowerment,sujets tels que l'autonomisation économique des
+4233.199,uh women's sexual reproductive,femmes euh l'autonomisation sexuelle des
+4234.88,empowerment,femmes
+4236.08,um,euh
+4237.6,and uh reproductive histories we collect,et euh  antécédents de reproduction nous recueillons
+4239.76,a two to three year contraceptive,un calendrier contraceptif de deux à trois ans
+4241.36,calendar uh,NA
+4242.96,a lot closer to three years than two,euh beaucoup plus près de trois ans que de deux
+4245.52,um gender-based violence uh for certain,euh violence basée sur le genre euh pour certains
+4248.239,countries and and rounds uh fertility,pays et et rondes euh fécondité
+4250.8,and contraceptive preference and,et préférences et intentions contraceptives
+4252,intentions,NA
+4253.199,uh family planning service quality and,euh qualité du service de planification familiale et
+4255.28,we also have gps coordinates that are,nous avons aussi des coordonnées GPS  qui sont
+4257.28,displaced,déplacés
+4258.8,for all of our participants in,pour tous nos participants dans les
+4260.239,households,"ménages,"
+4262.08,so these are only a few of the topics,donc ce ne sont que quelques-uns des sujets sur
+4264.239,that collect data on,lesquels des données sont collectées
+4266.48,and,et
+4268.64,our survey instruments are actually,nos instruments d'enquête sont réellement
+4270,available on the pma website so if you,"disponibles sur le site Web de pma, donc si vous"
+4272.159,go to pma's website and you go to the,allez sur le site Web de pma et que vous allez dans l'
+4274.4,survey methodology tab then you can find,"onglet méthodologie d'enquête, alors  vous pouvez trouver"
+4277.04,all of our survey instruments from,tous nos instruments d'enquête de la
+4279.6,phase 1 phase 2 and then we'll be,"phase 1 de la phase 2, puis nous"
+4282,posting phase 3 survey instrument,publierons bientôt l'instrument d'enquête de la phase 3
+4284.08,shortly,NA
+4285.12,and what i have here up on this slide,"et  ce que j'ai ici sur cette diapositive,"
+4287.36,these topics most of them are um,"ces sujets, la plupart d'entre eux sont"
+4290.48,available for longitudinal data analysis,"disponibles pour l'analyse longitudinale des données,"
+4292.96,there's one or two that we've changed,il y en a un ou deux que nous avons modifiés au
+4294.64,over time across phases but for the most,"fil du temps à travers les phases, mais pour la plupart,"
+4296.8,part you can do longitudinal analysis of,vous pouvez faire une analyse longitudinale de
+4299.36,things like empowerment um,choses comme l'autonomisation et
+4302,reproductive histories and uh fertility,les antécédents reproductifs  et euh les
+4304.159,intentions and so on,intentions de fertilité et ainsi de suite
+4306.239,so i do see,donc je vois
+4308,um a question in the chat,une question dans le chat
+4310.719,uh so one question for the iphone's team,euh donc une question pour l'équipe de l'iphone
+4314,what are the steps to registering for,quelles sont les étapes pour s'inscrire aux
+4315.84,ipham's data,données d'ipham
+4319.199,that's a great question,c'est une excellente question
+4320.88,so on our,donc sur notre
+4322.64,website um so i had scrolled down just a,site Web euh donc j'avais fait défiler juste un
+4325.44,little bit and clicked a button that,un peu et cliqué sur un bouton qui
+4327.52,said get data,disait obtenir des données
+4329.12,right immediately to the right of that,juste à droite de celui-ci
+4330.64,there's a button that says registered,il y a un bouton qui dit enregistré
+4332.56,here,ici
+4333.76,and just a re-emphasize always free,et juste un rappel toujours libre
+4336.96,to access so just register,d'accès alors inscrivez
+4339.52,tell us a little bit about how you plan,"-vous, dites-nous un peu comment vous prévoyez"
+4340.96,to use the data and then um i try to uh,d'utiliser les données  et puis euh j'essaie euh de
+4346.32,read those with like almost every day,lire ceux avec presque tous les jours
+4348.239,that they come in so within about a,où ils arrivent donc dans environ un
+4350.159,business day i'll be able to read it um,jour ouvrable je pourrai le lire euh
+4352.48,and,NA
+4353.36,as soon as you receive an email from us,et dès que vous recevrez un e-mail de notre part
+4355.12,that your,que votre
+4356.159,registration was approved then you can,"reg  L'inscription a été approuvée, alors vous pouvez"
+4358.239,go ahead log in,vous connecter en
+4360.159,using your credential the you know,"utilisant vos informations d'identification, le"
+4361.84,password and email you used and you can,mot de passe et l'e-mail que vous connaissez et vous pouvez
+4364.08,go ahead and down the data,aller de l'avant et descendre les données
+4365.6,right away,tout de
+4368.64,all right and uh thanks very much devin,suite et euh merci beaucoup devin la
+4371.52,second question is ipham's the preferred,deuxième question est la
+4373.44,way to access pma data uh so very good,façon préférée d'accéder à pma  données euh donc très bonne
+4376.32,question uh so for right now um you can,question euh donc pour le moment euh vous pouvez
+4379.44,access the data either through ipbombs,accéder aux données soit via ipbombs
+4381.199,or through the pma website and either,soit via le site web pma et les deux
+4383.679,ways are perfectly acceptable,manières sont parfaitement acceptables
+4386.159,um and the data are in slightly,euh et les données sont dans
+4388.159,different formats across these uh these,des formats légèrement différents à travers ces euh ces
+4390.08,two modes of of accessing them um,"deux modes d'accès  euh,"
+4393.679,but you know you won't have any,mais vous savez que vous n'aurez aucune
+4395.12,difficulty doing analysis,difficulté à effectuer une analyse
+4397.44,with either either data set so you could,"avec l'un ou l'autre des ensembles de données, vous pouvez donc"
+4399.679,use either the pma website or,utiliser le site Web pma ou
+4402.32,the ipam's web pma website for accessing,le site Web pma de l'ipam pour accéder aux
+4404.719,data,données
+4407.36,um so a few other notes about our,"euh, donc quelques autres notes sur nos"
+4409.52,longitudinal panel data,"données de panel longitudinales,"
+4411.36,so baseline panel data are available for,donc les données de base du panel  sont disponibles pour
+4413.6,all eight countries right now and as i,les huit pays en ce moment et comme je
+4415.76,just mentioned they can be accessed,"viens de le mentionner, ils sont accessibles"
+4417.04,through,via
+4417.84,the ipams pma website or,le site Web ipams pma ou
+4420.48,the pma main website,"le site Web principal pma,"
+4422.56,the links are shown here,les liens sont affichés ici
+4424.96,and we have two phases of longitudinal,et  nous avons deux phases de
+4426.96,panel data so we have baseline and,"données de panel longitudinales, nous avons donc une ligne de base et un"
+4428.64,follow-up available and posted online,suivi disponibles et publiés en ligne
+4431.04,for kenya nigeria drc and burkina faso,"pour le kenya, le nigeria, la rdc et le burkina faso"
+4434.48,and then this summer we'll be posting,", puis cet été, nous publierons des"
+4436.48,data for,données pour le
+4437.76,rajasthan india,"rajasthan, l'inde, l'"
+4439.36,uganda cote d'ivoire and niger so by the,"ouganda, la côte d'ivoire et le niger, donc d'ici le"
+4442.64,summer we'll have,"l'été, nous aurons des"
+4444.08,panel data for all eight countries where,données de panel pour les huit pays où
+4446.239,we work,nous travaillons
+4447.52,and then shortly afterwards we'll we'll,", puis peu de temps après, nous"
+4449.52,also have phase three data,"aurons également des données de phase trois,"
+4451.52,so ken in nigeria will post phase three,donc ken au nigeria publiera des données de phase trois d'
+4454.8,data by august of this year,"ici août de cette année,"
+4457.28,then followed shortly by burkina faso,puis peu de temps après le burkina faso
+4459.36,and drc,et  drc
+4461.12,um then you know we referred to some of,um alors vous savez que nous avons fait référence à certaines
+4464,the research that pma has done with,des recherches que pma a faites avec
+4465.44,these data or that has been done with,ces données ou qui ont été faites avec des
+4467.04,pma data,données pma
+4468.4,but we've done obviously more research,mais nous avons évidemment fait plus de recherches
+4470.8,than what was just presented here and if,que ce qui vient d'être présenté ici et si
+4472.719,you want to look at more of our research,"vous voulez regarder plus de  nos recherches,"
+4475.84,you can access it through the pma google,vous pouvez y accéder via le
+4478.159,scholar website,site Web pma google Scholar
+4479.76,and there's a link on this powerpoint,et il y a un lien sur ce powerpoint
+4481.76,that we'll make,que nous mettrons à
+4482.88,available after this session,disposition après cette session
+4487.28,next slide,"prochaine diapositive,"
+4489.84,so if you have questions about anything,donc si vous avez des questions sur tout ce que
+4491.36,we presented today,"nous avons présenté aujourd'hui,"
+4493.12,we encourage you to email us you can,"nous vous encourageons  ou pour nous envoyer un e-mail, vous pouvez"
+4496.56,reach us through these two email,nous joindre via ces deux adresses e-mail
+4498.56,addresses here the first four uh is the,ici les quatre premières euh sont l'
+4501.12,general email address for pma,adresse e-mail générale pour pma
+4503.76,and the second is for ippams,et la seconde est pour ippams
+4506,so any questions that you have please,donc toutes les questions que vous avez s'il vous plaît
+4508,feel free to reach out and we'll answer,n'hésitez pas à nous contacter et nous répondrons à
+4510.8,your questions very shortly,"vos questions  très prochainement,"
+4513.52,i have one that came up in in the chat,j'en ai un qui est apparu dans le chat
+4515.679,that i'd kind of like to to touch on if,que j'aimerais aborder si
+4518,this would be a good time um someone,ce serait un bon moment euh quelqu'un a
+4520.239,asked any takeaway messages from this,demandé des messages à retenir de cette
+4522.56,analysis on what might be the key things,analyse sur ce que pourraient être les éléments clés
+4525.28,to look for as far as the impact of,à rechercher comme  en ce qui concerne l'impact de
+4527.12,covet 19 on family planning use,covet 19 sur l'utilisation de la planification familiale
+4530.159,and one thing that comes to mind that um,et une chose qui me vient à l'esprit que euh
+4532.719,i meant to talk about the breakout,je voulais parler de la
+4534.159,session but,séance en petits groupes mais
+4535.52,we we saw in kenya that concern over,nous avons vu au kenya que l'inquiétude concernant l'
+4538.719,covet infection was was a significant uh,infection de covet était un
+4542.56,determinant of adoptions and,déterminant important des adoptions et de l'
+4544.56,discontinuation,abandon
+4546.32,so i feel like a takeaway could be to,donc  j'ai l'impression qu'un plat à emporter pourrait être d'
+4548.48,use the other variables that we didn't,utiliser les autres variables dont nous n'avons pas
+4550.719,discuss in the breakout sessions to kind,discuté lors des séances
+4552.64,of narrow in on why was that and there,NA
+4555.28,are variables in pma about uh whether,en petits groupes pour préciser pourquoi c'était et il y a des variables dans pma pour savoir si
+4558.4,the woman tried to access health care,la femme a essayé d'accéder aux soins de santé
+4561.36,for and ask the reason not just about,pour  et demander la raison non seulement de
+4563.52,family planning use and whether she had,l'utilisation de la planification familiale et si elle a eu
+4565.36,any um,des
+4566.56,obstacles or difficulties accessing care,obstacles ou des difficultés à accéder aux soins
+4568.96,during restrictions so kind of narrowing,"pendant les restrictions, donc en quelque sorte de"
+4570.96,in on why,NA
+4572.96,why that might be the case,préciser pourquoi cela pourrait être le cas
+4574.96,or or why we didn't see,ou pourquoi nous n'avons pas vu d'
+4577.44,significance about household income loss,importance à propos des choses de perte de revenu du ménage
+4580,things like that so um though today the,comme ça alors euh bien qu'aujourd'hui les
+4582.239,data is really rich um so definitely go,données soient vraiment riches euh alors allez certainement
+4585.199,go and explore on the website,explorer sur le site
+4588.4,thanks devin and just adding to that um,merci devin et ajoutez juste à ça euh
+4591.12,uh if you're interested in some of the,euh si vous êtes intéressé par certains des
+4592.88,results that we have on the impact of,résultats que nous avons sur l'impact de
+4594.719,coveton on contraceptive use we do have,"coveton sur la contraception  utiliser, nous"
+4597.36,a few papers on that that have been,avons quelques articles sur cela qui ont été
+4599.12,published one of which we referred to,publiés dont l'un auquel nous avons fait référence
+4600.719,earlier and overall we found that,"plus tôt et dans l'ensemble, nous avons constaté que"
+4603.52,in um in our geographies where we have,dans um dans nos zones géographiques où nous avons des
+4606.64,data from before and during covid we did,"données avant et pendant le covid, nous n'avons"
+4609.199,not see significant changes in overall,pas vu de changements significatifs dans l'utilisation globale de la
+4611.44,contraceptive use of the population,contraception de  Au
+4613.04,level we also found that at the,"niveau de la population, nous avons également constaté qu'au"
+4615.36,individual level women were more likely,"niveau individuel, les femmes étaient plus susceptibles"
+4617.199,to adopt uh contraception than they were,d'adopter euh la contraception qu'elles ne l'étaient
+4619.6,to discontinue,d'
+4620.96,so this was contrary to what was,"arrêter, ce qui était contraire à ce à quoi on"
+4622.48,expected that overall we expected to see,"s'attendait.  Dans l'ensemble, nous nous attendions à voir que"
+4625.679,you know pretty large impact of covadon,vous connaissez l'impact assez important de l'utilisation des
+4627.84,contraceptive use but we didn't see that,"contraceptifs covadon, mais nous n'avons pas vu cela"
+4630.32,at the population or individual level,"au niveau de la population ou de l'individu,"
+4632.4,but you know as was illustrated in this,"mais vous savez, comme cela a été illustré dans cette"
+4634.159,session there's variation among women by,"session, il y a des variations parmi les femmes en"
+4636.8,their their fear of covid uh so the,"raison de leur peur du covid, euh donc l'"
+4639.04,story is somewhat more nuanced than than,histoire  est un peu plus nuancé
+4641.199,just the overall population level um and,que le niveau global de la population euh et
+4644.48,like uh devin said we're really just,"comme euh devin l'a dit, nous ne faisons"
+4646.08,scratching the surface of the analysis,qu'effleurer la surface de l'analyse
+4648.08,that we can do with pma data so i think,"que nous pouvons faire avec les données pma, donc je pense"
+4650.88,there's,qu'il
+4652,there's there's much more that can be,y a beaucoup plus qui peut être
+4653.44,done,fait
+4654.719,and i see another question in the chat,et je vois  une autre question dans le chat
+4657.28,uh what what caveats do you add to,euh quelles mises en garde ajoutez-vous pour vous
+4659.36,ensure one appreciates that some of the,assurer que certaines des
+4660.88,pma data are regional within countries,données pma sont régionales au sein des pays
+4663.199,and not national like congo india and,et non nationales comme le congo l'inde et le
+4665.199,nigeria so that's true,nigeria donc c'est vrai
+4667.679,so we don't uh produce national,donc nous ne produisons pas d'
+4670.08,estimates for india dr congo or nigeria,estimations nationales pour l'inde dr congo  ou le nigeria
+4674,so the data that we have are,afin que les données dont nous disposons ne soient
+4675.28,representative only at the sub-national,représentatives qu'au niveau infranational
+4676.96,level so we can't make any statements,", nous ne pouvons donc faire aucune déclaration"
+4679.52,about national level estimates of covid,sur les estimations au niveau national de covid
+4681.92,or family planning for those geographies,"ou de planification familiale pour ces g  géographiques,"
+4684.32,but we do,mais nous
+4686.32,provide data at the sub-national level,fournissons des données au niveau infranational
+4688.159,which i think is,"qui, je pense,"
+4689.84,we found is valuable for for programs,sont utiles pour les programmes de
+4693.28,family planning uh,planification familiale euh
+4694.8,government activities and um and other,activités gouvernementales et euh et à d'autres
+4698.08,purposes as well,"fins,"
+4699.44,including research,"y compris la recherche,"
+4701.6,so more information about where our data,donc plus d'informations sur l'endroit où nos données
+4704.08,are represented is on our website and,sont représentées se trouvent sur notre site Web
+4706.08,and also like i said we'll make this,"et aussi, comme je l'ai dit, nous rendrons cette"
+4707.44,presentation available if you have more,présentation disponible si vous avez d'autres
+4708.88,questions,"questions,"
+4712.56,all right,très
+4716.96,great,NA
+4718.08,so uh,"bien, donc"
+4719.44,if there are no more questions um,"s'il n'y a plus de questions,"
+4721.92,we want to thank you for for attending,nous voulons vous remercier d'avoir participé à
+4723.679,this uh this webinar um we really,"ce webinaire, nous"
+4725.92,appreciate uh your your interest in our,apprécions vraiment votre intérêt.  dans nos
+4727.84,data and again um if you have any,données et encore euh si vous avez des
+4730.4,questions please feel free to email us,"questions, n'hésitez pas à nous envoyer un e-mail"
+4732.8,at the addresses i mentioned in the,aux adresses que j'ai mentionnées dans la
+4734.4,previous slide,diapositive précédente
+4735.84,and,et
+4736.96,thanks very much once again,merci encore une fois

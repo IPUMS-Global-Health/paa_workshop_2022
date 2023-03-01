@@ -1,0 +1,776 @@
+time,english,french
+7.44,all right so um,"d'accord, alors"
+9.679,welcome everyone to the breakout session,bienvenue à tous à la session en
+12.559,for,NA
+13.679,our users hopefully,"petits groupes pour nos utilisateurs, j'espère que la"
+15.44,most of you uh have,plupart d'entre vous ont déjà
+17.52,used r to some extent before,utilisé r dans une certaine mesure auparavant
+20.4,and if not that's okay um,"et si ce n'est pas grave,"
+22.4,consider this my pitch for you to join,considérez ceci comme mon argumentaire pour que vous rejoigniez
+24.8,the the dark side,"le côté obscur,"
+27.68,i'm matt gunther and i'm a senior data,je suis matt gunther et je  Je suis un
+30.32,analyst with ippam's pma so i've been,"analyste de données senior avec pma d'ippam, donc je suis"
+33.44,with pm ipm's pma for,avec pm ipm depuis
+35.84,uh around,environ
+37.52,five years i think and,"cinq ans, je pense et"
+39.6,my role is mainly,mon rôle consiste principalement à
+41.44,providing,fournir
+42.559,technical assistance to,une assistance technique à
+44.48,um the research faculty and postdocs and,"la faculté de recherche, aux postdoctorants et aux"
+47.12,grad students on our team,"étudiants diplômés de notre équipe,"
+49.12,um at least those who use our uh we use,au moins ceux  qui utilisent notre euh que nous utilisons
+52,are quite a bit on our team because of,sont un peu dans notre équipe en raison de
+55.36,its,sa
+56.16,capacity for spatial data analysis in,capacité d'analyse de données spatiales en
+58.719,addition to all the survey analysis,plus de toute l'analyse d'enquête sur laquelle
+60.239,we'll be focusing on in this session,nous nous concentrerons dans cette session
+63.359,um what we're going to be doing is,euh ce que nous allons faire
+65.36,covering a few of the data manipulation,couvre quelques-uns  des étapes de manipulation des données
+67.2,steps,NA
+68.159,um that'll be necessary in route to,euh qui seront nécessaires pour
+69.92,building the kind of,construire le type de
+71.76,model that we,"modèle qui, nous l'"
+73.119,hope will answer the research question,"espérons, répondra à la question de recherche"
+74.88,that devin's been discussing which is,NA
+77.04,about how covid19 impacted the family,"dont Devin a discuté, à savoir comment covid19 a eu un impact sur les"
+79.68,planning behaviors for women,comportements de planification familiale des femmes
+82.24,in the pma panel study and then by,de la pma  étude de panel et ensuite par
+84.32,extension uh what we might learn about,extension euh ce que nous pourrions apprendre sur
+86.56,the broader population of women uh,la population plus large de femmes euh
+88.72,reproductive age women in the countries,femmes en âge de procréer dans les pays
+91.04,burkina faso in kenya and just as a,burkina faso au kenya et juste pour
+93.04,reminder those are the two,rappel ce sont les deux
+94.56,nationally representative samples that,échantillons représentatifs au niveau national qui
+96.72,are currently available from,sont actuellement disponibles auprès de
+98.84,pma,pma
+100.64,we also have samples from,nous avons aussi des échantillons  de la
+103.2,drc and nigeria as well that are,rdc et du nigeria également qui sont
+105.439,regionally representative as phil,représentatifs au niveau régional comme phil l'a
+106.72,mentioned,"mentionné,"
+108.72,so this,donc cette
+109.759,presentation is,NA
+111.759,going to be available as an r markdown,présentation sera disponible sous forme de
+113.52,file this is just uh,fichier de démarquage r c'est juste
+115.84,our markdown slides presentation but all,euh notre présentation de diapositives de démarquage mais
+117.92,of it is just our code so,tout cela n'est que notre code donc
+120.32,we'll make this available for you so,nous le rendrons disponible pour  vous de sorte
+122.24,that if if it's useful you can use any,"que si c'est utile, vous pouvez utiliser n'importe"
+124.719,of the code in your own workflow and,quel code dans votre propre flux de travail et
+127.28,just change the samples and variables,simplement changer les échantillons et les variables
+129.039,and,et des
+129.759,things like that,choses comme ça
+131.28,um,euh
+132.08,see we've got a few people in the,voyez nous avons quelques personnes dans la
+133.2,waiting room,salle d'attente d'
+136.8,okay let's get started,accord commençons
+140.879,so um we're kind of picking up where,alors euh nous '  Je reprends en quelque sorte là où
+142.56,devin left off which is,"Devin s'est arrêté, c'est-à-"
+146.56,you know we've kind of created our data,dire que nous avons en quelque sorte créé notre
+148.72,extract through the iphone's pma website,extrait de données via le site Web pma de l'iphone
+152.239,and it's very important if you're an r,et qu'il est très important si vous êtes un
+154.08,user to remember to select that fixed,utilisateur R de vous en souvenir  ber pour sélectionner ce
+156.239,width data format from ipams that's the,format de données à largeur fixe à partir d'ipams c'est le
+158.4,dat file what you'll actually receive is,fichier dat ce que vous recevrez réellement est
+161.2,a compressed data file it's a,un fichier de données compressé c'est un
+164.08,gz file you don't have to unzip this you,fichier gz que vous n'avez pas à décompresser cela vous
+166.56,don't need any extra software to,n'avez pas besoin de logiciel supplémentaire pour
+168.64,decompress the file we're going to load,décompresser le fichier nous  allons charger
+170.879,that right into our,cela directement dans notre
+172.959,all you really need to do to follow,tout ce que vous avez vraiment besoin de faire pour
+174.319,along with what we're doing today is to,suivre ce que nous faisons aujourd'hui est de
+177.28,put,mettre
+178.72,the two associated files in a,les deux fichiers associés dans un
+181.76,subfolder in your r working directory,sous-dossier de votre répertoire de travail r
+184,which i usually put in a folder called,que je place habituellement dans un dossier appelé
+185.92,data,data
+187.44,so you're going to download the dat file,donc  vous allez télécharger le fichier dat
+189.36,that's your data and then over here,"qui contient vos données, puis ici,"
+191.68,under the code book menu which is,sous le menu du livre de codes qui est
+193.2,blurred out you'll see this ddi link and,"flou, vous verrez ce lien ddi"
+195.76,that is basically the variable labels,et c'est essentiellement les étiquettes de variable
+197.92,and value labels that we're going to be,et les étiquettes de valeur sur lesquelles nous allons
+200,working with in our so you need both of,travailler  avec dans notre donc vous avez besoin de
+201.76,these files download them and save them,"ces deux fichiers, téléchargez-les et enregistrez-les"
+204,to your working directory,dans votre répertoire de travail
+207.599,uh now ipams,euh maintenant ipams
+209.12,publishes a r package in our package,publie un package r dans notre package
+211.84,called iphone's r to make working with,appelé iphone's r pour rendre le travail avec
+214.48,um,euh
+215.44,all of this metadata devin sort of,toutes ces métadonnées devin en quelque sorte
+217.44,introduce uh much easier,introduire euh beaucoup plus facile
+219.519,um so you can download this this package,euh donc vous  peut télécharger  ad this this package
+222.319,iphones are from uh crayon just like you,iphones are from uh color like you
+224.879,would any other major r package,would any other major r package
+227.68,with install packages ipams are,with install install packages ipams are
+231.68,and then,puis
+232.64,each session when you open,chaque session lorsque vous ouvrez
+234.64,or to work with an iphone's extract,"ou travaillez avec un extrait d'iphone,"
+236.08,you'll just need to load that library,vous n'aurez qu'à charger cette bibliothèque
+238.159,and that library comes with a function,et cette bibliothèque vient  avec une fonction
+239.439,called read iphone's micro uh for,appelée lire le micro euh de l'iphone pour les
+241.439,microdata so we'll specify the ddi file,microdonnées donc nous allons spécifier le fichier ddi
+245.36,and the data file,et le fichier de données
+246.959,there you'll have a different number,là vous aurez un numéro différent
+248.319,here of course if it's your first,ici bien sûr si c'est votre premier
+250.72,uh your first,euh votre premier
+252,data extract from iphams it'll be number,extrait de données d'iphams ce sera le numéro
+254.159,zero zero zero one and i've,zéro  zéro zéro un et j'ai déjà
+256.32,got 93 data files somehow already,"93 fichiers de données d'une manière ou d'une autre,"
+259.68,but um that's the only major difference,mais euh c'est la seule différence majeure
+261.84,that you need to change,"que vous devez changer,"
+264.16,we'll also be working with three other,nous travaillerons également avec trois autres
+265.919,um,NA
+267.52,uh packages in this session on the first,paquets euh euh dans cette session sur le
+270,one is actually a suite of packages that,premier est en fait une suite de paquets  que la
+272.639,most our users are probably familiar,"plupart de nos utilisateurs connaissent probablement,"
+274.24,with it's the tidy verse,c'est que le verset bien rangé
+276.96,includes,comprend
+278.56,a graphics package and several,un package graphique et plusieurs
+280.96,other small packages that are extremely,autres petits packages qui sont extrêmement
+282.72,useful for data manipulation,utiles pour la manipulation de données
+284.639,um,NA
+285.6,in addition to that we're going to be,"en plus de cela, nous allons"
+286.96,using the labeled package to work with,utiliser le laboratoire  eled package pour travailler avec
+289.199,some value labels and then finally we'll,"certaines étiquettes de valeur, puis enfin"
+291.52,be using the surveyor package which is a,nous utiliserons le package surveyor qui est un ensemble de
+294.479,tidy verse wrapper around the,versets bien rangé autour du
+297.52,survey package,package d'enquête
+298.96,developed by a statistician named thomas,développé par un statisticien nommé thomas
+301.039,lumley to work with survey weights,lumley pour travailler avec les poids d'enquête
+303.36,and,et
+304.16,cluster sample design,la conception de l'échantillon en grappes
+306,so we'll be demonstrating how to do that,afin que nous soyons  démontrant comment faire cela
+308.8,incorporate survey weights into your,incorporer des poids d'enquête dans votre
+310.24,analysis,analyse
+313.039,so we'll begin by kind of considering,afin que nous commencions par considérer
+314.88,the analytic sample that we're working,l'échantillon analytique avec lequel nous travaillons
+317.199,with,NA
+318.08,uh as,euh comme la
+319.52,routine mentioned you know pma uses this,"routine l'a mentionné, vous savez que pma utilise cette"
+321.199,open panel design so that women can,conception de panel ouvert afin que les femmes puissent
+323.68,enter the panel,entrer dans le panel
+325.039,after phase one for example if they age,après la phase  un par exemple s'ils vieillissent
+327.52,if they reach age 15 uh after we've,s'ils atteignent 15 ans euh après qu'on ait
+329.919,already started um,déjà commencé euh
+331.35,[Music],[Musique]
+332.72,so and they can also be lost to follow,donc et ils peuvent aussi être perdus de
+334.72,up at any phase if for example they,vue à n'importe quelle phase si par exemple ils
+336.4,leave the,quittent la
+337.84,study area if they leave the enumeration,zone d'étude s'ils quittent la
+339.759,area,zone de dénombrement
+340.96,um,euh
+341.919,so what you really want to do to start,"donc ce que vous voulez vraiment faire pour commencer,"
+343.68,off is is take a look at that variable,c'est jeter un œil à cette variable
+345.12,that devon pointed out result fq and,que devon a souligné résultat fq et
+347.12,this this is the result of the female,c'est le résultat du questionnaire féminin
+349.039,questionnaire,NA
+350.16,when we have a wide format data extract,lorsque nous avons un extrait de données grand format
+352.639,like the one we're working with here um,comme celui avec lequel nous travaillons ici euh
+354.4,you'll see two versions of result fq one,vous verrez deux versions du résultat fq on
+357.12,will have the suffix one attached to it,aura le suffixe un attaché
+358.96,and that's the result of the phase one,et c'est le résultat du questionnaire de la phase
+361.12,questionnaire and then the other will,un et puis l'autre
+362.96,have a two and that's from phase two uh,"aura un deux et c'est de la phase deux  euh,"
+366.24,what you can see here is that um,"ce que vous pouvez voir ici, c'est que"
+369.759,in the extract we created we selected,"dans l'extrait que nous avons créé, nous avons sélectionné"
+372.16,female respondents only so that,uniquement des répondantes de sorte que
+375.12,everyone who's in our data extract had,toutes les personnes figurant dans notre extrait de données
+377.28,to complete you know one of the two,"devaient remplir, vous savez, l'un des deux"
+380,female questionnaires there are other,"questionnaires féminins, il y a d'autres"
+381.52,household members on the roster that get,membres du ménage sur la liste
+384,that get dropped from the file,qui obtiennent  supprimé du fichier
+386.479,um but,euh mais
+388.479,we have a bunch of nas here at the,nous avons un tas de nas ici en
+390.319,bottom,bas
+391.199,now these are women who appeared only at,maintenant ce sont des femmes qui ne sont apparues qu'à la
+394.56,phase two so there's no record for them,phase deux donc il n'y a pas d'enregistrement pour elles
+396.72,at phase one but in our wide format,à la phase un mais dans notre
+399.039,extract we have one row for each woman,extrait au format large nous avons une ligne pour chaque femme
+401.36,so,donc
+403.44,these individuals just don't have any,ces  les individus n'ont tout simplement pas de
+405.199,data in the phase one columns you'll see,"données dans les colonnes de la phase un, vous"
+407.6,that they do have data in the phase two,"verrez qu'ils ont des données dans les colonnes de la phase deux,"
+409.199,columns that's what those ana is mean,c'est ce que ces ana signifient
+413.44,if we look at the same variable from,si nous regardons la même variable de la
+415.039,phase two uh you see a different number,phase deux euh vous voyez un nombre différent
+417.36,of n a values these are people who,"de  n a valeurs, ce sont des personnes qui"
+420.96,enter the panel late at phase two,"entrent dans le panel tard à la phase deux,"
+424.16,so there's no phase one record for them,"il n'y a donc pas d'enregistrement de phase un pour elles,"
+426.479,but then you also see that result fq um,mais vous voyez également que le résultat fq um
+429.919,has a number of other,est associé à un certain nombre d'autres
+431.68,uh codes associated with it that,codes euh qui
+433.36,describe why,décrivent pourquoi
+434.88,a particular female questionnaire might,un questionnaire féminin particulier pourrait
+436.479,not have been completed,ne pas avoir  été remplis
+438.56,and these can include things like,et ceux-ci peuvent inclure des choses comme
+441.199,just declining to participate,simplement refuser de participer
+443.28,or,ou l'
+445.84,any of the reasons that you see here,une des raisons que vous voyez ici
+449.44,what we want to do is only include women,ce que nous voulons faire est d'inclure uniquement les femmes
+451.12,who completed the female questionnaire,qui ont rempli le questionnaire féminin
+453.36,in both phase one and phase two so i'm,"à la fois dans la phase un et la phase deux, donc je"
+455.44,going to do this with the filter,vais le faire  avec la
+456.479,function and we saw that code one equals,fonction de filtre et nous avons vu que le code un équivaut à
+459.36,fully completed so we'll say,"complètement rempli, nous dirons donc"
+461.84,filter if both of these variables equal,filtrer si ces deux variables valent
+464.16,one,un
+464.96,and you can see here how many cases are,et vous pouvez voir ici combien de cas il
+467.919,left,reste
+471.199,in addition to focusing on women who,en plus de se concentrer sur les femmes qui ont
+473.599,completed both questionnaires we're,rempli les deux questionnaires nous
+475.12,going to be working only with the de,allons  travailler uniquement avec la
+476.479,facto population of women and these are,population de facto des femmes et ce sont des
+478.16,women who slept in the household the,femmes qui ont dormi dans le ménage la
+479.68,night bef,nuit avant
+480.639,the night before the household interview,"la nuit avant l'entretien ménager,"
+483.44,you'll find that information in the,vous trouverez cette information dans le
+484.56,variable residence,v  résidence ariable
+489.039,so now these are our final uh sample,alors maintenant ce sont nos tailles d'échantillon finales euh
+492.08,sizes um,NA
+493.56,5208 women in burkina faso and 6935,5208 femmes au burkina faso et 6935
+497.44,in kenya,au kenya
+500.16,so we'll move on now to uh recoding some,donc nous allons passer maintenant à euh recoder certaines
+502.24,of the independent variables that you,des variables indépendantes que vous avez
+503.84,saw devin um checking out from the,vues devin um vérifier sur le
+505.44,website,site
+506.96,um,um
+508.4,so,donc
+509.52,i think something that's really,je pense  quelque chose qui est vraiment
+510.96,important to know if you're an r user,important à savoir si vous êtes un utilisateur r
+512.64,working with ibm's data is that,"travaillant avec les données d'ibm, c'est que"
+515.12,number one we have a lot of categorical,"numéro un, nous avons beaucoup"
+517.2,variables,NA
+518.32,from sort of like,de variables catégorielles comme
+520.64,select all that apply questions often,"sélectionner toutes les questions qui s'appliquent souvent,"
+522.959,there are dichotomized versions of those,il existe des versions dichotomisées de celles
+524.88,of those questions,de ces questions
+526.48,um if you've worked in r for any length,euh si vous  'ai travaillé dans r pendant un
+529.12,of time you're probably familiar with,"certain temps, vous savez probablement"
+530.399,working with um factors for categorical,travailler avec des facteurs um pour des
+533.2,data but iphones doesn't publish,"données catégorielles, mais iphones ne publie pas de"
+535.279,categorical data as factors,"données catégorielles en tant que facteurs,"
+537.6,we use,nous utilisons
+538.8,labeled numeric variables,des variables numériques étiquetées
+541.839,and the difference here is that,et la différence ici est que
+544.88,you'll see an integer code for each,vous verrez un entier  code pour chaque
+547.2,response and then in these square,"réponse, puis entre ces"
+549.12,brackets,"crochets,"
+550.399,we have the value label um for that,nous avons l'étiquette de valeur um pour cette
+554.24,response and we also have variable,réponse et nous avons également des
+556.16,labels,étiquettes de variables
+557.12,which you can,que vous pouvez
+558.64,pull up at any time with this ipams are,afficher à tout moment avec cet ipams sont
+561.68,uh function,uh f  onction
+563.279,so um if you're coming to r from stata,donc euh si vous venez de stata
+565.44,or spss this is probably more familiar,ou spss c'est probablement plus familier
+568.64,um,euh
+569.76,then factors would be,alors les facteurs seraient que
+571.76,we do this for a number of reasons and,nous le faisons pour un certain nombre de raisons et
+573.2,i'm happy to answer a question about why,je suis heureux de répondre à une question sur pourquoi
+575.12,we don't use factors maybe in the q a,nous n'utilisons pas de facteurs peut-être  dans le q a
+578.56,but we'll be showing you how to work,mais nous allons vous montrer comment travailler
+580.56,with these sort of special,avec ce genre de
+582.72,numerically,NA
+584.08,coded and labeled categorical variables,"variables catégorielles spéciales codées numériquement et étiquetées,"
+588.959,so as i mentioned we're gonna be using,"donc comme je l'ai mentionné, nous allons utiliser"
+590.24,that ipam's r package to do a little bit,le package r de cet ipam pour faire un peu
+592.32,of recoding um you know devin,de recodage euh vous savez devin
+594.56,highlighted the fact that we saw a,mis en évidence  le fait que nous ayons vu un
+596.56,number of,certain nombre de cas
+597.76,not in universe cases in one of our,non inclus dans l'univers dans l'une de nos
+600.16,variables coveted income laws,variables convoitées lois sur le revenu
+602.16,and that these actually came from women,et que celles-ci provenaient en fait de femmes
+604.72,who answered a prior question,qui ont répondu à une question préalable
+606.959,about whether their household,sur la question de savoir si leur ménage avait
+609.36,lost any income,"perdu un revenu,"
+611.2,um not necessarily covert related and if,pas nécessairement lié à la dissimulation et si
+613.6,they said that they hadn't lost any,elles ont dit qu'elles  n'avait perdu aucun
+615.44,income of any kind here,revenu d'aucune sorte ici
+618.72,for none,pour aucun
+619.839,this question was,cette question a été
+621.12,skipped and so those cases are marked,ignorée et donc ces cas ne sont
+624.079,not in universe but you know you could,pas marqués dans l'univers mais vous savez que
+626.72,you could recode this variable and,vous pourriez recoder cette variable et les
+628.64,include them as no because if they,inclure comme non parce que s'ils
+630.64,didn't lose income of any kind it makes,"n'ont pas perdu  revenus de toute nature, il est"
+632.72,sense they didn't lose any income,logique qu'ils n'aient pas perdu de revenus à
+634.399,because of covid either so that's what,"cause de covid non plus, c'est donc ce que"
+636.959,we want to do,nous voulons faire
+639.839,oh uh just a reminder you can always,"oh euh juste un rappel, vous pouvez toujours"
+641.92,find information about the universe on,trouver des informations sur l'univers sur
+644.079,the universe tab that,l'onglet univers que
+645.92,devon demonstrated,"devon a démontré,"
+650.72,so here,alors
+653.519,is where we'll be recoding those niu,voici où nous  recodera
+656.8,cases to zeros,à nouveau ces cas niu à
+660.079,again if if you've worked with r but not,zéro si si vous avez travaillé avec r mais pas avec
+662.48,ipm's data you might just try recoding,"les données d'ipm, vous pouvez simplement essayer de recoder"
+666.32,those 99s as zero,"ces 99 comme zéro,"
+669.12,but if you do that you'll notice that,"mais si vous faites cela, vous remarquerez que"
+670.959,the labels get dumped,les étiquettes sont jetées à
+673.519,because of automatic co,cause de la coercition automatique
+675.44,coercion,NA
+677.519,so what you want to do is work with a,"donc ce que vous voulez faire, c'est travailler avec une"
+679.92,function like,fonction comme
+681.6,something from the labeled package which,quelque chose du package étiqueté qui
+683.76,essentially recodes this value but,recode essentiellement cette valeur mais
+685.92,retains the label so you can see here,conserve l'étiquette afin que vous puissiez voir ici
+687.92,now,maintenant
+688.959,the no label is still attached to the,l'absence d'étiquette est toujours attachée au
+692,zero if i had if i had not used labeled,zéro si j'avais si je n'avais pas utilisé étiqueté
+695.36,you would not see these labels anymore,"vous ne verriez plus ces étiquettes,"
+697.36,you just see zeros ones and 97s and 99s,"vous ne verriez que des zéros, des 97 et des 99, d'"
+706.48,uh okay so,"accord, donc"
+708.16,with the remaining um,"avec le reste,"
+710.88,the remaining codes that are not just,les codes restants qui ne sont pas seulement des
+712.72,valid responses those 97s and 99s we'll,"réponses valides, ces 97 et 99, nous"
+715.2,want to now replace them with n a's uh,voudrons maintenant les remplacer par l'
+717.92,iphone's r has a has a little function,iphone de n a  's r a un a une petite
+720.72,label in a if,étiquette de fonction dans a si
+722.56,it's very helpful for this kind of thing,c'est très utile pour ce genre de chose
+724.32,um you can use this pronoun,euh vous pouvez utiliser ce pronom
+727.519,for value,pour la valeur
+729.279,in a lambda function that's what that is,dans une fonction lambda c'est ce que c'est
+732.079,uh and we're saying if the value is,euh et nous disons si la valeur est
+734.079,greater than 90 we would just like to,supérieure à 90 nous  voudrais juste
+735.6,replace those values with n a so that,remplacer ces valeurs par n a pour qu'encore une
+737.76,again that comes from the iphone's r,fois cela provienne du package r de l'iphone
+739.44,package and you can see that that's,et vous pouvez voir que cela est
+741.2,implemented here,"implémenté ici,"
+743.12,you can also,vous pouvez également
+745.36,re-label,ré-étiqueter les
+747.36,variables with with the pronoun label so,variables avec l'étiquette du pronom afin que
+750.24,you can actually,vous puissiez réellement
+751.6,say if the label is is no response or,dire si l'étiquette est n'est pas  réponse ou
+754.399,missing or niu i'd like to,manquant ou niu je voudrais les
+756.88,turn those into n a's as well,transformer en n a aussi d'
+763.6,okay so once you've sort of finished,accord donc une fois que vous avez en quelque sorte fini de
+765.68,working with the labels and negotiated,travailler avec les étiquettes et négocié
+767.92,for example all of the niu cases,par exemple tous les cas niu
+770.56,we do recommend then transforming the,nous vous recommandons de transformer la
+773.2,variable that you're working with into a,variable que vous '  re travaillez avec un
+775.04,factor if it's categorical and what you,facteur s'il est catégorique et ce que vous
+777.76,want to make sure to do is,voulez vous assurer de faire est d'
+780.56,use uh,utiliser euh
+781.54,[Applause],[Applaudissements]
+782.959,this version of as factor it's got an,cette version de comme facteur il y a un
+784.959,underscore in it it comes from the four,trait de soulignement dedans il vient du
+786.959,cats package for working with,paquet quatre chats pour travailler avec
+789.76,with factors that's part of the tidy,des facteurs qui fait partie de  le verset bien rangé
+792.16,verse that we loaded we ran library tidy,"que nous avons chargé, nous avons exécuté le verset de la bibliothèque,"
+795.12,verse,NA
+797.2,what this does is it takes the value,"ce que cela fait, c'est qu'il prend l'"
+799.76,label and uses it as the,étiquette de valeur et l'utilise comme
+802.079,factor level,niveau de facteur
+803.839,so you can see here that our numeric,afin que vous puissiez voir ici que nos
+805.6,codes are gone and they've been replaced,codes numériques ont disparu et qu'ils ont été remplacés
+807.36,with,par des
+808.32,characters no and yes and n a,caractères non et oui et n a
+811.839,the reason we want to,la raison  nous voulons
+813.279,transform our,transformer nos
+815.279,numeric variables into,variables numériques en
+817.2,factors in the end is because,facteurs à la fin parce que
+820,if you do any kind of graphing you're,"si vous faites n'importe quel type de graphique,"
+822.079,going to then see the value label rather,vous verrez alors l'étiquette de valeur plutôt
+824.48,than the numeric code you'll see the,"que le code numérique, vous verrez les"
+825.92,numeric codes if you forget to turn it,codes numériques si vous oubliez de le transformer
+827.839,into a factor and it also makes working,en  un facteur et cela rend également le travail
+830,with dummy variables in regression,avec des variables fictives dans l'
+831.76,analysis uh quite a bit easier as well,analyse de régression euh un peu plus facile ainsi que les
+837.12,likert style questions can be treated as,questions de style likert peuvent également être traitées comme des
+839.68,factors as well here's that covid,facteurs voici cette
+841.839,concern variable that devon introduced,variable de préoccupation covid que devon a introduite
+845.12,indicating a woman's level of concern,indiquant le niveau de préoccupation d'une femme à l'
+847.44,about becoming affected with covid19 and,idée d'être affectée par covid19 et
+850.079,this is at at phase two amidst the,c'est à la phase deux au milieu de la
+852.959,pandemic,"pandémie,"
+854.72,you can see here that we've got this,vous pouvez voir ici que nous avons cette
+856.16,likert style uh scale ranging from not,échelle euh de style likert allant de pas
+859.04,concerned to very concerned but then you,inquiet à très inquiet mais ensuite vous
+861.12,have this code five,avez ce code cinq
+862.8,um,um
+863.6,currently or previously infected with,curr  ently ou précédemment infecté par
+865.36,covid19,covid19
+866.88,and you have a few missing responses so,"et vous avez quelques réponses manquantes, donc"
+869.44,um,euh
+873.12,this time what we're going to do is use,"cette fois, ce que nous allons faire est d'"
+875.6,that use that value pronoun again to say,utiliser à nouveau ce pronom de valeur pour dire
+878.8,that we would like to label n a,que nous aimerions étiqueter n a
+881.44,any value where the value,n'importe quelle valeur où la valeur
+884.399,is greater or equal,est supérieure ou égale
+886.72,greater than or equal to five,supérieur ou égal à cinq
+888.639,and then i'm just going to speed things,", puis je vais simplement accélérer les"
+890.56,along here and pipe that directly to our,choses ici et diriger cela directement vers notre
+892.8,function as factor,fonction en tant que facteur
+895.279,so,afin
+896.24,that gets rid of the 5 and the 98 that,que cela se débarrasse du 5 et du 98 que
+898.56,we saw and then um turns it into a,"nous avons vus, puis euh le transforme en un"
+901.36,factor,facteur
+907.36,uh okay so something that we feature a,euh d'accord  donc quelque chose que nous présentons
+909.92,lot on the blog is,beaucoup sur le blog est une
+912.72,sort of strategies to make your data,sorte de stratégies pour rendre votre
+914.88,cleaning workflow more efficient and one,flux de travail de nettoyage de données plus efficace et l'une
+917.04,of my favorite strategies is using the,de mes stratégies préférées utilise à nouveau la
+919.36,across function from deep wire deep wire,fonction transversale de deep wire deep wire
+922.48,again is one of those packages,est à nouveau l'un de ces
+924.56,that gets loaded when you load the tidy,packages qui est chargé lorsque vous chargez  l'éclatement ordonné
+926.639,burst,NA
+927.6,and across just allows you to run the,et à travers vous permet simplement d'exécuter la
+930.16,same data manipulation function over,même fonction de manipulation de données sur
+932.8,several variables in sequence so here,"plusieurs variables en séquence, donc ici,"
+935.12,i'm saying okay across these variables,"je dis d'accord sur ces variables,"
+938.079,i'd like to do,je voudrais faire
+939.36,basically the workflow we saw on our on,essentiellement le flux de travail que nous avons vu sur notre sur
+941.44,our,notre
+942.24,on our last slide um so this is country,sur ou  r dernière diapositive euh donc c'est le pays
+945.279,uh the urban a rural status of the,euh le statut urbain un rural de la
+947.36,enumeration area where the one woman,zone de dénombrement où la seule femme
+949.519,resides um the wealth uh tertile of her,réside euh la richesse euh tertile de son
+953.759,household and her uh general education,ménage et son euh
+957.12,level so with each one of those we'll,niveau d'éducation générale donc avec chacun de ceux-là nous
+959.12,we'll,allons nous
+960.16,turn the,tourner  les
+961.519,values above 90 into n a's and then um,valeurs supérieures à 90 dans n a et ensuite euh
+964.72,course as a factor,bien sûr comme un facteur
+969.6,uh so,euh donc
+970.959,something that everyone does when they,quelque chose que tout le monde fait quand ils
+973.36,start working with categorical variables,commencent à travailler avec des variables catégorielles
+975.199,is they have to learn you know how to,est qu'ils doivent apprendre vous savez comment
+976.56,set a reference group um,définir un groupe de référence euh
+978.72,you can do this with a another um,vous pouvez le faire avec un autre euh
+981.12,function from the four cats,fonction du package quatre chats
+983.36,package,NA
+984.56,it's factory level so here here i'm,c'est au niveau de l'usine donc ici je
+987.279,setting up,configure l'
+988.72,age in three groups,âge en trois groupes
+991.68,so um,donc euh une
+993.519,sort of a young group a middle group and,sorte de groupe jeune un groupe moyen et
+994.88,an older group,un groupe plus âgé
+997.6,and i do that with case when and that,et je le fais avec le cas quand et qui
+1000.48,creates this character string but i want,crée cette chaîne de caractères mais je
+1002.079,to make sure that,Je veux m'assurer que
+1003.759,i use,j'utilise
+1006.079,the youngest group as my reference group,le groupe le plus jeune comme mon groupe de référence.
+1008.8,factor v level is going to set your,NA
+1011.36,levels in the order that you that you,NA
+1013.6,specify here,NA
+1015.04,so this will ensure that the youngest,NA
+1016.639,group is is the reference group,NA
+1020.72,all right so much for our,r nos
+1025.199,independent variables we're now going to,"variables indépendantes, nous allons maintenant"
+1026.559,look at our dependent variables,"examiner nos variables dépendantes,"
+1034.88,so,donc
+1036.72,as devon mentioned we're interested in,"comme devon l'a mentionné, nous sommes intéressés à"
+1039.199,predicting,prédire l'
+1040.48,um,NA
+1042,contraceptive method adoption and,adoption et l'
+1044.64,discontinuation between phase one and,arrêt de la méthode contraceptive entre la phase un et la
+1046.959,phase two uh and we're primarily,phase deux euh et nous sommes principalement
+1049.44,interested in how,intéressés par la façon dont
+1050.84,um those covid19 variables impact,ces variables covid19  impact
+1055.2,whether women adopted a method or just,si les femmes ont adopté une méthode ou juste
+1057.2,continued a method,continué une méthode
+1059.2,so we're going to use this variable,donc nous allons utiliser cette variable
+1061.76,cp,cp
+1064,to create,pour créer
+1066.32,basically,essentiellement
+1068.88,a dependent variable with four levels,une variable dépendante à quatre niveaux
+1072,so here you can see sort of the,donc ici vous pouvez voir une sorte de
+1073.44,breakdown of each of the four possible,répartition de chacune des quatre
+1076.24,permutations of those two variables,permutations possibles de ces deux variables
+1079.6,um oh we're also dropping,euh oh nous abandonnons également
+1081.76,uh any case that um either one of these,euh tout cas où l'une de ces
+1085.36,variables was missing or niu,variables manquait ou niu
+1088.64,i think that's like three cases across,je pense que c'est comme trois cas sur
+1090.32,the across the entire data set,"l'ensemble de l'ensemble de données,"
+1094.72,all right so we will say that a woman,donc nous dirons qu'une femme
+1096.48,has adopted a method if she was,a adopté une méthode si elle était
+1099.52,not using one at baseline at phase one,"n'en utilisait pas une au départ lors de la première phase,"
+1102.64,but then reported that she was using one,mais a ensuite signalé qu'elle en utilisait une
+1105.28,when we spoke to her again one year,lorsque nous lui avons reparlé un an
+1107.36,later,plus tard
+1108.559,and she has discontinued a method if she,et qu'elle a arrêté une méthode si elle en
+1111.2,was using one at baseline but then when,"utilisait une  au départ, mais ensuite, lorsque"
+1113.919,we talked to her again a year later she,"nous lui avons reparlé un an plus tard,"
+1115.52,was no longer using a method of any kind,elle n'utilisait plus aucune méthode d'aucune sorte
+1119.6,so here we use case when to identify,", nous utilisons donc ici le cas quand pour identifier"
+1121.919,those cases and,ces cas et
+1123.76,i'm just going to set,je vais simplement
+1126,set this up as a factor with,configurer cela comme un facteur avec un
+1128.96,factor in by frequency basically so,"facteur dans  par fréquence essentiellement, donc"
+1131.6,whatever,quel que soit le
+1132.799,group has the largest frequency would be,groupe qui a la fréquence la plus élevée serait
+1135.12,our reference group,notre groupe de référence
+1139.76,um so,euh donc
+1140.88,the first thing that you would probably,la première chose que vous voudriez probablement
+1142.16,want to do is put together some kind of,faire est de mettre en place une sorte de
+1143.52,descriptive statistics table for this,tableau statistique descriptif pour cette
+1145.36,variable um and we can do an unweighted,variable euh et nous pouvons faire une description non pondérée de l'
+1148.559,you know sample description,échantillon
+1150.88,with uh count count is from d d plier,avec euh count count vient de d d plier
+1154,again another one of those tiny verse,encore une autre de ces minuscules
+1155.6,functions so what we'll do here is we'll,"fonctions de verset donc ce que nous allons faire ici, c'est que nous"
+1157.76,say okay i want you to take my data and,dirons d'accord je veux que vous preniez mes données et que vous les
+1160.08,group it by country and then count the,"regroupiez par pays, puis que vous comptiez le"
+1162.64,number of responses to this variable we,"nombre de réponses à cela  variable, nous avons"
+1165.84,created fpstatus,créé fpstatus
+1167.76,and then we use proptable um usually to,", puis nous utilisons proptable um généralement pour"
+1170.88,create proportions for each each,créer des proportions pour chaque
+1172.88,response so you notice here that the,"réponse, vous remarquez donc ici que les"
+1174.799,proportions add up to one for each of,proportions totalisent une pour chacun
+1177.2,the countries,des pays
+1179.36,now i don't,"maintenant, je ne"
+1180.559,find this particularly readable so i,"trouve pas cela particulièrement lisible, donc"
+1182.08,always like to make a bar chart whenever,j'aime toujours faire un graphique à barres chaque fois que
+1184.08,i can i'll make it ggplot2,"je le peux, je vais en faire ggplot2"
+1186.88,another tidyburst package,un autre paquet tidyburst
+1189.919,and here's what uh what a very simple,et voici à quoi ressemble un
+1192.799,bar chart um,graphique à barres très simple euh
+1194.48,looks like uh,NA
+1196.32,we'll pass it to this ggplot function,nous le passerons à cette fonction ggplot
+1199.6,where we basically tell it to map the,où nous lui disons essentiellement de mapper  la
+1202.64,proportion on our our x-axis and the,proportion sur notre axe des x et les
+1205.6,different categories of family planning,différentes catégories de
+1208.4,status on the y-axis and fill is just,statut de planification familiale sur l'axe des y et le remplissage
+1211.2,telling it to,lui disent simplement de
+1213.2,also map that y-axis to the color that,mapper également cet axe des y à la couleur que
+1215.76,we're filling we use g-on-bar,"nous remplissons, nous utilisons g-on-bar"
+1218.559,to,pour
+1219.76,draw bars,dessiner des barres
+1221.28,and this this in particular is very,et ceci en particulier est très
+1223.44,important um using the identity,important euh en utilisant la
+1225.6,statistic,statistique d'identité
+1226.72,basically tells ggplot to do no further,dit essentiellement à ggplot de ne plus faire de
+1229.6,statistical manipulation of the data,manipulation statistique des données
+1231.12,that we're passing to it instead you,"que nous lui transmettons à la place, vous"
+1233.039,know we've already created our accounts,savez que nous avons déjà créé nos comptes
+1235.12,and proportions so we wanted to use what,"et nos proportions, nous voulions donc  utilisez ce"
+1236.96,we're giving it directly,que nous lui donnons directement
+1239.76,uh why are there two,euh pourquoi y a-t-il bien deux
+1242,bars well that comes from facet wrap and,barres qui viennent de l'enveloppement des facettes et
+1244.88,we're saying we want to facet our data,nous disons que nous voulons facetter nos données
+1247.2,by country,"par pays,"
+1248.48,the rest of this is just basically bells,le reste n'est que des cloches
+1250.88,and whistles we like to use theme,et des sifflets pour lesquels nous aimons utiliser le thème
+1252.48,minimal for a nice clean looking plot,minimal  une belle apparence p  beaucoup
+1254.96,i've gotten rid of the axis title and,je me suis débarrassé du titre de l'axe et de
+1257.2,the legend since those are labeled,la légende car ceux-ci sont déjà étiquetés
+1259.28,already,NA
+1260.159,and,et
+1260.96,the last thing is,la dernière chose est que
+1263.28,you know very commonly you'll want to,vous savez très souvent que vous voudrez
+1264.96,take those proportions and transform,prendre ces proportions et les
+1266.48,them into percents uh there's a,transformer en pourcentages euh il y a un
+1269.6,awesome package called scales that will,package génial appelé des échelles qui va
+1272.799,just,juste
+1273.679,do all that work for you and apply a,faites tout ce travail pour vous et appliquez un
+1275.12,percent sign,"signe de pourcentage,"
+1278.32,all right so that was the unweighted uh,donc c'était les
+1281.039,sample statistics but now we want to do,"statistiques d'échantillon non pondérées, mais maintenant nous voulons faire"
+1283.12,maybe a,peut-être une
+1285.36,estimation of what's happening in the,estimation de ce qui se passe dans la
+1286.72,population and for that we want to use,"population et pour cela, nous voulons utiliser"
+1290.559,our survey weights,nos poids d'enquête
+1292.159,specifically we'll be using,spécifiquement nous allons  utiliser le
+1294.559,panel weight which phil mentioned it,poids du panneau que phil a mentionné qu'il
+1297.2,adjusts for loss to follow up at phase,ajuste pour la perte de suivi à la phase
+1300.32,two,"deux,"
+1301.679,so again if you're a state user this,"donc encore une fois si vous êtes un utilisateur d'état,"
+1303.6,this kind of workflow from the surveyor,ce type de flux de travail du
+1305.919,package will probably be pretty familiar,"package d'arpenteur sera probablement assez familier,"
+1308.559,we use a function called as survey,nous utilisons une fonction appelée comme
+1310.32,design to specify elements of the survey,conception d'enquête pour spécifier  éléments de la conception de l'enquête
+1312.96,design so we've got the weight here,", nous avons donc le poids ici,"
+1315.44,then we've got uh identifiers for each,puis nous avons des identifiants pour chaque
+1318.08,sample clustering uh that when we're,échantillon regroupant euh que lorsque nous
+1320.48,using uh the enumeration area id from,utilisons euh l'identifiant de la zone de dénombrement de la première
+1323.52,phase one you could use uh phase two as,"phase, vous pouvez utiliser  euh la phase deux"
+1325.679,well um because,aussi euh parce que
+1327.28,uh women had to stay in the same,euh les femmes devaient rester dans la même
+1329.28,study area between phases in order to be,zone d'étude entre les phases afin d'être
+1331.2,included both times so it doesn't matter,"incluses les deux fois, donc peu importe que"
+1333.44,you can use one or two,vous puissiez utiliser une ou deux
+1335.44,strata is,"strates, c'est"
+1336.88,usually urban and rural strata so this,"généralement des strates urbaines et rurales, donc"
+1339.12,is creating independent variance,cela crée indépendant
+1340.64,estimates for for women sampled in each,estimations de la variance pour les femmes échantillonnées dans chaque
+1343.6,stratum,strate
+1346.64,very small effect on standard errors in,effet très faible sur les erreurs types dans
+1348.559,this case we're going to be grouping by,"ce cas, nous allons regrouper par"
+1350.48,country and and family planning status,pays et statut de planification familiale
+1354.24,and then we're going to use the,", puis nous allons utiliser la"
+1355.6,summarize function,fonction de synthèse
+1357.2,to estimate a survey,pour estimer une enquête
+1359.36,mean this also comes from the surveyor,signifie cela aussi  vient du package de l'arpenteur
+1361.52,package and what we're doing here is,"et ce que nous faisons ici, c'est"
+1363.2,we're saying hey we're estimating,"que nous disons hé, nous estimons les"
+1365.2,proportions,proportions
+1366.88,and we would like to adjust our,et nous aimerions ajuster nos
+1369.12,confidence intervals,intervalles de confiance
+1371.12,so that you don't get any values that,afin que vous n'obteniez aucune
+1373.28,are below zero or above one hundred,valeur inférieure à zéro ou supérieure à cent
+1375.2,percent basically,"pour cent  fondamentalement,"
+1376.96,um so if you do that you'll get a table,"euh, donc si vous faites cela, vous obtiendrez un tableau"
+1378.48,like this,"comme celui-ci,"
+1379.6,i'm going to move along a bit quickly,je vais avancer un peu rapidement
+1381.039,here because we've got about six minutes,"ici parce qu'il nous reste environ six minutes,"
+1383.44,left,NA
+1384.559,um,"euh,"
+1385.52,but uh,"mais euh,"
+1388.08,you saw that we get a coefficient,vous avez vu que nous obtenons une
+1390.159,estimate and a confidence interval here,"estimation de coefficient et un int de confiance  erval ici,"
+1392.4,i'm just using the same uh function that,j'utilise simplement la même fonction euh que
+1394.799,we we saw before but with,"nous avons vue auparavant, mais avec"
+1397.28,geom error bar to insert these error,la barre d'erreur geom pour insérer ces
+1400.08,bars,barres d'erreur
+1401.039,indicating the confidence interval,indiquant l'intervalle de confiance que
+1403.52,i don't think i mentioned but this is a,"je ne pense pas avoir mentionné, mais il s'agit d'un"
+1404.88,95 percent confidence interval by,intervalle de confiance de 95% par
+1406.799,default and of course you can adjust,défaut et bien sûr  vous pouvez ajuster
+1408.72,that as as needed,"cela au besoin,"
+1412.4,all right so finally we'll uh spend the,donc finalement nous allons passer les
+1414.64,last five minutes on our,cinq dernières minutes sur notre
+1417.84,analysis,"analyse,"
+1419.6,so we're gonna use that exact same,donc nous allons utiliser exactement la même
+1421.36,surveyor uh toolkit to model our,boîte à outils d'arpenteur pour modéliser nos
+1424.64,dependent variables,variables dépendantes
+1426.4,um with this,euh avec cette
+1428.88,survey glm function which comes from,fonction glm d'enquête qui vient de
+1431.6,that survey package,ça  package d'enquête
+1435.44,this is similar to the glm function that,ceci est similaire à la fonction glm que la
+1438.159,most our users are probably familiar,"plupart de nos utilisateurs connaissent probablement,"
+1439.84,with except for that it is able to read,sauf qu'il est capable de lire
+1442.32,that survey design information,ces informations de conception d'enquête
+1444.559,and create cluster robust,et de créer des
+1446.88,standard error estimates using the ea,estimations d'erreur standard robustes en cluster en utilisant les
+1449.919,ids that we talked about,"identifiants ea dont nous avons parlé,"
+1452.799,so another thing,donc une autre chose
+1454.4,that i like to do on the blog is,que j'aime  faire sur le blog est
+1456.84,um try not to repeat the same code each,euh essayer de ne pas répéter le même code chaque
+1461.2,time i want to run a model in this case,fois que je veux exécuter un modèle dans ce cas
+1462.96,i'm going to run a separate model for,je vais exécuter un modèle séparé pour le
+1464.32,burkina faso in kenya,burkina faso au kenya
+1466.559,i only really want to specify it once so,je veux seulement vraiment sp  ecifiez-le une fois donc
+1468.48,i'm going to you know put that code in a,je vais vous savez mettre ce code dans une
+1471.679,summarize function,fonction de résumé
+1473.76,after we've grouped the data by country,après avoir regroupé les données par pays
+1475.84,and this allows us to basically create,et cela nous permet de créer essentiellement
+1478.159,you know one model per country in a nice,vous savez un modèle par pays dans un joli
+1480.72,little tidy data frame like this so,petit cadre de données bien rangé comme celui-ci donc
+1483.52,we're going to be saying,nous allons dire la
+1484.96,same survey design,même conception d'enquête
+1486.799,and for the for the glm we're going to,"et pour le glm, nous allons"
+1488.88,be um,NA
+1491.2,working with this this binary version of,travailler avec cette version binaire
+1493.919,our of our dependent variable called,de notre variable dépendante appelée
+1495.679,adopt so we've we've filtered down to,"adopter, nous avons donc filtré pour"
+1498.799,look only at women who were not using a,ne regarder que  les femmes qui n'utilisaient pas de
+1501.76,method at phase one,"méthode lors de la première phase,"
+1503.44,so if we create adopt as a as a logical,donc si nous créons adopter comme indicateur logique
+1506.96,indicator of whether our status is,"de l'adoption de notre statut,"
+1509.44,adopted that means,cela signifie que
+1511.36,the value in adopt is,la valeur de adopter est
+1513.36,true if if a non-user adopted a method,vraie si si un non-utilisateur a adopté une méthode
+1517.039,and it's false if because we only have,et c'est faux si parce que nous  il ne reste que des
+1519.6,non-users left,non-utilisateurs
+1521.36,if that non-user was still not using a,si ce non-utilisateur n'utilisait toujours pas une
+1524.24,phase two okay,"phase deux d'accord,"
+1525.76,so this is a binary logit model,donc c'est un modèle logit binaire
+1530.72,and we're going to be specifying this,et nous allons spécifier cette
+1532.6,quasi-binomial family i know this throws,famille quasi-binomiale je sais que cela
+1534.64,a lot of people,jette beaucoup de gens
+1536,you're probably accustomed to saying,vous êtes  probablement habitué à dire
+1537.36,binomial but,binôme mais
+1539.039,we use quasi-binomial to basically,nous utilisons quasi-binôme pour basica  supprimez uniquement
+1541.6,suppress warnings that r would uh,les avertissements indiquant que r
+1544.64,r would issue um for non-integer,émettrait uh r pour des résultats non entiers.
+1547.279,outcomes that's what happens when you,NA
+1548.72,use a non-integer survey weight like the,NA
+1551.44,one we're using in panel weight but,NA
+1553.679,otherwise it's the same logic model that,NA
+1555.6,you're probably familiar with,familier avec
+1557.84,tidy basically creates a standard,tidy crée essentiellement une
+1560.64,tidy data frame output we're going to,"sortie de trame de données standard tidy, nous allons"
+1562.559,exponentiate our regression coefficients,exposer nos coefficients de régression
+1565.6,and i'm also using um,et j'utilise également des outils um
+1568.799,g tools to create just some uh stars,g pour créer juste quelques euh étoiles
+1572.159,in the table which you'll see in a,dans le tableau que vous verrez dans une
+1573.36,second,seconde
+1575.84,so you can take that uh summary output,afin que vous puissiez prendre  cette sortie récapitulative
+1578.159,and just grab one of you know either the,et prenez simplement l'un d'entre vous connaissant les
+1581.279,two countries and unnest it and this is,deux pays et démêlez-le et c'est
+1583.679,the,la
+1584.4,regression output that we've created for,sortie de régression que nous avons créée pour l'
+1587.12,method adoption,adoption de la méthode
+1589.36,uh what you can see here because i've,euh ce que vous pouvez voir ici parce que j'ai
+1590.96,added these stars,"ajouté ces étoiles,"
+1593.76,is that you know we we only found in,c'est que vous savez que nous  nous avons seulement constaté dans
+1595.84,this particular analysis that,cette analyse particulière que
+1598.559,the,le
+1599.279,highest level of concern about becoming,niveau le plus élevé de préoccupation concernant le fait d'être
+1601.919,affected with covet 19 was correlated,affecté par la convoitise 19 était corrélé
+1604.559,with an increased likelihood of,à une probabilité accrue d'adoption de la
+1609.679,method adoption between phases we also,"méthode entre les phases, nous voyons également une"
+1612.48,see some significance for the education,certaine importance pour l'éducation
+1614.559,and age variables so this is burkina,"a  nd variables d'âge, donc c'est le burkina"
+1616.799,faso if we look at kenya none of these,"faso si nous regardons le kenya, aucune de ces"
+1619.279,measures are,mesures n'est
+1620.96,significant predictors of adoption for,un prédicteur significatif de l'adoption pour les
+1622.96,non-users,non-utilisateurs
+1625.039,uh the story's a little bit different if,euh l'histoire est un peu différente si
+1626.32,we switch to looking at discontinuation,nous passons à l'examen de l'abandon
+1629.76,uh in this case you know we're going to,"euh dans ce cas, vous savez que nous allons  pour"
+1631.039,filter to women who were using at phase,filtrer les femmes qui utilisaient à la phase
+1634.08,one,un
+1634.88,and see if they discontinued or they,et voir si elles ont arrêté ou
+1636.88,continued using that would be the the,continué à utiliser ce serait l'
+1639.279,inverse,inverse
+1641.279,uh so again we're just going to use the,euh donc encore une fois nous allons juste utiliser le
+1642.72,same code group it by country and then,même groupe de code par pays et ensuite
+1644.96,we'll throw our same model specification,nous lancerons notre même  spécification du modèle
+1648,into a summary function,dans une fonction récapitulative
+1650.88,creating a table like this one,créant un tableau comme celui-ci
+1657.76,in this case,"dans ce cas,"
+1659.36,we found that neither of the coven 19,nous avons constaté qu'aucune des mesures du coven 19
+1661.6,measures were significantly associated,n'était significativement associée
+1663.44,with discontinuation,à l'abandon
+1665.039,for women who were using a method at,pour les femmes qui utilisaient une méthode à la
+1667.039,phase one in burkina faso but in kenya,"phase un au burkina faso mais au kenya,"
+1672.399,we see that,nous voyons que
+1673.84,generally all of these,généralement tous  de ces
+1675.6,levels of concern were correlated with a,niveaux de préoccupation étaient corrélés avec une
+1678.24,higher likelihood of,probabilité plus élevée
+1680.48,of,d'
+1681.6,discontinuation,abandon
+1684.72,between phase one and phase two,entre la phase un et la phase deux d'
+1688.32,okay so we've got about a minute left um,"accord, il nous reste donc environ une minute"
+1691.36,that was,euh c'était
+1692.399,very fast uh,très rapide euh
+1694,and uh i know it's a probably a lot of,et euh je  sais que c'est probablement beaucoup de fonctions
+1697.6,very ipham specific functions uh,très spécifiques à ipham euh
+1700.64,but um if you,mais euh
+1702.399,if you'd like to see more stuff like,si vous souhaitez voir plus de choses comme
+1703.919,this uh please check out that um ipham's,ça euh s'il vous plaît consultez ce blog pma d'ipham
+1706.64,pma blog,NA
+1708.799,that devin mentioned up at the top,que devin a mentionné en haut
+1711.12,um,euh
+1712.159,we feature only examples in r on the,nous ne présentons que des exemples dans r  sur le
+1714.48,blog at this point um so we'll be using,blog à ce stade euh donc nous
+1716.96,the exact same workflow that you saw in,utiliserons exactement le même flux de travail que vous avez vu dans
+1718.96,this presentation uh the iphone's r,cette présentation euh le
+1721.279,documentation website is also extremely,site Web de documentation r de l'iphone est également extrêmement
+1723.36,useful for understanding um you know,utile pour comprendre euh vous savez
+1725.52,what kinds of specific functions are,quels types de fonctions spécifiques sont
+1727.2,available,disponibles
+1728.64,uh for working with iphone's data and,euh pour travailler avec l'iphone  data et
+1730.159,then there's also an iphone's tutorials,puis il y a aussi une page de tutos iphone
+1732.399,page,NA
+1734.64,where you'll find all kinds of,où tu trouveras toutes sortes de
+1738.799,guides in every language r stata spss,guides dans toutes les langues r stata spss
+1742.24,and and so on so,et ainsi de suite
+1744,um thank you all very much it's been a,euh merci beaucoup à tous ça fait
+1746.159,half an hour uh,une demi-heure euh
+1748.96,yep laura says we are returning to,ouais laura dit qu'on retourne en
+1750.799,plenary so,plénière  alors
+1752.96,thank you,merci toi
+1822.399,you,NA

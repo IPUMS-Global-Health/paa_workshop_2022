@@ -1,0 +1,470 @@
+---
+title: "R Users Breakout Session"
+author: Matt Gunther - IPUMS PMA Senior Data Analyst
+date: 2022-04-06
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  R.options = list(width = 100)
+)
+```
+
+## Setup
+
+R users: remember to select a **.dat (fixed-width text)** data format  
+
+You'll receive a compressed **dat.gz** file - no need to decompress! 
+
+Save both of those files in the "data" folder of your working directory.
+
+<center>
+```{r, echo = FALSE}
+knitr::include_graphics("images/download.png", dpi = 150)
+```
+</center>
+
+---
+
+You'll need the [ipumsr](https://tech.popdata.org/ipumsr/index.html) package to load them. If not installed, you can download from CRAN.
+
+```{r, eval = FALSE}
+install.packages("ipumsr")
+```
+
+Each session, load the `ipumsr` library before you import data.
+
+```{r, results='hide', message=FALSE, warning=FALSE}
+library(ipumsr)
+
+# Load data into R with `ipumsr`
+dat <- read_ipums_micro(
+  ddi = "data/pma_00093.xml",
+  data = "data/pma_00093.dat.gz"
+)
+```
+
+<center>
+```{r, echo = FALSE}
+knitr::include_graphics("images/logo.png", dpi = 150)
+```
+</center>
+
+---
+
+Other useful packages for IPUMS data: 
+
+```{r, results='hide', message=FALSE, warning=FALSE}
+# General toolkit 
+library(tidyverse)
+
+# For label manipulation: 
+library(labelled)
+
+# For survey analysis: 
+library(survey) 
+library(srvyr) 
+```
+
+<center>
+```{r, echo = FALSE}
+knitr::include_graphics("images/logo-ribbon.png", dpi = 150)
+```
+</center>
+
+# 1 - Analytic Sample 
+
+--- 
+
+PMA uses an **open panel design** - women may enter the panel after Phase 1, and they may be lost to follow-up after any phase.
+
+See [RESULTFQ](https://pma.ipums.org/pma-action/variables/RESULTFQ) 
+
+Women who enter the panel at Phase 2 are `NA` for all variables at Phase 1.
+
+```{r}
+dat %>% count(RESULTFQ_1)
+```
+
+---
+
+Women whose households were not found again after Phase 1 are `NA` for all variables at Phase 2. 
+
+```{r}
+dat %>% count(RESULTFQ_2)
+```
+
+---
+
+We will only include women who were available and completed the Female Questionnaire for *both* Phase 1 and Phase 2. 
+
+```{r}
+dat <- dat %>% filter(RESULTFQ_1 == 1 & RESULTFQ_2 == 1)
+
+dat %>% count(RESULTFQ_1, RESULTFQ_2)
+```
+
+---
+
+Additionally, PMA samples are only valid for the *de facto* population: women who 
+slept in the household the night before the Household interview.
+
+See [RESIDENT](https://pma.ipums.org/pma-action/variables/RESIDENT)
+
+```{r}
+dat %>% count(RESIDENT_1)
+```
+
+We'll also drop cases where the woman was not part of the *de facto* population in either Phase 1 or Phase 2. 
+
+```{r}
+dat <- dat %>% filter(RESIDENT_1 %in% c(11, 22) & RESIDENT_2 %in% c(11, 22))
+```
+
+---
+
+How many cases remain? 
+
+```{r}
+dat %>% count(COUNTRY)
+```
+
+
+# 2 - Recoding Independent variables 
+
+---
+
+PMA surveys contain many **categorical** variables. These are usually represented as **factors** in R. 
+
+In an IPUMS data extract, you won't see factors! 
+
+Instead, we generate **labelled** numeric variables (note the label in brackets). 
+
+```{r}
+dat %>% ipums_var_label(CVINCOMELOSS_2)
+
+dat %>% count(CVINCOMELOSS_2)
+```
+
+--- 
+
+The [ipumsr](https://tech.popdata.org/ipumsr/index.html) package contains tools for working with labelled IPUMS data.
+
+Usually, we handle codes like `99 [NIU (not in universe)]` before transforming other missing data to `NA`. 
+
+```{r}
+dat %>% count(CVINCOMELOSS_2, HHINCOMELOSSAMT_2)
+```
+
+---
+
+**Tip:** 
+
+Information the code `NIU (not in universe)` can always be found on a variable's [universe tab](https://pma.ipums.org/pma-action/variables/CVINCOMELOSS#universe_section).  
+
+<center>
+```{r, echo = FALSE}
+knitr::include_graphics("images/universe.png", dpi = 300)
+```
+</center>
+
+---
+
+For [CVINCOMELOSS_2](https://pma.ipums.org/pma-action/variables/CVINCOMELOSS), `99 [NIU (not in universe)]` may indicate that the household experienced *no income loss in the last year*, or it may indicate that [HHINCOMELOSSAMT_2](https://pma.ipums.org/pma-action/variables/HHINCOMELOSSAMT) is `98 [No response or missing]`. 
+
+We should treat the `NIU` women from households without *any* income loss as "No" in [CVINCOMELOSS_2](https://pma.ipums.org/pma-action/variables/CVINCOMELOSS). 
+
+```{r}
+dat <- dat %>% 
+  mutate(
+    CVINCOMELOSS_2 = CVINCOMELOSS_2 %>% 
+      labelled::recode_if(HHINCOMELOSSAMT_2 == 1, 0)
+  )
+
+dat %>% count(CVINCOMELOSS_2, HHINCOMELOSSAMT_2)
+```
+
+---
+
+Next, we'll use `NA` to represent the remaining values above `90`: 
+
+  * `97 [Don't know] ` and 
+  * remaining cases marked `99 [NIU (not in universe)]` 
+
+```{r}
+dat <- dat %>% 
+  mutate(
+    CVINCOMELOSS_2 = CVINCOMELOSS_2 %>% 
+      lbl_na_if(~.val > 90)
+  )  
+
+dat %>% count(CVINCOMELOSS_2, HHINCOMELOSSAMT_2)
+```
+
+---
+
+Once you're done with labels, we recommend transforming key variables into **factors** with [forcats::as_factor](https://forcats.tidyverse.org/reference/as_factor.html). 
+
+The [forcats](https://forcats.tidyverse.org) package is included when you load `library(tidyverse)`.
+
+```{r}
+dat <- dat %>% mutate(CVINCOMELOSS_2 = as_factor(CVINCOMELOSS_2))
+
+dat %>% count(CVINCOMELOSS_2)
+```
+
+This will make categorical variables easier to use in data visualization and as "dummy" variables in regression analysis. 
+
+---
+
+Likert-style questions can be treated as factors, too. 
+
+```{r}
+dat %>% ipums_var_label(COVIDCONCERN_2)
+
+dat %>% count(COVIDCONCERN_2)
+```
+
+---
+
+This time we'll treat codes `5` and above as `NA`. 
+
+```{r}
+dat <- dat %>% 
+  mutate(
+    COVIDCONCERN_2 = COVIDCONCERN_2 %>% 
+      lbl_na_if(~.val >= 5) %>% 
+      as_factor()
+  )
+
+dat %>% count(COVIDCONCERN_2)
+```
+
+---
+
+You can apply the same transformation to several variables with help from [dplyr::across](https://dplyr.tidyverse.org/reference/across.html). 
+
+[dplyr]() is another package included when you load `library(tidyverse)`.
+
+```{r}
+dat <- dat %>% 
+  mutate(
+    across(
+      c(COUNTRY, URBAN, WEALTHT_2, EDUCATTGEN_2),
+      ~.x %>% lbl_na_if(~.val >= 90) %>% as_factor()
+    )
+  )
+```
+
+---
+
+Often, it's important to set a **reference group** against which all dummy variables will be compared. 
+
+You can manually specify a **refernece group** when you set factor "levels" with a function like [forcats::fct_relevel](https://forcats.tidyverse.org/reference/fct_relevel.html). 
+
+```{r}
+dat <- dat %>% 
+  mutate(
+    AGE_2 = case_when(
+      AGE_2 < 25 ~ "15-24",
+      AGE_2 < 35 ~ "25-34",
+      AGE_2 < 50 ~ "35-49"
+    ),
+    AGE_2 = AGE_2 %>% fct_relevel("15-24", "25-34", "35-49")
+  ) 
+```
+
+
+# 3 - Dependent variables
+
+---
+
+We'll use our recoded variables to model the likelihood of contraceptive method **adoption** and **discontinuation** between phases. 
+
+See [CP](https://pma.ipums.org/pma-action/variables/CVINCOMELOSS) 
+
+```{r}
+dat <- dat %>% filter(CP_1 < 90 & CP_2 < 90)
+
+dat %>% count(CP_1, CP_2)
+```
+
+---
+
+A woman has **adopted** a method if she was *not* using one at Phase 1, but then reported using one at Phase 2.
+
+She has **discontinued** a method if she *did* use one at Phase 1, but no longer uses one at Phase 2. 
+
+```{r}
+dat <- dat %>% 
+  mutate(
+    FPSTATUS = case_when(
+      CP_1 == 1 & CP_2 == 1 ~ "User",
+      CP_1 == 0 & CP_2 == 0 ~ "Non-user",
+      CP_1 == 1 & CP_2 == 0 ~ "Discontinued",
+      CP_1 == 0 & CP_2 == 1 ~ "Adopted"
+    ),
+    FPSTATUS = fct_infreq(FPSTATUS)
+  )
+```
+
+---
+
+Un-weighted sample proportions for `FPSTATUS` can be found with [count](https://dplyr.tidyverse.org/reference/count.html) and [prop.table](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/prop.table):
+
+```{r}
+dat_nowt <- dat %>% 
+  group_by(COUNTRY) %>% 
+  count(FPSTATUS) %>% 
+  mutate(prop = prop.table(n))
+
+dat_nowt
+```
+
+We'll plot this table with [ggplot2](https://ggplot2.tidyverse.org/index.html) (also included with the [tidyverse](https://tidyverse.tidyverse.org/)).
+
+---
+
+```{r, fig.height=4, fig.width=10}
+dat_nowt %>% 
+  ggplot(aes(x = prop, y = FPSTATUS, fill = FPSTATUS)) +  
+  geom_bar(stat = "identity") +
+  facet_wrap(~COUNTRY) + theme_minimal() + 
+  theme(axis.title = element_blank(), legend.position = "none") + 
+  scale_x_continuous(labels = scales::label_percent())
+```
+
+---
+
+For *weighted* population estimates, use [as_survey_design](http://gdfe.co/srvyr/reference/as_survey_design.html) and [survey_mean](http://gdfe.co/srvyr/reference/survey_mean.html) from the [srvyr](http://gdfe.co/srvyr/index.html) package. 
+
+Use `prop = TRUE` to adjust standard errors near 0% or 100% for proportions.
+
+```{r}
+dat_wtd <- dat %>% 
+  as_survey_design(weight = PANELWEIGHT, id = EAID_1, strata = STRATA_1) %>%
+  group_by(COUNTRY, FPSTATUS) %>% 
+  summarise(survey_mean(prop = TRUE, prop_method = "logit", vartype = "ci"))
+
+dat_wtd
+```
+
+---
+
+```{r, fig.height=4, fig.width=10}
+dat_wtd %>% 
+  ggplot(aes(x = coef, y = FPSTATUS, fill = FPSTATUS)) +  
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(xmin = `_low`, xmax = `_upp`), width = 0.2, alpha = 0.5) +
+  facet_wrap(~COUNTRY) + theme_minimal() + 
+  theme(axis.title = element_blank(), legend.position = "none") + 
+  scale_x_continuous(labels = scales::label_percent())
+```
+
+# 4 - Analysis
+
+---
+
+The same [srvyr](http://gdfe.co/srvyr/index.html) toolkit can be used to model our dependent variables with [survey::svyglm](http://r-survey.r-forge.r-project.org/survey/). 
+
+Consider women who were *not* using a method at Phase 1: 
+
+```{r}
+adopt_glm <- dat %>% 
+  filter(CP_1 == 0) %>%
+  mutate(adopt = FPSTATUS == "Adopted") %>% 
+  group_by(COUNTRY) %>%
+  summarise(
+    adopt = cur_data() %>% 
+      as_survey_design(weight = PANELWEIGHT, id = EAID_1, strata = STRATA_1) %>% 
+      svyglm(
+        adopt ~ CVINCOMELOSS_2 + COVIDCONCERN_2 + URBAN + WEALTHT_2 + EDUCATTGEN_2 + AGE_2,
+        family = "quasibinomial", design = .
+      ) %>% 
+      broom::tidy(exp = TRUE) %>% 
+      mutate(sig = gtools::stars.pval(p.value)) %>% 
+      list()
+  )
+
+adopt_glm
+```
+
+---
+
+For Phase 1 non-users in Burkina Faso, **very high** levels of concern about becoming infected with COVID-19 are significantly associated with higher chances of adopting a contraceptive method (relative to women who had no such concern).
+
+Lesser levels of concern are not statistically significant, nor is household income loss from COVID-19. 
+
+```{r}
+adopt_glm %>% 
+  filter(COUNTRY == "Burkina Faso") %>% 
+  unnest(adopt) 
+```
+
+---
+
+In Kenya, neither of these measures are significantly predictive of adoption among non-users.
+
+```{r}
+adopt_glm %>% 
+  filter(COUNTRY == "Kenya") %>% 
+  unnest(adopt) 
+```
+
+---
+
+What about method **dicontinuation** for women who *were* using a method at Phase 1? 
+
+```{r}
+stop_glm <- dat %>% 
+  filter(CP_1 == 1) %>% 
+  mutate(stop = FPSTATUS == "Discontinued") %>% 
+  group_by(COUNTRY) %>%
+  summarise(
+    stop = cur_data() %>% 
+      as_survey_design(weight = PANELWEIGHT, id = EAID_1, strata = STRATA_1) %>% 
+      svyglm(
+        stop ~ CVINCOMELOSS_2 + COVIDCONCERN_2 + URBAN + WEALTHT_2 + EDUCATTGEN_2 + AGE_2,
+        family = "quasibinomial", design = .
+      ) %>% 
+      broom::tidy(exp = TRUE) %>% 
+      mutate(sig = gtools::stars.pval(p.value)) %>% 
+      list()
+  )
+
+stop_glm
+```
+
+---
+
+This time, neither of the COVID-19 measures are significantly associated with **discontinuation** for Phase 1 contraceptive users in Burkina Faso.
+
+```{r}
+stop_glm %>% 
+  filter(COUNTRY == "Burkina Faso") %>% 
+  unnest(stop) 
+```
+
+---
+
+However, higher levels concern with becoming infected with COVID-19 *are* significantly associated with higher odds of discontinuation for Phase 1 contraceptive users in Kenya. 
+
+```{r}
+stop_glm %>% 
+  filter(COUNTRY == "Kenya") %>% 
+  unnest(stop) 
+```
+
+--- 
+
+For more R tips for IPUMS data, check out: 
+
+  * The [IPUMS PMA blog](https://tech.popdata.org/pma-data-hub/)
+  * The [ipumsr](https://tech.popdata.org/ipumsr/) documentation website 
+  * The [ipums tutorials](https://www.ipums.org/support/tutorials) page
+  
+Thank you!

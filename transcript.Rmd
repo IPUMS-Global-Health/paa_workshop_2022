@@ -1,0 +1,94 @@
+---
+title: "transcript"
+output: html_document
+date: "2022-07-26"
+---
+
+Setup: 
+
+Auto-generated transcripts for Youtube videos (including translations) can be downloaded via the [YouTube Transcript API](https://github.com/jdepoix/youtube-transcript-api) for Python. 
+
+[reticulate](https://rstudio.github.io/reticulate/index.html) manages interoperability between R and Python.
+
+Here, we use `reiculate` to import `YouTubeTranscriptApi`, which gives us time-stamped English and French transcripts of the webinar.
+
+Before using this script, we took the following setup steps:
+
+  1. Added a blank file called `.Renviron` to the project root directory (this overrides the default path to Python set globally for `reticulate` elsewhere)
+  2. Created a conda environment called `R_youtube_capion` at project root 
+  3. Install `youtube_transcript_api` via `pip`
+
+See below for steps 2 and 3:
+
+```{r}
+# reticulate::conda_create(envname = "local/r-youtube-api")
+# reticulate::py_install(packages = "youtube_transcript_api", pip = TRUE)
+```
+
+# Main transcript 
+
+```{r}
+library(tidyverse)
+library(reticulate)
+reticulate::use_condaenv("local/r-youtube-api")
+
+api <- reticulate::import("youtube_transcript_api")$YouTubeTranscriptApi
+
+transcript_list <- api$list_transcripts(video_id = "9aS4DF0DsKA")
+transcript <- transcript_list$find_transcript(language_codes = list("en"))
+
+english <- transcript$fetch()
+french <- transcript$translate("fr")$fetch()
+
+english <- map_dfr(english, as_tibble) %>% select(text, start)
+french <- map_dfr(french, as_tibble) %>% select(text, start)
+
+main <- english %>% 
+  left_join(french, by = "start") %>% 
+  rename(english = text.x, french = text.y, time = start) %>% 
+  relocate(time, .before = english)
+
+main %>% write_csv("plenary.csv")
+```
+
+# R breakout 
+
+```{r}
+transcript_list <- api$list_transcripts(video_id = "KYS-YnmYCyU")
+transcript <- transcript_list$find_transcript(language_codes = list("en"))
+
+english <- transcript$fetch()
+french <- transcript$translate("fr")$fetch()
+
+english <- map_dfr(english, as_tibble) %>% select(text, start)
+french <- map_dfr(french, as_tibble) %>% select(text, start)
+
+r <- english %>% 
+  left_join(french, by = "start") %>% 
+  rename(english = text.x, french = text.y, time = start) %>% 
+  relocate(time, .before = english)
+
+r %>% write_csv("r_session.csv")
+```
+
+# Stata breakout 
+
+```{r}
+transcript_list <- api$list_transcripts(video_id = "ijifgQDGS8A")
+transcript <- transcript_list$find_transcript(language_codes = list("en"))
+
+english <- transcript$fetch()
+french <- transcript$translate("fr")$fetch()
+
+english <- map_dfr(english, as_tibble) %>% select(text, start)
+french <- map_dfr(french, as_tibble) %>% select(text, start)
+
+stata <- english %>% 
+  left_join(french, by = "start") %>% 
+  rename(english = text.x, french = text.y, time = start) %>% 
+  relocate(time, .before = english)
+
+stata %>% write_csv("stata_session.csv")
+```
+
+
